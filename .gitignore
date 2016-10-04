@@ -2,4 +2,7 @@
 node_modules
 # Ignores your built application.
 build/js/app.js
+# Ignore annoying mac system files
+.DS_Store
+*/.DS_Store
 
