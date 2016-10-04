@@ -21,19 +21,20 @@
 .result {
 	border: 10px solid rgb(13, 60, 85);
 	padding: 0px;
-	color: white;
+	color: rgb(13, 60, 85);
 }
 
-.media {
-	background-color: rgb(251, 108, 32);
-	border-right: 0px solid rgb(251, 108, 32);
+.media-body {
+	background-color: #fcfcfc;
+	border: 4px solid rgb(251, 108, 32);
+	border-left-width: 0px;
 	border-bottom-right-radius: 15px;
 	border-top-right-radius: 15px;
 	white-space: nowrap;
 }
 
 .media-left {
-	padding-right: 0px;
+	padding-right: 1px;
 }
 
 .media-body > .col-md-12 {
