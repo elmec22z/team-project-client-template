@@ -1,0 +1,25 @@
+body{
+	padding-top: 10px;
+	font-family: "Open Sans" serif;
+}
+
+.who-we-are {
+	border: hidden;
+}
+
+.faq {
+	border: hidden;
+}
+
+.contact-us {
+	border: hidden;
+}
+
+.locations {
+	border: hidden;
+}
+
+iframe{
+	height: 500px;
+	width: 700px;
+}
