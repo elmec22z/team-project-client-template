@@ -1,6 +1,16 @@
 body{
 	padding-top: 10px;
 	font-family: "Open Sans" serif;
+	background-color: #e5c550;
+}
+
+.pres{	
+	background-color: white;
+}
+
+.btn{
+	color: white;	
+	background-color: #e87817;
 }
 
 .who-we-are {
