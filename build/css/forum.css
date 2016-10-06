@@ -8,3 +8,7 @@ body{
 	color: white;
 	background-color: #e87817;
 }
+.q-and-a-comment hr {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
