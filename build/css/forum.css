@@ -22,3 +22,7 @@ h3 {
 /* Removes space above Questions */
 	margin-top: 0;
 }
+
+ul {
+	list-style-type: none;
+}
