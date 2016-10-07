@@ -14,11 +14,12 @@ body {
 }
 
 #base-row {
-	background-color: #75c0c6;
+	background-color: transparent;
 }
 
 .result {
-	border: 10px solid #e5c550;
+	border: 0px solid #e5c550;
+	margin-bottom: 10px;
 	padding: 0px;
 }
 
