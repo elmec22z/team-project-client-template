@@ -1,5 +1,5 @@
 body{
-	margin-top: 50px;
+	margin-top: 10px;
 	font-family: "Open Sans" serif;
 	background-color: #e5c550;
 }
@@ -11,4 +11,14 @@ body{
 .q-and-a-comment hr {
 	margin-top: 5px;
 	margin-bottom: 5px;
+}
+
+h1 {
+	/* Increase space after page header */
+	margin-bottom: 10px;
+}
+
+h3 {
+/* Removes space above Questions */
+	margin-top: 0;
 }
