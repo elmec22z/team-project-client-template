@@ -1,0 +1,22 @@
+#background {
+  width: 600px;
+  height:auto;
+  position: fixed;
+  z-index: -100;
+}
+
+.pres{
+	background-color: white;
+}
+
+.btn{
+	color: white;
+	background-color: #e87817;
+}
+
+#main-background {
+  width: 600px;
+  height:auto;
+  position: fixed;
+  z-index: -100;
+}
