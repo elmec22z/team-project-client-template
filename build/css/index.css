@@ -1,7 +1,5 @@
 body {
-	margin-top: 130px;
 	font-family: "Open Sans" serif;
-	background-color: #e5c550;
   padding-top:30px;
 }
 
@@ -15,18 +13,32 @@ body {
 }
 
 #login {
-  padding-left: 300px;
+  color: black;
+  padding-top: 100px;
+  padding-left: 470px;
   border: 1px;
   border-color: black;
 }
 
 #profile {
-  padding-left: 300px;
-  padding-top: 60px;
+  padding-left: 470px;
+  padding-top: 130px;
+  float: right;
+  padding-right: 60px;
 }
 
 #searchbar {
-  padding-right: 50px;
-  padding-bottom: 300px;
-  padding-left: 50px;
+  padding: 150px;
+  float: right;
+}
+
+#background {
+  width: 600px;
+  height:auto;
+  position: fixed;
+  z-index: -100;
+}
+
+.languages {
+  float: left;
 }
