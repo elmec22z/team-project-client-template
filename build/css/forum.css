@@ -8,9 +8,14 @@ body{
 	color: white;
 	background-color: #e87817;
 }
-.q-and-a-comment hr {
-	margin-top: 5px;
-	margin-bottom: 5px;
+.top-answers hr{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.like-comment {
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 h1 {
@@ -18,7 +23,20 @@ h1 {
 	margin-bottom: 10px;
 }
 
-h3 {
-/* Removes space above Questions */
+h3,h4 {
+/* h3 Removes space above Questions */
+/* h4 Removes space above Frequent Topics*/
 	margin-top: 0;
+}
+
+.freq-topics-list ul{
+	/* Take out space on the left*/
+	padding: 0px;
+	/* Take out bullet points */
+	list-style-type: none;
+}
+
+.freq-topics-list li{
+	/* Add space between list */
+	margin: 1em 0;
 }

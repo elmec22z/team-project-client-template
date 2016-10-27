@@ -12,9 +12,13 @@
     <link href="css/about.css" rel="stylesheet">
     <!-- css for forum page -->
     <link href="css/forum.css" rel="stylesheet">
+
+    <link href="css/template.css" rel="stylesheet">
+
   </head>
 
   <body>
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-fixed-top navbar-default">
 			<div class="container">
@@ -98,7 +102,7 @@
             <h4>Top Answers <span class="label label-default"></span></h4>
 
             <!-- 1 Question and Answer -->
-            <div class="panel panel-default">
+            <div class="panel panel-default top-answers">
               <div class="panel-body">
                 <!-- Post metadata -->
                 <!-- Question -->
@@ -126,6 +130,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         ANSWER HERE
+                        <a href="#"> more ...</a>
                       </div>
                     </div>
                   </div>
@@ -135,7 +140,7 @@
 
 
               <!-- Like and comment -->
-              <div class="panel-footer q-and-a-comment">
+              <div class="panel-footer like-comment ">
                 <div class="row">
                   <div class="col-md-12">
                     <ul class="list-inline">
@@ -145,6 +150,10 @@
                       <li>
                       <a href="#"> Comment <span class="badge">20+</span></a>
                       </li>
+                      <li>
+                      <a href="#"> <span class="glyphicon glyphicon-save">
+                        </span> Save </a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -153,8 +162,8 @@
             </div> <!-- End of panel -->
 
             <!-- 2 Question and Answer -->
-            <div class="panel panel-default">
-              <div class="panel-body">
+            <div class="panel panel-default top-answers">
+              <div class="panel-body ">
                 <!-- Post metadata -->
                 <!-- Question -->
                 <div class="row">
@@ -177,10 +186,12 @@
                       </div>
                     </div>
                     <!-- Answer -->
-                    <hr>
-                    <div class="row">
+                    <hr> <!-- Line -->
+
+                    <div class="row ">
                       <div class="col-md-12">
                         ANSWER HERE
+                        <a href="#"> more ...</a>
                       </div>
                     </div>
                   </div>
@@ -189,7 +200,7 @@
 
 
               <!-- Like and comment -->
-              <div class="panel-footer q-and-a-comment">
+              <div class="panel-footer like-comment">
                 <div class="row">
                   <div class="col-md-12">
                     <ul class="list-inline">
@@ -199,44 +210,56 @@
                       <li>
                       <a href="#"> Comment <span class="badge">30+</span></a>
                       </li>
+                      <li>
+                      <a href="#"> <span class="glyphicon glyphicon-save">
+                        </span> Save </a>
+                      </li>
                     </ul>
                   </div>
                 </div>
               </div> <!-- End of panel body -->
-
             </div> <!-- End of panel -->
-
-
-
-
           </div>
         </div>
 
-
-
         <!-- Right column -->
         <div class="col-md-3">
+          <!-- My Forum -->
           <div class="row">
             <div class="col-md-12">
               <div class="panel panel-default">
                 <div class="panel-body">
-                  <h4> FREQUENT TOPICS <span class="label label-default"></span></h4>
+                  <a href="#">My Forum</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Frequent topics -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-default">
+                <div class="panel-body freq-topics-list">
+                  <h4> FREQUENT TOPICS <span class="label label-default"></span></h4>
                   <ul>
-                    <li><a>Topic1</a></li>
-                    <li><a>Topic2</a></li>
-                    <li><a>Topic3</a></li>
-                    <li><a>Topic4</a></li>
-                    <li><a>Topic5</a></li>
-                    <li><a>Topic6</a></li>
+                    <li><a href="#">Topic1</a></li>
+                    <li><a href="#">Topic2</a></li>
+                    <li><a href="#">Topic3</a></li>
+                    <li><a href="#">Topic4</a></li>
+                    <li><a href="#">Topic5</a></li>
+                    <li><a href="#">Topic6</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
+
+
         </div>
-      </div>
-    </div>
+
+
+      </div> <!-- body row -->
+    </div> <!-- body container -->
 
     <script src="js/jquery.min.js"></script>
 
