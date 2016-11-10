@@ -7,6 +7,76 @@ var safehouse = null;
 // Put your mock objects here, as in Workshop 4
 var initialData = {
 
+  "cities": {
+    "0": {
+      "name": "Amherst",
+      "location": "MA, USA",
+      "climate": "Warm summer, Cold winter",
+      "population": 37819
+    }
+  }
+
+  "user": {
+    "0": {
+      "_id": 0,
+      "name": "Jon Doe",
+      "dob": "mm/dd/yyyy",
+      "familySize": 2,
+      "gender": "male",
+      "address": "1600 Pennsylvania Ave",
+      // This is the list of cities that would be returned. 
+      "resultList": [0]
+    },
+    "1": {
+      "_id": 1,
+      "name": "Jane Doe",
+      "dob": "mm/dd/yyyy",
+      "familySize": 2,
+      "gender": "female",
+      "address": "1600 Pennsylvania Ave",
+      // This is the list of cities that would be returned. 
+      "resultList": [0]
+    }
+  }
+
+  "forum": {
+    "0": {
+      "_id": 0,
+      "author": 0,
+      "content": "This is a sample question.",
+      "postDate": 1453690800000,
+      "likeCounter": [1],
+      "comments": [
+        {
+          "_id": 0,
+          "author": 1,
+          "content": "This is a sample response.",
+          "postdate": 1453690800000,
+          "likeCounter": [1],
+          "postId": 0
+        }
+      ]
+    },
+    "1": {
+      "_id": 1,
+      "author": 1,
+      "content": "This is a sample question.",
+      "postDate": 1453690800000,
+      "likeCounter": [0],
+      "comments": [
+        {
+          "_id": 0,
+          "author": 0,
+          "content": "This is a sample response.",
+          "postdate": 1453690800000,
+          "likeCounter": [0],
+          "postId": 1
+        }
+      ]
+    }
+
+  }
+
 };
 
 var data = JSON.parse(localStorage.getItem(safehouse));
