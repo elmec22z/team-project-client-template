@@ -23,9 +23,11 @@ var initialData = {
       "dob": "mm/dd/yyyy",
       "familySize": 2,
       "gender": "male",
+      "numberToHost": 5,
+      // howLongToHost is in number of days.
+      "howLongToHost": 100, 
       "address": "1600 Pennsylvania Ave",
-      // This is the list of cities that would be returned. 
-      "resultList": [0]
+      "city": 0
     },
     "1": {
       "_id": 1,
@@ -33,9 +35,11 @@ var initialData = {
       "dob": "mm/dd/yyyy",
       "familySize": 2,
       "gender": "female",
+      "numberToHost": 5,
+      // howLongToHost is in number of days.
+      "howLongToHost": 100,
       "address": "1600 Pennsylvania Ave",
-      // This is the list of cities that would be returned. 
-      "resultList": [0]
+      "city": 0
     }
   }
 
