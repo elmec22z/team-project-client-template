@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Result from './components/result';
+import ResultCity from './components/resultcity';
 
 class ResultPage extends React.Component {
 	render() {
@@ -11,6 +11,6 @@ class ResultPage extends React.Component {
 }
 
 ReactDOM.render(
-	<Result />,
+	<ResultCity />,
 	document.getElementById('app')
 );

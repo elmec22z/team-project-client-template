@@ -12,9 +12,17 @@ var initialData = {
       "name": "Amherst",
       "location": "MA, USA",
       "climate": "Warm summer, Cold winter",
-      "population": 37819
+      "population": 37819,
+      "people": [0,1]
+    },
+    "1": {
+      "name": "New York",
+      "location": "NY, USA",
+      "climate": "Warm summer, Cold winter",
+      "population": 8,
+      "people": []
     }
-  }
+  },
 
   "user": {
     "0": {
@@ -27,7 +35,6 @@ var initialData = {
       // howLongToHost is in number of days.
       "howLongToHost": 100, 
       "address": "1600 Pennsylvania Ave",
-      "city": 0
     },
     "1": {
       "_id": 1,
@@ -39,9 +46,8 @@ var initialData = {
       // howLongToHost is in number of days.
       "howLongToHost": 100,
       "address": "1600 Pennsylvania Ave",
-      "city": 0
     }
-  }
+  },
 
   "forum": {
     "0": {
@@ -107,6 +113,10 @@ export function readDocument(collection, id) {
   return JSONClone(data[collection][id]);
 }
 
+export function readCollection(collection) {
+  return JSONClone(data[collection]);
+}
+
 /**
  * Emulates writing a "document" to a NoSQL database.
  */
@@ -154,8 +164,3 @@ class ResetDatabase extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <ResetDatabase />,
-  document.getElementById('db-reset')
-);

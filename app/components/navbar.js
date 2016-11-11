@@ -16,13 +16,12 @@ export default class Navbar extends React.Component {
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <form className="navbar-form navbar-left" role ="search">
             <div className="input-group">
-              <input type = "text" className="form-control" placeholder = "Search Safehouse">
+              <input type = "text" className="form-control" placeholder = "Search Safehouse" />
                 <span className="input-group-btn">
                   <button type="submit" className="btn btn-default">
                     <span className="glyphicon glyphicon-search"></span>
                   </button>
                 </span>
-              </input>
             </div>
           </form>
           <div className="nav navbar-nav navbar-right">
