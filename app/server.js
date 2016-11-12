@@ -12,16 +12,7 @@ function emulateServerReturn(data, cb) {
 
 export function getCityById(cityId) {
 	var city = readDocument('cities', cityId);
-	return city.name + ", " + city.location
-}
-
-export function getUsersByCity(cityId, cb) {
-	var city = readDocument('cities', cityId);
-	var people = [];
-	for(var i in city.people){
-		people.push(readDocument('user', city.people[i]))
-	}
-	emulateServerReturn(people, cb);
+	return city.name + ", " + city.location;
 }
 
 export function getCityData(cb) {
@@ -29,4 +20,13 @@ export function getCityData(cb) {
 	var cities = readCollection('cities');
 
 	emulateServerReturn(cities, cb);
+}
+
+export function getUsersByCity(cityId, cb) {
+	var city = readDocument('cities', cityId);
+	var people = [];
+	for(var i in city.people){
+		people.push(readDocument('user', city.people[i]));
+	}
+	emulateServerReturn(people, cb);
 }

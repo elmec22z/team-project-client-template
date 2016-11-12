@@ -68,6 +68,17 @@ body {
 	margin-top: 10px;
 }
 
+.pic-list {
+	border-top: 0px;
+	padding-left: 6px;
+}
+
+.list-pic {
+	height: 50px;
+	padding-right: 4px;
+	margin-top: 20px;
+}
+
 td {
 	padding: 5px;
 }

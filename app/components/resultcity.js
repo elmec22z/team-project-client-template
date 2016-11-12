@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './navbar';
 import ResultCityEntry from './resultcityentry';
-import {getCityData} from '../server';
+import { getCityData } from '../server';
 
 
 export default class Result extends React.Component {
@@ -25,7 +25,6 @@ export default class Result extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     var rows = [];
     for (var key in this.state) {
       if (!this.state.hasOwnProperty(key)) continue;
@@ -43,7 +42,6 @@ export default class Result extends React.Component {
     }
     return (
       <div>
-
         <link href="css/about.css" rel="stylesheet" />
         <link href="css/results.css" rel="stylesheet" />
         <link href="css/template.css" rel="stylesheet" />

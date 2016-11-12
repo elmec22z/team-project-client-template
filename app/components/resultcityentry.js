@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router'
+import { getUsersByCity } from '../server'
 
 export default class ResultCityEntry extends React.Component {
 	constructor(props){
@@ -7,8 +8,19 @@ export default class ResultCityEntry extends React.Component {
     this.state = props.data;
   }
 
+  componentDidMount() {
+    getUsersByCity(this.state._id, (peopleData) => {
+      this.setState({peoplepics: peopleData});
+    });
+  }
+
   render() {
-    console.log(this)
+    var pics = [];
+    for (var key in this.state.peoplepics) {
+      if (!this.state.peoplepics.hasOwnProperty(key)) continue;
+      var obj = this.state.peoplepics[key];
+      pics.push(<img className="list-pic" src={obj.image} title={obj.name} key={key}/>);
+    }
 		return(
 			<div className="row">
         <div className="col-md-12 result">
@@ -47,12 +59,12 @@ export default class ResultCityEntry extends React.Component {
                         <tbody>
                           <tr>
                             <td>Number of hosts:</td>
-                            <td className="r">{this.state.people.length}</td>
+                            <td>{this.state.people.length}</td>
                           </tr>
                         </tbody>
                       </table>
-                      <div className="col-md-12">
-
+                      <div className="col-md-12 visible-md visible-lg">
+                        { pics }
                       </div>
                     </div>
                   </div>

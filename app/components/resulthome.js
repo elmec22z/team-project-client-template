@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './navbar'
 import ResultHomeEntry from './resulthomeentry'
-import {getUsersByCity, getCityById} from '../server'
+import { getUsersByCity, getCityById } from '../server'
 
 export default class ResultHome extends React.Component {
 
@@ -17,7 +17,6 @@ export default class ResultHome extends React.Component {
   }
 
   render() {
-    console.log(this);
     var rows = [];
     var cityName = getCityById(this.props.params.city)
     for (var key in this.state) {
