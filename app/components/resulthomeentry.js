@@ -5,15 +5,15 @@ export default class ResultEntry extends React.Component {
 		return(
 			<div className="row">
         <div className="col-md-12 result">
-          <a href="#link2">
-            <div className="media" onclick="location.href='#link1'">
+          {/* Add link to user profile when that is done */}
+            <div className="media">
               <div className="media-left">
                 <img className="result-image" src="img/blank-profile.png" />
               </div>
               <div className="media-body">
                 <div className="col-md-12">
                   <div className="row result-name">
-                    Name
+                    {this.props.data.name}
                   </div>
                   <hr />
                   <div className="row result-info">
@@ -22,15 +22,15 @@ export default class ResultEntry extends React.Component {
                         <tbody>
                           <tr>
                             <td>DOB:</td>
-                            <td>MM/DD/YYYY</td>
+                            <td>{this.props.data.dob}</td>
                           </tr>
                           <tr>
                             <td>Family Size:</td>
-                            <td>--</td>
+                            <td>{this.props.data.familySize}</td>
                           </tr>
                           <tr>
                             <td>Location:</td>
-                            <td>--</td>
+                            <td>{this.props.data.address}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -39,15 +39,12 @@ export default class ResultEntry extends React.Component {
                       <table>
                         <tbody>
                           <tr>
-                            <td>Contact:</td>
+                            <td>Number to host:</td>
+                            <td>{this.props.data.numberToHost}</td>
                           </tr>
                           <tr>
-                            <td>Phone:</td>
-                            <td>###-###-####</td>
-                          </tr>
-                          <tr>
-                            <td>Email:</td>
-                            <td>--</td>
+                            <td>How long to host</td>
+                            <td>{this.props.data.howLongToHost}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -56,7 +53,7 @@ export default class ResultEntry extends React.Component {
                 </div>
               </div>
             </div>
-          </a>
+          {/* End link */}
         </div>
       </div>
     )

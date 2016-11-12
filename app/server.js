@@ -10,9 +10,18 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-function getCitySync(cityID) {
-	var cityItem = readDocument('cities',cityID);
-	return cityItem;
+export function getCityById(cityId) {
+	var city = readDocument('cities', cityId);
+	return city.name + ", " + city.location
+}
+
+export function getUsersByCity(cityId, cb) {
+	var city = readDocument('cities', cityId);
+	var people = [];
+	for(var i in city.people){
+		people.push(readDocument('user', city.people[i]))
+	}
+	emulateServerReturn(people, cb);
 }
 
 export function getCityData(cb) {

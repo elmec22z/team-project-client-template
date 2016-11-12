@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import ResultCity from './components/resultcity';
 import ResultHome from './components/resulthome';
 import Navbar from './components/navbar'
-import { IndexRoute, Router, Route, browserHistory, hashHistory } from 'react-router'
-import { Link } from 'react-router'
+import { IndexRoute, Router, Route, Link, hashHistory } from 'react-router'
 
 class ResultPage extends React.Component {
 	render() {
@@ -29,7 +28,7 @@ ReactDOM.render((
       {/* make them children of `App` */}
       <Route path="/" component={App}/>
       <Route path="/cities" component={ResultCity}/>
-      <Route path="/cities/people" component={ResultHome}/>
+      <Route path="/cities/:city" component={ResultHome}/>
   </Router>
   ),document.getElementById('app')
 );

@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from './navbar.js';
-import ResultCityEntry from './resultcityentry.js';
+import Navbar from './navbar';
+import ResultCityEntry from './resultcityentry';
 import {getCityData} from '../server';
 
 
@@ -32,7 +32,16 @@ export default class Result extends React.Component {
       var obj = this.state[key];
       rows.push(<ResultCityEntry key={key} data={obj} />);
     }
-    return(
+    if (rows.length < 1){
+      rows.push(
+        <div className="row">
+          <div className="col-md-12 result">
+            <h1>No results for this search.</h1>
+          </div>
+        </div>
+      )
+    }
+    return (
       <div>
 
         <link href="css/about.css" rel="stylesheet" />

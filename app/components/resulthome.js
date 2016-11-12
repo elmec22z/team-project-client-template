@@ -1,10 +1,40 @@
 import React from 'react';
-import Navbar from './navbar.js'
-import ResultHomeEntry from './resulthomeentry.js'
+import Navbar from './navbar'
+import ResultHomeEntry from './resulthomeentry'
+import {getUsersByCity, getCityById} from '../server'
 
 export default class ResultHome extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = props.data;
+  }
+
+  componentDidMount() {
+    getUsersByCity(this.props.params.city, (peopleData) => {
+      this.setState(peopleData);
+    });
+  }
+
   render() {
-    return(
+    console.log(this);
+    var rows = [];
+    var cityName = getCityById(this.props.params.city)
+    for (var key in this.state) {
+      if (!this.state.hasOwnProperty(key)) continue;
+      var obj = this.state[key]
+      rows.push(<ResultHomeEntry key={key} data={obj} />);
+    }
+    if (rows.length < 1){
+      rows.push(
+        <div className="row">
+          <div className="col-md-12 result">
+            <h1>No results for this search.</h1>
+          </div>
+        </div>
+      )
+    }
+    return (
       <div>
         <link href="css/about.css" rel="stylesheet" />
         <link href="css/results.css" rel="stylesheet" />
@@ -14,7 +44,12 @@ export default class ResultHome extends React.Component {
           <div className="row" id="base-row">
             <div className="col-sm-2 visible-md visible-lg" id="left-half-of-page-just-a-temp-name"></div>
             <div className="col-sm-7" id="result-holder">
-              <ResultHomeEntry />
+              <div className="row">
+                <div className="col-md-12 result">
+                  <h1>Hosts in { cityName }</h1>
+                </div>
+              </div>
+              { rows }
             </div>
           </div>
           <div className="col-sm-2 visible-sm" id="right-when-small"></div>

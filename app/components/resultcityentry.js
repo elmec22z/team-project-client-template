@@ -9,12 +9,11 @@ export default class ResultCityEntry extends React.Component {
 
   render() {
     console.log(this)
-
 		return(
 			<div className="row">
         <div className="col-md-12 result">
-          <Link to="/cities/people">
-            <div className="media" onclick="location.href='#link1'">
+          <Link to={"/cities/"+this.state._id}>
+            <div className="media">
               <div className="media-left">
                 <img className="result-image" src={this.state.image} />
               </div>

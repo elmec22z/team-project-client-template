@@ -9,6 +9,7 @@ var initialData = {
 
   "cities": {
     "0": {
+      "_id": 0,
       "name": "Amherst",
       "location": "MA, USA",
       "climate": "Warm summer, Cold winter",
@@ -17,6 +18,7 @@ var initialData = {
       "people": [0,1]
     },
     "1": {
+      "_id": 1,
       "name": "New York",
       "location": "NY, USA",
       "climate": "Warm summer, Cold winter",
