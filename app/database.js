@@ -13,6 +13,7 @@ var initialData = {
       "location": "MA, USA",
       "climate": "Warm summer, Cold winter",
       "population": 37819,
+      "image": "img/city.png",
       "people": [0,1]
     },
     "1": {
@@ -20,6 +21,7 @@ var initialData = {
       "location": "NY, USA",
       "climate": "Warm summer, Cold winter",
       "population": 8,
+      "image": "img/city.png",
       "people": []
     }
   },
@@ -31,6 +33,7 @@ var initialData = {
       "dob": "mm/dd/yyyy",
       "familySize": 2,
       "gender": "male",
+      "image": "img/blank-profile.png",
       "numberToHost": 5,
       // howLongToHost is in number of days.
       "howLongToHost": 100, 
@@ -42,6 +45,7 @@ var initialData = {
       "dob": "mm/dd/yyyy",
       "familySize": 2,
       "gender": "female",
+      "image": "img/blank-profile.png",
       "numberToHost": 5,
       // howLongToHost is in number of days.
       "howLongToHost": 100,

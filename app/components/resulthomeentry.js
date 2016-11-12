@@ -1,27 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router'
 
-export default class ResultCityEntry extends React.Component {
-	constructor(props){
-    super(props);
-    this.state = props.data;
-  }
-
-  render() {
-    console.log(this)
-
+export default class ResultEntry extends React.Component {
+	render() {
 		return(
 			<div className="row">
         <div className="col-md-12 result">
-          <Link to="/cities/people">
+          <a href="#link2">
             <div className="media" onclick="location.href='#link1'">
               <div className="media-left">
-                <img className="result-image" src={this.state.image} />
+                <img className="result-image" src="img/blank-profile.png" />
               </div>
               <div className="media-body">
                 <div className="col-md-12">
                   <div className="row result-name">
-                    {this.state.name}
+                    Name
                   </div>
                   <hr />
                   <div className="row result-info">
@@ -29,16 +21,16 @@ export default class ResultCityEntry extends React.Component {
                       <table>
                         <tbody>
                           <tr>
+                            <td>DOB:</td>
+                            <td>MM/DD/YYYY</td>
+                          </tr>
+                          <tr>
+                            <td>Family Size:</td>
+                            <td>--</td>
+                          </tr>
+                          <tr>
                             <td>Location:</td>
-                            <td className="r">{this.state.location}</td>
-                          </tr>
-                          <tr>
-                            <td>Climate:</td>
-                            <td className="r">{this.state.climate}</td>
-                          </tr>
-                          <tr>
-                            <td>Population:</td>
-                            <td className="r">{this.state.population}</td>
+                            <td>--</td>
                           </tr>
                         </tbody>
                       </table>
@@ -47,20 +39,24 @@ export default class ResultCityEntry extends React.Component {
                       <table>
                         <tbody>
                           <tr>
-                            <td>Number of hosts:</td>
-                            <td className="r">{this.state.people.length}</td>
+                            <td>Contact:</td>
+                          </tr>
+                          <tr>
+                            <td>Phone:</td>
+                            <td>###-###-####</td>
+                          </tr>
+                          <tr>
+                            <td>Email:</td>
+                            <td>--</td>
                           </tr>
                         </tbody>
                       </table>
-                      <div className="col-md-12">
-
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </Link>
+          </a>
         </div>
       </div>
     )
