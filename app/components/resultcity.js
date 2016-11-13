@@ -15,7 +15,7 @@ export default class Result extends React.Component {
   }
 
   componentDidMount() {
-    getCityData((cityData) => {
+    getCityData(this.props.location.query, (cityData) => {
         this.setState(cityData);
     });
   }

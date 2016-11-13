@@ -10,8 +10,12 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-export function getCityData(cb) {
+export function getCityData(queryData, cb) {
 	// get the cities collection
+	for (var key in queryData) {
+		
+	}
+	
 	var cities = readCollection('cities');
 
 	emulateServerReturn(cities, cb);
