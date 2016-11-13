@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './navbar'
 import ResultHomeEntry from './resulthomeentry'
 import { getUsersByCity, getCityById } from '../server'
+import Search from './search'
 
 export default class ResultHome extends React.Component {
 
@@ -42,11 +43,13 @@ export default class ResultHome extends React.Component {
         <div className="contain">
           <div className="row" id="base-row">
             <div className="col-sm-2 visible-md visible-lg" id="left-half-of-page-just-a-temp-name"></div>
-            <div className="col-sm-7" id="result-holder">
+            <div className="col-sm-4 col-md-3 col-md-push-7 col-sm-push-8" id="search-col">
+              <Search/>
+            </div>
+            <div className="col-sm-8 col-md-7 col-md-pull-3 col-sm-pull-4" id="result-holder">
               { rows }
             </div>
           </div>
-          <div className="col-sm-2 visible-sm" id="right-when-small"></div>
         </div>
       </div>
     )

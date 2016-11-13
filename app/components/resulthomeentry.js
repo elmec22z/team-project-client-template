@@ -29,7 +29,7 @@ export default class ResultEntry extends React.Component {
                             <td>{this.props.data.familySize}</td>
                           </tr>
                           <tr>
-                            <td>Location:</td>
+                            <td>Address:</td>
                             <td>{this.props.data.address}</td>
                           </tr>
                         </tbody>
