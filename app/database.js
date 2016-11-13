@@ -11,7 +11,7 @@ var initialData = {
     "0": {
       "_id": 0,
       "name": "Amherst",
-      "location": "MA, USA",
+      "location": "MA",
       "climate": "Warm summer, Cold winter",
       "population": 37819,
       "image": "img/city.png",
@@ -19,8 +19,8 @@ var initialData = {
     },
     "1": {
       "_id": 1,
-      "name": "New York",
-      "location": "NY, USA",
+      "name": "New York City",
+      "location": "NY",
       "climate": "Warm summer, Cold winter",
       "population": 8,
       "image": "img/city.png",

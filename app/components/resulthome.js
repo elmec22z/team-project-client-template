@@ -29,7 +29,7 @@ export default class ResultHome extends React.Component {
       rows.push(
         <div className="row" key={'key'}>
           <div className="col-md-12 result" key={'key'}>
-            <h1 key={'key'}>No results for this search.</h1>
+            <h1 key={'key'}>No results for this city.</h1>
           </div>
         </div>
       )

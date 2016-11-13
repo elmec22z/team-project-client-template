@@ -14,17 +14,24 @@ export default class Result extends React.Component {
     }
   }
 
+  componentWillReceiveProps() {
+
+    getCityData(this.props.location.query, (cityData) => {
+        this.setState({cityData});
+    });
+  }
+
   componentDidMount() {
     getCityData(this.props.location.query, (cityData) => {
-        this.setState(cityData);
+        this.setState({cityData});
     });
   }
 
   render() {
     var rows = [];
-    for (var key in this.state) {
-      if (!this.state.hasOwnProperty(key)) continue;
-      var obj = this.state[key];
+    for (var key in this.state.cityData) {
+      if (!this.state.cityData.hasOwnProperty(key)) continue;
+      var obj = this.state.cityData[key];
       rows.push(<ResultCityEntry key={key} data={obj} />);
     }
     if (rows.length < 1){

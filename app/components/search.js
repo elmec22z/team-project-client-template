@@ -45,6 +45,7 @@ export default class Search extends React.Component {
                   <select onChange={(e) => this.handleChange(e,'state')}>
                     <option value="">State</option>
                     <option value="MA">MA</option>
+                    <option value="NY">NY</option>
                   </select>
                   <select onChange={(e) => this.handleChange(e,'climate')}>
                     <option value="">Climate</option>
@@ -79,7 +80,7 @@ export default class Search extends React.Component {
                       </div>
                     </div>
                   </form>
-                  <Link to={{ pathname: '/cities', query: this.sendSearch()}} >
+                  <Link to={{ pathname: '/cities', query: this.sendSearch()}}>
                     <button className="btn btn-default">
                       Submit
                     </button>

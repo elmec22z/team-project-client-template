@@ -11,14 +11,50 @@ function emulateServerReturn(data, cb) {
 }
 
 export function getCityData(queryData, cb) {
-	// get the cities collection
-	for (var key in queryData) {
-		
-	}
-	
 	var cities = readCollection('cities');
+	var c = {};
+	for (var key in cities) {
+		var result = true;
+		for (var k in queryData) {
+			switch(k) {
+				case ('cityName'):
+					if (cities[key].name.toLowerCase() == queryData[k].toLowerCase()) {
+						break;
+					}
+					result = false;
+					break;
+				case ('state'): 
+					if (cities[key].location == queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
+				case ('climate'):
+					if (cities[key].climate == queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
+				case ('overPop'):
+					if (cities[key].population >= queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
+				case ('underPop'):
+					if (cities[key].population <= queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
 
-	emulateServerReturn(cities, cb);
+			}
+		}
+		if (result) c[key] = cities[key];
+	}
+	// get the cities collection
+
+	emulateServerReturn(c, cb);
 }
 
 export function getUsersByCity(cityId, cb) {
