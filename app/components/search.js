@@ -3,8 +3,31 @@ import { Link } from 'react-router';
 
 export default class Search extends React.Component {
 
-  handleChange(e){
-    console.log(e);
+  constructor(props) {
+    super(props);
+    this.state = {
+      cityName: '',
+      state: '',
+      climate: '',
+      overPop: '0',
+      underPop: '50000'
+    }
+  }
+
+  sendSearch() {
+    var dict = {}
+    for (var key in this.state) {
+      if (!this.state.hasOwnProperty(key)) continue;
+      var obj = this.state[key];
+      if (obj !== '') {
+        dict[key] = obj;
+      }
+    }
+    return dict;
+  }
+
+  handleChange(e,name){
+    this.setState({[name]: e.target.value});
   }
 
   render() {
@@ -15,16 +38,16 @@ export default class Search extends React.Component {
             <div className="panel-body">
               <div className="row">
                 <div className="col-md-12 search">
-                  <h3>Search</h3>
+                  <h3>Search Cities</h3>
                   <hr/>
-                  <input type="text" id="city-search"
-                         placeholder="City Name" />
-                  <select>
-                    <option>State</option>
+                  <input type="text" id="city-search" placeholder="City Name" 
+                         onChange={(e) => this.handleChange(e,'cityName')} />
+                  <select onChange={(e) => this.handleChange(e,'state')}>
+                    <option value="">State</option>
                     <option value="MA">MA</option>
                   </select>
-                  <select>
-                    <option>Climate</option>
+                  <select onChange={(e) => this.handleChange(e,'climate')}>
+                    <option value="">Climate</option>
                     <option value="Warm summer, Cold winter">Warm summer, Cold winter</option>
                   </select>
                   <h4>Population:</h4>
@@ -33,48 +56,34 @@ export default class Search extends React.Component {
                     <div className="row"> 
                       <div className="col-xs-8">
                         <input type="range" name="overRange" 
-                               min="0" max="20000" value="0" 
-                               oninput="
-                               this.form.overInput.value=this.value;
-                               this.form.underRange.min=this.value;
-                               this.form.underInput.min=this.value;" 
-                               onChange={(e) => this.handleChange(e)} />
+                               min="0" max={this.state.underPop} value={this.state.overPop} 
+                               onChange={(e) => this.handleChange(e,'overPop')} />
                       </div>
                       <div className="col-xs-4">
                         <input type="number" name="overInput"
-                               min="0" max="20000" value="0" 
-                               oninput="
-                               this.form.overRange.value=this.value;
-                               this.form.underRange.min=this.value;
-                               this.form.underInput.min=this.value;" 
-                               onChange={(e) => this.handleChange(e)} />
+                               min="0" max={this.state.underPop} value={this.state.overPop} 
+                               onChange={(e) => this.handleChange(e,'overPop')} />
                       </div>
                     </div>
                     Under:
                     <div className="row"> 
                       <div className="col-xs-8">
                         <input type="range" name="underRange" 
-                               min="0" max="20000" value="20000" 
-                               oninput="
-                               this.form.underInput.value=this.value;
-                               this.form.overRange.max=this.value;
-                               this.form.overInput.max=this.value;" 
-                               onChange={(e) => this.handleChange(e)} />
+                               min={this.state.overPop} max="50000" value={this.state.underPop}
+                               onChange={(e) => this.handleChange(e,'underPop')} />
                       </div>
                       <div className="col-xs-4">
                         <input type="number" name="underInput"
-                               min="0" max="20000" value="20000" 
-                               oninput="
-                               this.form.underRange.value=this.value;
-                               this.form.overRange.max=this.value;
-                               this.form.overInput.max=this.value;" 
-                               onChange={(e) => this.handleChange(e)} />
+                               min={this.state.overPop} max="50000" value={this.state.underPop}
+                               onChange={(e) => this.handleChange(e,'underPop')} />
                       </div>
                     </div>
                   </form>
-                  <button className="btn btn-default">
-                    Submit
-                  </button>
+                  <Link to={{ pathname: '/cities', query: this.sendSearch()}} >
+                    <button className="btn btn-default">
+                      Submit
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
