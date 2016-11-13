@@ -7,6 +7,92 @@ var safehouse = null;
 // Put your mock objects here, as in Workshop 4
 var initialData = {
 
+  "cities": {
+    "0": {
+      "_id": 0,
+      "name": "Amherst",
+      "location": "MA, USA",
+      "climate": "Warm summer, Cold winter",
+      "population": 37819,
+      "image": "img/city.png",
+      "people": [0,1]
+    },
+    "1": {
+      "_id": 1,
+      "name": "New York",
+      "location": "NY, USA",
+      "climate": "Warm summer, Cold winter",
+      "population": 8,
+      "image": "img/city.png",
+      "people": []
+    }
+  },
+
+  "user": {
+    "0": {
+      "_id": 0,
+      "name": "Jon Doe",
+      "dob": "mm/dd/yyyy",
+      "familySize": 2,
+      "gender": "male",
+      "image": "img/blank-profile.png",
+      "numberToHost": 5,
+      // howLongToHost is in number of days.
+      "howLongToHost": 100, 
+      "address": "1600 Pennsylvania Ave",
+    },
+    "1": {
+      "_id": 1,
+      "name": "Jane Doe",
+      "dob": "mm/dd/yyyy",
+      "familySize": 2,
+      "gender": "female",
+      "image": "img/blank-profile.png",
+      "numberToHost": 5,
+      // howLongToHost is in number of days.
+      "howLongToHost": 100,
+      "address": "1600 Pennsylvania Ave",
+    }
+  },
+
+  "forum": {
+    "0": {
+      "_id": 0,
+      "author": 0,
+      "content": "This is a sample question.",
+      "postDate": 1453690800000,
+      "likeCounter": [1],
+      "comments": [
+        {
+          "_id": 0,
+          "author": 1,
+          "content": "This is a sample response.",
+          "postdate": 1453690800000,
+          "likeCounter": [1],
+          "postId": 0
+        }
+      ]
+    },
+    "1": {
+      "_id": 1,
+      "author": 1,
+      "content": "This is a sample question.",
+      "postDate": 1453690800000,
+      "likeCounter": [0],
+      "comments": [
+        {
+          "_id": 0,
+          "author": 0,
+          "content": "This is a sample response.",
+          "postdate": 1453690800000,
+          "likeCounter": [0],
+          "postId": 1
+        }
+      ]
+    }
+
+  }
+
 };
 
 var data = JSON.parse(localStorage.getItem(safehouse));
@@ -31,6 +117,10 @@ export function readDocument(collection, id) {
   // Clone the data. We do this to model a database, where you receive a
   // *copy* of an object and not the object itself.
   return JSONClone(data[collection][id]);
+}
+
+export function readCollection(collection) {
+  return JSONClone(data[collection]);
 }
 
 /**
