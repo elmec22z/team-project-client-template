@@ -15,11 +15,6 @@ export default class Result extends React.Component {
 
   componentDidMount() {
     getCityData((cityData) => {
-        // Note: setState does a *shallow merge* of
-        // the current state and the new state. If
-        // state was currently set to {foo: 3}, and
-        // we setState({bar: 5}), state would then be
-        // {foo: 3, bar: 5}. This won't be a problem here.
         this.setState(cityData);
     });
   }
@@ -33,9 +28,9 @@ export default class Result extends React.Component {
     }
     if (rows.length < 1){
       rows.push(
-        <div className="row">
-          <div className="col-md-12 result">
-            <h1>No results for this search.</h1>
+        <div className="row" key={'key'}>
+          <div className="col-md-12 result" key={'key'}>
+            <h1 key={'key'}>No results for this search.</h1>
           </div>
         </div>
       )

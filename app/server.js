@@ -10,11 +10,6 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-export function getCityById(cityId) {
-	var city = readDocument('cities', cityId);
-	return city.name + ", " + city.location;
-}
-
 export function getCityData(cb) {
 	// get the cities collection
 	var cities = readCollection('cities');
