@@ -9,6 +9,12 @@ export default class Navbar extends React.Component {
     <nav className="navbar navbar-fixed-top navbar-default">
       <div className="container">
         <div className="navbar-header">
+          <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+          </button>
           <a className="navbar-brand" href="#">
             <span className="glyphicon glyphicon-home"></span>
           </a>
@@ -47,8 +53,7 @@ export default class Navbar extends React.Component {
                 </button>
               </div>
               <div className="btn-group" role="group">
-                <button type="button" className="btn btn-default btn btn-default navbar-btn dropdown
-                -toggle" data-toggle="dropdown">
+                <button type="button" className="btn btn-default btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown">
                   <span className="caret"></span>
                 </button>
                 <ul className="dropdown-menu">
