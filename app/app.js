@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ResultCity from './components/resultcity';
 import ResultHome from './components/resulthome';
 import Navbar from './components/navbar'
+import About from './components/about';
 import { IndexRoute, Router, Route, Link, hashHistory } from 'react-router'
 
 class ResultPage extends React.Component {
@@ -29,6 +30,7 @@ ReactDOM.render((
       <Route path="/" component={App}/>
       <Route path="/cities" component={ResultCity}/>
       <Route path="/cities/:city" component={ResultHome}/>
+			<Route path="/about" component={About}/>
   </Router>
   ),document.getElementById('app')
 );
