@@ -38,8 +38,12 @@ var initialData = {
       "image": "img/blank-profile.png",
       "numberToHost": 5,
       // howLongToHost is in number of days.
-      "howLongToHost": 100, 
+      "howLongToHost": 100,
       "address": "1600 Pennsylvania Ave",
+      "homeDesc": "Small 3 Bedroom, 1 Bath",
+      "familyDesc": "Married, 1 Boy, 6 years old",
+      "Area Desc": "Quiet, Low Crime, Cold Winters",
+      "Accommodations": "Own Bedroom, willing to cook familiar meals"
     },
     "1": {
       "_id": 1,
@@ -52,6 +56,10 @@ var initialData = {
       // howLongToHost is in number of days.
       "howLongToHost": 100,
       "address": "1600 Pennsylvania Ave",
+      "homeDesc": "Large 5 Bedroom, 3 Bath",
+      "familyDesc": "Married, 3 Boys, 4, 7, 10 years old",
+      "Area Desc": "Urban Center, Busy, Good Public Transport",
+      "Accommodations": "Own Bedroom, Own Bath"
     }
   },
 
