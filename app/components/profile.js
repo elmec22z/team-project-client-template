@@ -1,0 +1,137 @@
+import React from 'react';
+import Navbar from './navbar';
+export default class profile extends React.Component {
+  render(){
+    return(
+      <head>
+    		<meta charset="utf-8">
+    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    		<title>About Safehouse</title>
+
+    		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    		<link href="css/about.css" rel="stylesheet">
+    		<link href="css/profile.css" rel="stylesheet">
+    		<link href="css/template.css" rel="stylesheet">
+    	</head>
+
+    	<body>
+    		<nav class="navbar navbar-fixed-top navbar-default">
+    			<div class="container">
+
+
+    				<div class="navbar-header">
+    					<a class="navbar-brand" href="#">
+    						<span class="glyphicon glyphicon-home"></span>
+    					</a>
+    				</div>
+
+
+    				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    					<form class="navbar-form navbar-left" role ="search">
+    						<div class ="input-group">
+    							<input type = "text" class = "form-control" placeholder = "Search Safehouse">
+    							<span class = "input-group-btn">
+    								<button type="submit" class="btn btn-default">
+    									<span class="glyphicon glyphicon-search"></span>
+    								</button>
+    							</span>
+    						</div>
+    					</form>
+    					<div class="nav navbar-nav navbar-right">
+    						<div class="btn-toolbar pull right" role="toolbar">
+    							<div class="btn-group" role="group">
+    								<button type="button" class="btn btn-default navbar-btn">
+    									Home
+    								</button>
+    							</div>
+    							<div class="btn-group" role="group">
+    								<button type="button" class="btn btn-default navbar-btn">
+    									My Profile
+    								</button>
+    							</div>
+    							<div class="btn-group" role="group">
+    								<button type="button" class="btn btn-default navbar-btn">
+    									About
+    								</button>
+    							</div>
+    							<div class="btn-group" role="group">
+    								<button type="button" class="btn btn-default navbar-btn">
+    									Forum
+    								</button>
+    							</div>
+    							<div class="btn-group" role="group">
+    								<button type="button" class="btn btn-default btn btn-default navbar-btn dropdown
+    								-toggle" data-toggle="dropdown">
+    									<span class="caret"></span>
+    								</button>
+    								<ul class="dropdown-menu">
+    									<li><a href="#">Log Out</a></li>
+    								</ul>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</nav>
+
+    		<div class = "container">
+          <div class="row">
+          <div class="col-md-12 .flash" >
+
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title"> Name </h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-2 col-lg-2 " align="center"> <img alt="User Pic" src="https://pixabay.com/static/uploads/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" class="img-circle img-responsive"> </div>
+
+                  <div class=" col-md-9 col-lg-9 ">
+                    <table class="table table-user-information">
+                      <tbody>
+                        <tr>
+                          <td>Date of Birth</td>
+                          <td>01/24/1988</td>
+                        </tr>
+    												<td>Family size</td>
+    												<td>4</td>
+                           <tr>
+                        <tr>
+                          <td>Gender</td>
+                          <td>Female</td>
+                        </tr>
+                          <tr>
+                          <td>Home Address</td>
+                          <td>----</td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td><a href="mailto:info@support.com">info@support.com</a></td>
+                        </tr>
+                          <td>Phone Number</td>
+                          <td>123-4567-890(Landline)<br>
+                          </td>
+
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+                  </div>
+                </div>
+              </div>
+                   <div class="panel-footer">
+                     <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                          <span class="pull-right"> </span>
+                  </div>
+    						</div>
+            </div>
+          </div>
+        </div>
+    	</body>
+    )
+  }
+}
