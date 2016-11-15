@@ -23,13 +23,14 @@ body {
 #profile {
   padding-left: 470px;
   padding-top: 130px;
-  float: right;
+  float: left;
   padding-right: 60px;
 }
 
 #searchbar {
-  padding: 150px;
-  float: right;
+	padding-left: 400px;
+	padding-right: 400px;
+	padding-top: 200px;
 }
 
 #background {
