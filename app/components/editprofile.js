@@ -10,7 +10,7 @@ export default class editprofile extends React.Component {
     AreaDesc: "",
     Accommodations: ""
   }
-  //pullfromDB(1)
+  pullfromDB();
 }
   updateValues(){
     this.setState({
@@ -18,23 +18,30 @@ export default class editprofile extends React.Component {
       familyDesc:  document.getElementById("family"),
       AreaDesc:  document.getElementById("area"),
       Accomodations:  document.getElementById("acc")
-    })
-    //updateDB(1)
+    });
+    updateDB();
   }
 
-  //updateDB(userid){
-
-  //}
-
-  /*pullfromDB(userid){
+  pullfromDB(){
+    var user = readDocument("user", 1);
     this.setState({
-      homeDesc:
-      familyDesc:
-      AreaDesc:
-      Accomodations:
-    })
-  }*/
+      homeDesc: user.homeDesc,
+      familyDesc: user.familyDesc,
+      AreaDesc: user.AreaDesc,
+      Accomodations: user.Accomodations
+    });
+  }
 
+  updateDB(){
+    var user = readDocument("user", 1);
+    user.push({
+      "homeDesc": homeDesc,
+      "familyDesc": familyDesc,
+      "AreaDesc": AreaDesc,
+      "Accomodations": Accomodations
+    });
+    writeDocument("user", user);
+  }
 
   render(){
     return(
