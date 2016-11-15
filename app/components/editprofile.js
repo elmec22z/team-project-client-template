@@ -5,12 +5,35 @@ export default class editprofile extends React.Component {
   constructor(props) {
   super(props);
   this.state = {
-    homeDesc: ' ',
-    familyDesc: ' ',
-    AreaDesc: ' ',
-    Accommodations: ' '
+    homeDesc: "",
+    familyDesc: "",
+    AreaDesc: "",
+    Accommodations: ""
   }
+  //pullfromDB(1)
 }
+  updateValues(){
+    this.setState({
+      homeDesc: document.getElementById("home"),
+      familyDesc:  document.getElementById("family"),
+      AreaDesc:  document.getElementById("area"),
+      Accomodations:  document.getElementById("acc")
+    })
+    //updateDB(1)
+  }
+
+  //updateDB(userid){
+
+  //}
+
+  /*pullfromDB(userid){
+    this.setState({
+      homeDesc:
+      familyDesc:
+      AreaDesc:
+      Accomodations:
+    })
+  }*/
 
 
   render(){
@@ -33,7 +56,7 @@ export default class editprofile extends React.Component {
 
     		<Navbar/>
         <div class = "container">
-          <button type="button" onclick="alert('Saved Changes!')">Save Changes</button>
+          <button type="button" onclick="alert('Saved Changes!');updateValues()">Save Changes</button>
           <div class = "col-md-16">
             <a name="Describe your Home"></a>
             <div class = "panel panel-default">
@@ -45,7 +68,7 @@ export default class editprofile extends React.Component {
                 </ul>
                 <div class="panel-body">
                   <div class ="describe-your-home">
-                    <textarea placeholder={{homeDesc}} style="resize:none" rows="6" cols="150">
+                    <textarea id="home" placeholder={{homeDesc}} style="resize:none" rows="6" cols="150">
                     </textarea>
                   </div>
                 </div>
@@ -63,7 +86,7 @@ export default class editprofile extends React.Component {
                 </ul>
                 <div class="panel-body">
                   <div class ="describe-your-family">
-                    <textarea placeholder={{familyDesc}} style="resize:none" rows="6" cols="150">
+                    <textarea id="family" placeholder={{familyDesc}} style="resize:none" rows="6" cols="150">
                     </textarea>
                   </div>
                 </div>
@@ -81,7 +104,7 @@ export default class editprofile extends React.Component {
                 </ul>
                 <div class="panel-body">
                   <div class ="describe-your-Area-Location">
-                    <textarea placeholder={{AreaDesc}} style="resize:none" rows="6" cols="150">
+                    <textarea id="area" placeholder={{AreaDesc}} style="resize:none" rows="6" cols="150">
                     </textarea>
                   </div>
                 </div>
@@ -99,7 +122,7 @@ export default class editprofile extends React.Component {
                 </ul>
                 <div class="panel-body">
                   <div class ="describe-your-guests">
-                    <textarea placeholder={{Accommodations}} style="resize:none" rows="6" cols="150">
+                    <textarea id="acc" placeholder={{Accommodations}} style="resize:none" rows="6" cols="150">
                     </textarea>
                   </div>
                 </div>
