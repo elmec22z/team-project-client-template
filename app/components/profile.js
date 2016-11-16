@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from './navbar';
 export default class profile extends React.Component {
   render(){
     return(
 <div>
-<body>
+<Navbar/>
 <div className = "container">
 <div className="row">
 <div className="col-md-12 .flash" >
@@ -14,7 +15,7 @@ export default class profile extends React.Component {
   </div>
   <div className="panel-body">
     <div className="row">
-      <div className="col-md-2 col-lg-2 " align="center"> <img alt="User Pic" src="https://pixabay.com/static/uploads/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" className="img-circle img-responsive" /> </div>
+      <div className="col-md-2 col-lg-2 " align="center"> <img alt="User Pic" src="img/blank-profile.png" className="img-circle img-responsive" /> </div>
       <div className=" col-md-9 col-lg-9 ">
         <table className="table table-user-information">
           <tbody>
@@ -22,14 +23,15 @@ export default class profile extends React.Component {
               <td>Date of Birth</td>
               <td>01/24/1988</td>
             </tr>
+            <tr>
 								<td>Family size</td>
 								<td>4</td>
-               <tr>
+            </tr>
             <tr>
               <td>Gender</td>
               <td>Female</td>
             </tr>
-              <tr>
+            <tr>
               <td>Home Address</td>
               <td>----</td>
             </tr>
@@ -37,6 +39,7 @@ export default class profile extends React.Component {
               <td>Email</td>
               <td><a href="mailto:info@support.com">info@support.com</a></td>
             </tr>
+            <tr>
               <td>Phone Number</td>
               <td>123-4567-890(Landline)</td>
 
@@ -57,7 +60,6 @@ export default class profile extends React.Component {
 </div>
 </div>
 </div>
-</body>
 </div>
 )
 }
