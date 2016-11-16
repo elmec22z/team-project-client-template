@@ -4,6 +4,8 @@ import ResultCity from './components/resultcity';
 import ResultHome from './components/resulthome';
 import Navbar from './components/navbar'
 import About from './components/about';
+import login from './components/login';
+import splash from './components/splash';
 
 import profile from './components/profile'
 import { IndexRoute, Router, Route, Link, hashHistory } from 'react-router'
@@ -33,8 +35,10 @@ ReactDOM.render((
       <Route path="/cities" component={ResultCity}/>
       <Route path="/cities/:city" component={ResultHome}/>
 			<Route path="/about" component={About}/>
-			
+
 			<Route path ='/profile' component={profile}/>
+			<Route path ='/splash' component={splash} />
+			<Route path ='/login' component={login} />
   </Router>
   ),document.getElementById('app')
 );
