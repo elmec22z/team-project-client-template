@@ -14,6 +14,11 @@ export default class Navbar extends React.Component {
     this.setState({'cityName': e.target.value});
   }
 
+  sendSearch() {
+    if (this.state['cityName'] !== '') return {'cityName': this.state['cityName']};
+    return {}
+  }
+
   render() {
     return(
     <div>
@@ -38,7 +43,7 @@ export default class Navbar extends React.Component {
               <input type = "text" className="form-control" placeholder = "Search Safehouse" 
                      onChange={(e) => this.handleChange(e)} />
                 <span className="input-group-btn">
-                  <Link to={{ pathname: '/cities', query: {'cityName': this.state['cityName']} }}>
+                  <Link to={{ pathname: '/cities', query: this.sendSearch() }}>
                     <button type="submit" className="btn btn-default">
                       <span className="glyphicon glyphicon-search"></span>
                     </button>
