@@ -53,13 +53,6 @@ export default class Navbar extends React.Component {
           </form>
           <div className="nav navbar-nav navbar-right">
             <div className="btn-toolbar pull right" role="toolbar">
-              <Link to='/'>
-                <div className="btn-group" role="group">
-                  <button type="button" className="btn btn-default navbar-btn">
-                    Home
-                  </button>
-                </div>
-              </Link>
               <Link to='/profile'>
                 <div className="btn-group" role="group">
                   <button type="button" className="btn btn-default navbar-btn">
