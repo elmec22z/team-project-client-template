@@ -1,6 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export default class Navbar extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      cityName: ''
+    }
+  }
+
+  handleChange(e) {
+    this.setState({'cityName': e.target.value});
+  }
+
   render() {
     return(
     <div>
@@ -22,36 +35,47 @@ export default class Navbar extends React.Component {
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <form className="navbar-form navbar-left" role ="search">
             <div className="input-group">
-              <input type = "text" className="form-control" placeholder = "Search Safehouse" />
+              <input type = "text" className="form-control" placeholder = "Search Safehouse" 
+                     onChange={(e) => this.handleChange(e)} />
                 <span className="input-group-btn">
-                  <button type="submit" className="btn btn-default">
-                    <span className="glyphicon glyphicon-search"></span>
-                  </button>
+                  <Link to={{ pathname: '/cities', query: {'cityName': this.state['cityName']} }}>
+                    <button type="submit" className="btn btn-default">
+                      <span className="glyphicon glyphicon-search"></span>
+                    </button>
+                  </Link>
                 </span>
             </div>
           </form>
           <div className="nav navbar-nav navbar-right">
             <div className="btn-toolbar pull right" role="toolbar">
-              <div className="btn-group" role="group">
-                <button type="button" className="btn btn-default navbar-btn">
-                  Home
-                </button>
-              </div>
-              <div className="btn-group" role="group">
-                <button type="button" className="btn btn-default navbar-btn">
-                  My Profile
-                </button>
-              </div>
-              <div className="btn-group" role="group">
-                <button type="button" className="btn btn-default navbar-btn">
-                  About
-                </button>
-              </div>
-              <div className="btn-group" role="group">
-                <button type="button" className="btn btn-default navbar-btn">
-                  Forum
-                </button>
-              </div>
+              <Link to='/'>
+                <div className="btn-group" role="group">
+                  <button type="button" className="btn btn-default navbar-btn">
+                    Home
+                  </button>
+                </div>
+              </Link>
+              <Link to='/profile'>
+                <div className="btn-group" role="group">
+                  <button type="button" className="btn btn-default navbar-btn">
+                    My Profile
+                  </button>
+                </div>
+              </Link>
+              <Link to='/about'>
+                <div className="btn-group" role="group">
+                  <button type="button" className="btn btn-default navbar-btn">
+                    About
+                  </button>
+                </div>
+              </Link>
+              <Link to='/forum'>
+                <div className="btn-group" role="group">
+                  <button type="button" className="btn btn-default navbar-btn">
+                    Forum
+                  </button>
+                </div>
+              </Link>
               <div className="btn-group" role="group">
                 <button type="button" className="btn btn-default btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown">
                   <span className="caret"></span>
