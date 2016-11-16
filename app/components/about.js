@@ -4,9 +4,9 @@ export default class About extends React.Component {
   render(){
     return (
       <div>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/about.css" rel="stylesheet">
-        <link href="css/template.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/about.css" rel="stylesheet"/>
+        <link href="css/template.css" rel="stylesheet"/>
         <Navbar/>
       		<div class Name = "container">
       			<div class Name = "row">
@@ -109,11 +109,11 @@ export default class About extends React.Component {
       								<div class Name="contact-us">
       									<form>
       										Name: <br/>
-      										<input type="text" name="name"><br/><br/>
+      										<input type="text" name="name"/><br/><br/>
       									</form>
       									<form>
       										Email Address: <br/>
-      										<input type="text" name="email"><br/><br/>
+      										<input type="text" name="email"/><br/><br/>
       									</form>
       									<div class Name= "form-group">
       										How can we help?
@@ -122,7 +122,7 @@ export default class About extends React.Component {
       										</textarea>
       									</div>
       									<form>
-      										<input type="submit" value = "Submit">
+      										<input type="submit" value = "Submit"/>
       									</form>
       								</div>
       							</div>
