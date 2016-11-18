@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './navbar';
+
 export default class profile extends React.Component {
   render(){
     return(
