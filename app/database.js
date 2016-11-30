@@ -63,20 +63,21 @@ var initialData = {
     }
   },
 
-  "forum": {
+  "forumItems": {
     "0": {
       "_id": 0,
       "author": 0,
       "content": "This is a sample question.",
       "postDate": 1453690800000,
-      "likeCounter": [1],
+      "upvoteCounter": [1],
+      //"type": "newQuestion",
       "comments": [
         {
           "_id": 0,
           "author": 1,
           "content": "This is a sample response.",
-          "postdate": 1453690800000,
-          "likeCounter": [1],
+          "postDate": 1453690800000,
+          "upvoteCounter": [1],
           "postId": 0
         }
       ]
@@ -86,21 +87,28 @@ var initialData = {
       "author": 1,
       "content": "This is a sample question.",
       "postDate": 1453690800000,
-      "likeCounter": [0],
+      "upvoteCounter": [0],
       "comments": [
         {
           "_id": 0,
           "author": 0,
           "content": "This is a sample response.",
           "postdate": 1453690800000,
-          "likeCounter": [0],
+          "upvoteCounter": [0],
           "postId": 1
         }
       ]
     }
+  },
 
+  "forums": {
+    "0":{
+      "_id": []
+    },
+    "1":{
+      "_id": []
+    }
   }
-
 };
 
 var data = JSON.parse(localStorage.getItem(safehouse));
