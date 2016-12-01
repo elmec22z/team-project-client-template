@@ -6,6 +6,7 @@ import Navbar from './components/navbar'
 import About from './components/about';
 import login from './components/login';
 import splash from './components/splash';
+import forum from './components/forum';
 // import editprofile from './components/editprofile'
 import profile from './components/profile'
 import { IndexRoute, Router, Route, Link, hashHistory } from 'react-router'
