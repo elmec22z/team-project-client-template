@@ -52,6 +52,7 @@ var initialData = {
       "dob": "mm/dd/yyyy",
       "familySize": 2,
       "gender": "female",
+      "email": "janedoe@gmail.com",
       "image": "img/blank-profile.png",
       "numberToHost": 5,
       // howLongToHost is in number of days.

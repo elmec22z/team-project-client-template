@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './navbar';
-import {readDocument} from './database.js';
+//import {readDocument} from './database.js';
 export default class profile extends React.Component {
   constructor(props) {
   super(props);
@@ -14,7 +14,7 @@ export default class profile extends React.Component {
     numberToHost:""
   }
 }
-pullfromDB(){
+/*pullfromDB(){
   var user = readDocument("user", 1);
   this.setState({
     numberToHost: user.numberToHost,
@@ -27,6 +27,7 @@ pullfromDB(){
 
   });
 }
+*/
 id(){
   this.setState({
     numberToHost: document.getElementById("numberToHost"),
@@ -50,7 +51,7 @@ id(){
 
 <div className="panel panel-info">
   <div className="panel-heading">
-    <h3 className="panel-title"> Name </h3>
+    <h3 className="panel-title"> {this.props.name} </h3>
   </div>
   <div className="panel-body">
     <div className="row">
@@ -60,27 +61,27 @@ id(){
           <tbody>
             <tr>
               <td>Date of Birth</td>
-              <td>{this.props.data.dob}</td>
+              <td>{this.props.dob}</td>
             </tr>
             <tr>
 								<td>Family size</td>
-								<td>{this.props.data.familySize}</td>
+								<td>{this.props.familySize}</td>
             </tr>
             <tr>
               <td>Gender</td>
-              <td>{this.props.data.gender}</td>
+              <td>{this.props.gender}</td>
             </tr>
             <tr>
               <td>Home Address</td>
-              <td>{this.props.data.address}</td>
+              <td>{this.props.address}</td>
             </tr>
             <tr>
               <td>Email</td>
-              <td>{this.props.data.email}</td>
+              <td>{this.props.email}</td>
             </tr>
             <tr>
               <td>Phone Number</td>
-              <td>{this.props.data.number}</td>
+              <td>{this.props.number}</td>
             </tr>
           </tbody>
         </table>
