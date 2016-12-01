@@ -23,7 +23,7 @@ export function getCityData(queryData, cb) {
 					}
 					result = false;
 					break;
-				case ('state'): 
+				case ('state'):
 					if (cities[key].location == queryData[k]) {
 						break;
 					}
@@ -64,4 +64,17 @@ export function getUsersByCity(cityId, cb) {
 		people.push(readDocument('user', city.people[i]));
 	}
 	emulateServerReturn(people, cb);
+}
+
+/**
+* Emulates a REST call to get the feed data for a particular user.
+* @param user The ID of the user whose feed we are requesting.
+* @param cb A Function object, which we will invoke when the Feed's data is available.
+*/
+export function getFeedData(user, cb) {
+// Get the User object with the id "user".
+var userData = readDocument('users', user);
+// Get the Feed object for the user.
+var profile = readDocument('feeds', userData.id);
+emulateServerReturn(profile, cb);
 }

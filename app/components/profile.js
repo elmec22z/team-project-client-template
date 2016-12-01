@@ -1,8 +1,46 @@
 import React from 'react';
 import Navbar from './navbar';
-
+import {readDocument} from './database.js';
 export default class profile extends React.Component {
+  constructor(props) {
+  super(props);
+  this.state = {
+    name: "",
+    dob: "",
+    familySize: "",
+    gender: "",
+    email:"",
+    image:"",
+    numberToHost:""
+  }
+}
+pullfromDB(){
+  var user = readDocument("user", 1);
+  this.setState({
+    numberToHost: user.numberToHost,
+    name: user.name,
+    dob: user.dob,
+    gender: user.gender,
+    email: user.email,
+    image: user.image,
+    familySize:user.familySize
+
+  });
+}
+id(){
+  this.setState({
+    numberToHost: document.getElementById("numberToHost"),
+    name:  document.getElementById("name"),
+    dob:  document.getElementById("dob"),
+    gender:  document.getElementById("gender"),
+    email: document.getElementById("email"),
+    image: document.getElementById("image"),
+    familySize: document.getElementById("family")
+
+  });
+}
   render(){
+
     return(
 <div>
 <Navbar/>
@@ -22,31 +60,28 @@ export default class profile extends React.Component {
           <tbody>
             <tr>
               <td>Date of Birth</td>
-              <td>01/24/1988</td>
+              <td>{this.props.data.dob}</td>
             </tr>
             <tr>
 								<td>Family size</td>
-								<td>4</td>
+								<td>{this.props.data.familySize}</td>
             </tr>
             <tr>
               <td>Gender</td>
-              <td>Female</td>
+              <td>{this.props.data.gender}</td>
             </tr>
             <tr>
               <td>Home Address</td>
-              <td>----</td>
+              <td>{this.props.data.address}</td>
             </tr>
             <tr>
               <td>Email</td>
-              <td><a href="mailto:info@support.com">info@support.com</a></td>
+              <td>{this.props.data.email}</td>
             </tr>
             <tr>
               <td>Phone Number</td>
-              <td>123-4567-890(Landline)</td>
-
-
+              <td>{this.props.data.number}</td>
             </tr>
-
           </tbody>
         </table>
 
