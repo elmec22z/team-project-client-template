@@ -12,13 +12,7 @@ export default class About extends React.Component {
       		<div className= "container">
       			<div className= "row">
       				<div className= "col-md-3">
-      					<ul className="nav nav-pills nav-stacked">
-      						<li role="presentation"><a href="#">User Name</a></li>
-      						<li role="presentation"><a href="#">User Name</a></li>
-      						<li role="presentation"><a href="#"><span className=
-      							"glyphicon glyphicon-pencil"></span>
-      							Edit Profile</a>
-      						</li>
+      					<ul className="nav nav-pills nav-stacked">      						
       						<li role="presentation" className="pres">
       							<a href="#who-we-are">
       								<span className="glyphicon glyphicon-user"></span>
@@ -131,7 +125,6 @@ export default class About extends React.Component {
       					</div>
       				</div>
       				<div className= "col-md-1">
-      					Right Sidebar
       				</div>
       			</div>
       		</div>
