@@ -18,8 +18,7 @@ ReactDOM.render((
       <Route path="/cities" component={ResultCity}/>
       <Route path="/cities/:city" component={ResultHome}/>
 			<Route path="/about" component={About}/>
-			<Route path ='/profile' component={profile}/>
-      <Route path='/forum' component={Forum}/>
+			{<Route path ='/profile' component={profile}/>}
 			{/*<Route path ='/editprofile' component={editprofile}/>*/}
 			<Route path ='/login' component={login} />
   </Router>

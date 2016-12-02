@@ -43,3 +43,6 @@ body {
 .languages {
   float: left;
 }
+#footer_socials{
+    margin: 0 .5em 0 .5em;
+}
