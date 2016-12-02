@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './navbar';
+import {getProfileData} from '../server';
 //import {readDocument} from './database.js';
 export default class profile extends React.Component {
   constructor(props) {
@@ -28,7 +29,14 @@ export default class profile extends React.Component {
   });
 }
 */
-id(){
+
+componentDidMount(){
+  getProfileData(1, (feedData)=> {
+    this.setState({name:feedData.name,dob: feedData.dob});
+  });
+}
+
+/*id(){
   this.setState({
     numberToHost: document.getElementById("numberToHost"),
     name:  document.getElementById("name"),
@@ -39,7 +47,7 @@ id(){
     familySize: document.getElementById("family")
 
   });
-}
+}*/
   render(){
 
     return(
@@ -51,7 +59,7 @@ id(){
 
 <div className="panel panel-info">
   <div className="panel-heading">
-    <h3 className="panel-title"> {this.props.name} </h3>
+    <h3 className="panel-title"> {this.state.name} </h3>
   </div>
   <div className="panel-body">
     <div className="row">
@@ -61,7 +69,7 @@ id(){
           <tbody>
             <tr>
               <td>Date of Birth</td>
-              <td>{this.props.dob}</td>
+              <td>{this.state.dob}</td>
             </tr>
             <tr>
 								<td>Family size</td>

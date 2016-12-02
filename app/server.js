@@ -9,7 +9,10 @@ function emulateServerReturn(data, cb) {
     cb(data);
   }, 4);
 }
-
+export function getProfileData(userID, cb){
+  var userData = readDocument('user', userID);
+  emulateServerReturn(userData, cb);
+}
 export function getCityData(queryData, cb) {
 	var cities = readCollection('cities');
 	var c = {};
