@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './navbar';
 import {getProfileData} from '../server';
+import { Link } from 'react-router';
 //import {readDocument} from './database.js';
 export default class profile extends React.Component {
   constructor(props) {
@@ -98,9 +99,11 @@ componentDidMount(){
     </div>
   </div>
        <div className="panel-footer">
-         <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" className="btn btn-sm btn-warning"><i className="glyphicon glyphicon-edit"></i></a>
+        <Link to='/editprofile'>
+         <a data-original-title="Edit this user" data-toggle="tooltip" type="button" className="btn btn-sm btn-warning"><i className="glyphicon glyphicon-edit"></i></a>
               <span className="pull-right"> </span>
-      </div>
+        </Link>
+    </div>
 		</div>
 </div>
 </div>
