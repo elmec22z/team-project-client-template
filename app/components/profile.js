@@ -32,7 +32,7 @@ export default class profile extends React.Component {
 
 componentDidMount(){
   getProfileData(1, (feedData)=> {
-    this.setState({name:feedData.name,dob: feedData.dob});
+    this.setState({name:feedData.name,dob: feedData.dob,gender:feedData.gender,email:feedData.email, image:feedData.image, numberToHost:feedData.numberToHost, familySize:feedData.familySize, address:feedData.address});
   });
 }
 
@@ -73,23 +73,23 @@ componentDidMount(){
             </tr>
             <tr>
 								<td>Family size</td>
-								<td>{this.props.familySize}</td>
+								<td>{this.state.familySize}</td>
             </tr>
             <tr>
               <td>Gender</td>
-              <td>{this.props.gender}</td>
+              <td>{this.state.gender}</td>
             </tr>
             <tr>
               <td>Home Address</td>
-              <td>{this.props.address}</td>
+              <td>{this.state.address}</td>
             </tr>
             <tr>
               <td>Email</td>
-              <td>{this.props.email}</td>
+              <td>{this.state.email}</td>
             </tr>
             <tr>
-              <td>Phone Number</td>
-              <td>{this.props.number}</td>
+              <td>Number to host</td>
+              <td>{this.state.numberToHost}</td>
             </tr>
           </tbody>
         </table>
