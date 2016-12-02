@@ -32,7 +32,7 @@ var initialData = {
     "0": {
       "_id": 0,
       "name": "Jon Doe",
-      "dob": "mm/dd/yyyy",
+      "dob": "10/15/1080",
       "familySize": 2,
       "gender": "male",
       "email": "jondoe@gmail.com",
@@ -49,7 +49,7 @@ var initialData = {
     "1": {
       "_id": 1,
       "name": "Jane Doe",
-      "dob": "mm/dd/yyyy",
+      "dob": "06/17/1981",
       "familySize": 2,
       "gender": "female",
       "email": "janedoe@gmail.com",
