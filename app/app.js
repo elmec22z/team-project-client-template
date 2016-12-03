@@ -23,6 +23,7 @@ ReactDOM.render((
       <Route path ='/profile' component={profile}/>
       <Route path='/forum' component={Forum}/>
 			<Route path ='/login' component={login} />
+      <Route path ='/resulthome' component={ResultHome} />
   </Router>
   ),document.getElementById('app')
 );
