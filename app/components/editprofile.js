@@ -4,13 +4,12 @@ import {getProfileData} from '../server';
 export default class editprofile extends React.Component {
 
   constructor(props) {
-
   super(props);
   this.state = {
-    homeDesc: "",
-    familyDesc: "",
-    AreaDesc: "",
-    Accommodations: ""
+    homeDesc: "home",
+    familyDesc: "family",
+    AreaDesc: "Area",
+    Accommodations: "Acc"
   }
   //pullfromDB();
 }
@@ -38,8 +37,7 @@ componentDidMount(){
                 </ul>
                 <div className="panel-body">
                   <div className ="describe-your-home">
-                    <textarea styles="resize:none" rows="6" cols="150">
-                      {this.state.homeDesc}
+                    <textarea styles="resize:none" rows="6" cols="150" value={this.state.homeDesc} onChange={this.state.homeDesc}>
                     </textarea>
                   </div>
                 </div>
@@ -57,8 +55,7 @@ componentDidMount(){
                 </ul>
                 <div className="panel-body">
                   <div className ="describe-your-family">
-                    <textarea styles="resize:none" rows="6" cols="150">
-                      {this.state.familyDesc}
+                    <textarea styles="resize:none" rows="6" cols="150" value={this.state.familyDesc} onChange={this.state.familyDesc}>
                     </textarea>
                   </div>
                 </div>
@@ -76,8 +73,7 @@ componentDidMount(){
                 </ul>
                 <div className="panel-body">
                   <div className ="describe-your-Area-Location">
-                    <textarea styles="resize:none" rows="6" cols="150">
-                      {this.state.AreaDesc}
+                    <textarea styles="resize:none" rows="6" cols="150" value={this.state.AreaDesc} onChange={this.state.AreaDesc}>
                     </textarea>
                   </div>
                 </div>
@@ -95,8 +91,7 @@ componentDidMount(){
                 </ul>
                 <div className="panel-body">
                   <div className ="describe-your-guests">
-                    <textarea styles="resize:none" rows="6" cols="150">
-                      {this.state.Accommodations}
+                    <textarea styles="resize:none" rows="6" cols="150" value={this.state.Accommodations} onChange={this.state.Accommodations}>
                     </textarea>
                   </div>
                 </div>
