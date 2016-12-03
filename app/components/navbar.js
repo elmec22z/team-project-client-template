@@ -40,7 +40,7 @@ export default class Navbar extends React.Component {
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <form className="navbar-form navbar-left" role ="search">
             <div className="input-group">
-              <input type = "text" className="form-control" placeholder = "Search Safehouse" 
+              <input type = "text" className="form-control" placeholder = "Search Safehouse"
                      onChange={(e) => this.handleChange(e)} />
                 <span className="input-group-btn">
                   <Link to={{ pathname: '/cities', query: this.sendSearch() }}>
@@ -57,6 +57,13 @@ export default class Navbar extends React.Component {
                 <div className="btn-group" role="group">
                   <button type="button" className="btn btn-default navbar-btn">
                     My Profile
+                  </button>
+                </div>
+              </Link>
+              <Link to='/resulthome'>
+                <div className="btn-group" role="group">
+                  <button type="button" className="btn btn-default navbar-btn">
+                    My Results
                   </button>
                 </div>
               </Link>

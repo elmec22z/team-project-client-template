@@ -19,7 +19,7 @@ export default class ResultHome extends React.Component {
   }
 
   render() {
-    var rows = []; 
+    var rows = [];
     for (var key in this.state) {
       if (!this.state.hasOwnProperty(key)) continue;
       var obj = this.state[key]
