@@ -25,6 +25,15 @@ var initialData = {
       "population": 8,
       "image": "img/city.png",
       "people": []
+    },
+    "2": {
+      "_id": 2,
+      "name": "Boston",
+      "location": "MA",
+      "climate": "Warm summer, Cold winter",
+      "population": 8,
+      "image": "img/city.png",
+      "people": []
     }
   },
 
