@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './navbar';
+import {getProfileData} from '../server';
 export default class editprofile extends React.Component {
 
   constructor(props) {
@@ -13,6 +14,13 @@ export default class editprofile extends React.Component {
   }
   //pullfromDB();
 }
+
+componentDidMount(){
+  getProfileData(1, (feedData)=> {
+    this.setState({homeDesc: feedData.homeDesc, familyDesc: feedData.familyDesc, AreaDesc: feedData.AreaDesc, Accommodations: feedData.Accommodations});
+  });
+}
+
   render(){
     return(
       <div>
@@ -31,6 +39,7 @@ export default class editprofile extends React.Component {
                 <div className="panel-body">
                   <div className ="describe-your-home">
                     <textarea styles="resize:none" rows="6" cols="150">
+                      {this.state.homeDesc}
                     </textarea>
                   </div>
                 </div>
@@ -49,6 +58,7 @@ export default class editprofile extends React.Component {
                 <div className="panel-body">
                   <div className ="describe-your-family">
                     <textarea styles="resize:none" rows="6" cols="150">
+                      {this.state.familyDesc}
                     </textarea>
                   </div>
                 </div>
@@ -67,6 +77,7 @@ export default class editprofile extends React.Component {
                 <div className="panel-body">
                   <div className ="describe-your-Area-Location">
                     <textarea styles="resize:none" rows="6" cols="150">
+                      {this.state.AreaDesc}
                     </textarea>
                   </div>
                 </div>
@@ -85,6 +96,7 @@ export default class editprofile extends React.Component {
                 <div className="panel-body">
                   <div className ="describe-your-guests">
                     <textarea styles="resize:none" rows="6" cols="150">
+                      {this.state.Accommodations}
                     </textarea>
                   </div>
                 </div>
