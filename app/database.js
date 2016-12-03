@@ -167,6 +167,11 @@ export function addDocument(collectionName, newDoc) {
   return newDoc;
 }
 
+//updates Document in NoSQL database
+export function updateDocument(collectionName, id, changedDoc){
+  data[collectionName][id] = changedDoc
+}
+
 /**
  * Reset our browser-local database.
  */
