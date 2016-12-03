@@ -1,8 +1,6 @@
 // Implement your server in this file.
 // We should be able to run your server with node src/server.js
 
-
-
 // Imports the express Node module.
 var express = require('express');
 // Creates an Express server.
@@ -35,6 +33,15 @@ app.listen(3000, function () {
 });
 
 app.use(bodyParser.text());
+
+// Reset database
+app.post('/resetdb', function(req, res) {
+  console.log("Resetting database ...");
+  // this is a debug route, so don't do any validation
+  database.resetDatabase();
+  // sends an empty response with status code 200
+  res.send();
+});
 
 // Handle POST /reverse [data]
 // app.post('/reverse', function (req, res) {
