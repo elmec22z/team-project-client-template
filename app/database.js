@@ -25,6 +25,15 @@ var initialData = {
       "population": 8,
       "image": "img/city.png",
       "people": []
+    },
+    "2": {
+      "_id": 2,
+      "name": "Boston",
+      "location": "MA",
+      "climate": "Warm summer, Cold winter",
+      "population": 8,
+      "image": "img/city.png",
+      "people": []
     }
   },
 
@@ -43,7 +52,7 @@ var initialData = {
       "address": "1600 Pennsylvania Ave",
       "homeDesc": "Small 3 Bedroom, 1 Bath",
       "familyDesc": "Married, 1 Boy, 6 years old",
-      "Area Desc": "Quiet, Low Crime, Cold Winters",
+      "AreaDesc": "Quiet, Low Crime, Cold Winters",
       "Accommodations": "Own Bedroom, willing to cook familiar meals"
     },
     "1": {
@@ -60,7 +69,7 @@ var initialData = {
       "address": "1600 Pennsylvania Ave",
       "homeDesc": "Large 5 Bedroom, 3 Bath",
       "familyDesc": "Married, 3 Boys, 4, 7, 10 years old",
-      "Area Desc": "Urban Center, Busy, Good Public Transport",
+      "AreaDesc": "Urban Center, Busy, Good Public Transport",
       "Accommodations": "Own Bedroom, Own Bath"
     }
   },
