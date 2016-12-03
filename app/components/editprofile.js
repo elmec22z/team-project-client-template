@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './navbar';
-import {getProfileData, updateDatabase} from '../server';
-import {readDocument, writeDocument, addDocument, updateDocument, readCollection} from '../database.js';
+import {getProfileData} from '../server';
+/*import {readDocument, writeDocument, addDocument, updateDocument, readCollection} from '../database.js';*/
 export default class editprofile extends React.Component {
 
   constructor(props) {
@@ -27,7 +27,7 @@ render(){
     <div>
       <Navbar/>
       <div className = "container">
-        <button type="button" onClick="alert('Save Changes!')">Save Changes</button>
+        <button type="button" onclick="alert('Save Changes!')">Save Changes</button>
         <div className = "col-md-16">
           <a name="Describe your Home"></a>
           <div className = "panel panel-default">
