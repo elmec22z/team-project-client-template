@@ -1,8 +1,3 @@
-// Implement your server in this file.
-// We should be able to run your server with node src/server.js
-
-
-
 // Imports the express Node module.
 var express = require('express');
 // Creates an Express server.
@@ -36,72 +31,46 @@ app.listen(3000, function () {
 
 app.use(bodyParser.text());
 
-// Handle POST /reverse [data]
-// app.post('/reverse', function (req, res) {
-//     // If the request came with text, then the text() middleware handled it
-//     // and made `req.body` a string.
-//     // Check that req.body is a string.
-//     if (typeof(req.body) === 'string') {
-//         var reversed = reverseString(req.body);
-//         res.send(reversed);
-//     }
-//     else {
-//     // POST did not contain a string. Send an error code back!
-//       res.status(400).end();
-//     }
-// });
-
 /**
- * Get the feed data for a particular user
+ * Get the user ID from a token. Returns -1 (an invalid ID)
+ * if it fails.
  */
- // app.get('/user/:userid/feed', function(req, res) {
- //   // URL parameters are stored in req. parameters
- //   var userid = req.params.userid;
- //   // Send response
- //   res.send(getFeedData(userid));
- // });
-
- /**
-  * Get the user ID from a token. Returns -1 (an invalid ID)
-  * if it fails.
-  */
 function getUserIdFromToken(authorizationLine) {
-  try {
-    // Cut off "Bearer " from the header value.
-    var token = authorizationLine.slice(7);
-    // Convert the base64 string to a UTF-8 string.
-    var regularString = new Buffer(token, 'base64').toString('utf8'); // Convert the UTF-8 string into a JavaScript object.
-    var tokenObj = JSON.parse(regularString);
-    var id = tokenObj['id'];
-    // Check that id is a number.
-    if (typeof id === 'number') {
-      return id;
+    try {
+        var token = authorizationLine.slice(7);
+        var regularString = new Buffer(token, 'base64').toString('utf8');
+        var tokenObj = JSON.parse(regularString);
+        var id = tokenObj['id'];
+        if (typeof id === 'number') {
+            return id;
+        } else {
+            return -1;
+        }
+    } catch (e) {
+        return -1;
     }
-    else {
-      // Not a number. Return -1, an invalid ID.
-      return -1;
-    }
-  }
-  catch (e) {
-    // Return an invalid ID.
-    return -1;
-  }
+}
+/*
+ * Shorten this as it will be called anytime we send the userId.
+ */
+function checkAuth(req, res) {
+    var fromUser = getUserIdFromToken(req.get('Authorization'));
+    var useridNumber = parseInt(req.params.userID, 1);
+    return fromUser == useridNumber;
 }
 
-/**
- * Get the feed data for a particular user.
- */
-// app.get('/user/:userid/feed', function(req, res) {
-//   var userid = req.params.userid;
-//   var fromUser = getUserIdFromToken(req.get('Authorization')); // userid is a string. We need it to be a number.
-//   // Parameters are always strings.
-//   var useridNumber = parseInt(userid, 10);
-//   if (fromUser === useridNumber) {
-//     // Send response.
-//     res.send(getFeedData(userid));
-//   }
-//   else {
-//     // 401: Unauthorized request.
-//     res.status(401).end();
-//   }
-// });
+app.get("/user/:userid", function(req, res) {
+    if (checkAuth(req, res)) {
+        res.send(db.readDocument('users', parseInt(req.params.userid, 10)));
+    } else {
+        res.status(401).end();
+    }
+});
+
+
+// Starts the server on port 3000!
+app.listen(port, function () {
+    console.log('Geopost listening on port: ' + port);
+
+
+})

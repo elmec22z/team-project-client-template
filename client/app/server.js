@@ -1,4 +1,4 @@
-import {readDocument, writeDocument, addDocument, readCollection} from './database.js';
+import {readDocument, readCollection} from './database.js';
 
 /**
  * Emulates how a REST call is *asynchronous* -- it calls your function back
@@ -9,10 +9,15 @@ function emulateServerReturn(data, cb) {
     cb(data);
   }, 4);
 }
-export function getProfileData(userID, cb){
-  var userData = readDocument('user', userID);
-  emulateServerReturn(userData, cb);
+export function getProfileData(userID, cb, t)
+{
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '/user/' + userID,
+      undefined, (xhr) => {
+      cb(JSON.parse(xhr.responseText), t);
+  });
 }
+
 export function getCityData(queryData, cb) {
 	var cities = readCollection('cities');
 	var c = {};
