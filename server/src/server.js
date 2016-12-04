@@ -93,6 +93,7 @@ app.get("/user/:userid", function(req, res) {
     }
 });
 
+<<<<<<< HEAD
 /**
  * Get the feed data for a particular user.
  */
@@ -241,10 +242,10 @@ function getFeedData(user, cb) {
   var profile = readDocument('feeds', userData.id);
 }
 
+=======
+>>>>>>> 5ee76dc456b47a33931649f14b085a312884ca9b
 
 // Starts the server on port 3000!
-app.listen(port, function () {
-    console.log('Geopost listening on port: ' + port);
-
-
-})
+// app.listen(3000, function () {
+//     console.log('Geopost listening on port 3000 ');
+// })

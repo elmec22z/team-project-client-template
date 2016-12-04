@@ -1,10 +1,7 @@
 import {readDocument, readCollection} from './database.js';
-<<<<<<< HEAD
-=======
 
 
-/** var token=''; **/
->>>>>>> c6bf0cbcef14c4d0c1210d6abf1637e54e2df3d3
+/*var token=''; 
 
 /**
 * Properly configure+send an XMLHttpRequest with error handling,
