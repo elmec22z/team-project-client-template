@@ -1,5 +1,8 @@
 import {readDocument, writeDocument, addDocument, readCollection} from './database.js';
 
+
+/** var token=''; **/
+
 /**
 * Properly configure+send an XMLHttpRequest with error handling,
 * authorization token, and other needed properties.
