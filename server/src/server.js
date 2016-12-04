@@ -93,6 +93,84 @@ app.get("/user/:userid", function(req, res) {
     }
 });
 
+/**
+ * Get the feed data for a particular user.
+ */
+// app.get('/user/:userid/feed', function(req, res) {
+//   var userid = req.params.userid;
+//   var fromUser = getUserIdFromToken(req.get('Authorization')); // userid is a string. We need it to be a number.
+//   // Parameters are always strings.
+//   var useridNumber = parseInt(userid, 10);
+//   if (fromUser === useridNumber) {
+//     // Send response.
+//     res.send(getFeedData(userid));
+//   }
+//   else {
+//     // 401: Unauthorized request.
+//     res.status(401).end();
+//   }
+// });
+
+/**
+* Get the profile data for a particular user.
+*/
+app.get('/user/:userid/profile', function(req, res) {
+  var userid = req.params.userid;
+  var fromUser = getUserIdFromToken(req.get('Authorization'));
+  // userid is a string. We need it to be a number.
+  // Parameters are always strings.
+  var useridNumber = parseInt(userid, 10);
+  if (fromUser === useridNumber) {
+    // Send response.
+    res.send(getProfileData(userid, feedData));
+  } else {
+    // 401: Unauthorized request.
+    res.status(401).end();
+  }
+});
+
+// get the list of cities
+app.get('/cities/list', function(req, res) {
+    res.send(getCityData(userid, feedData));
+});
+
+app.get('/cities/:cityid/', function(req, res) {
+  var cityid = req.params.cityid;
+  if (cityid <= 2) {
+    // Send response.
+    res.send(getCityData(userid, feedData));
+  } else {
+    // 401: Unauthorized request.
+    res.status(401).end();
+  }
+});
+
+// editprofile
+app.put('/user/:userid/editprofile', function(req, res) {
+  var userid = req.params.userid;
+  var fromUser = getUserIdFromToken(req.get('Authorization'));
+  // userid is a string. We need it to be a number.
+  // Parameters are always strings.
+  var useridNumber = parseInt(userid, 10);
+  if (fromUser === useridNumber) {
+    // Check that the body is a string, and not something like a JSON object.
+    // We can't use JSON validation here, since the body is simply text!
+    if (typeof(req.body) !== 'string') {
+      // 400: Bad request.
+      res.status(400).end();
+      return;
+    }
+    // Update text content of update.
+    var userProfile = req.body;
+    writeDocument('user', userProfile);
+  } else {
+    // 401: Unauthorized.
+    res.status(401).end();
+  }
+});
+
+
+
 
 // Starts the server on port 3000!
 app.listen(port, function () {
