@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-=======
-// Implement your server in this file.
-// We should be able to run your server with node src/server.js
 
->>>>>>> 5d3dc4801fe9e56ab4262e625ccb3e7a8eaa98d4
 // Imports the express Node module.
 var express = require('express');
 // Creates an Express server.
