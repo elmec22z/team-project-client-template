@@ -78,7 +78,7 @@ function checkAuth(req, res) {
 
 app.get("/user/:userid", function(req, res) {
     if (checkAuth(req, res)) {
-        res.send(db.readDocument('users', parseInt(req.params.userid, 10)));
+        res.send(db.readDocument('users', parseInt(req.params.userID, 10)));
     } else {
         res.status(401).end();
     }
@@ -107,14 +107,14 @@ app.get("/user/:userid", function(req, res) {
 * Get the profile data for a particular user.
 */
 app.get('/user/:userid/profile', function(req, res) {
-  var userid = req.params.userid;
+  var userID = req.params.userID;
   var fromUser = getUserIdFromToken(req.get('Authorization'));
   // userid is a string. We need it to be a number.
   // Parameters are always strings.
-  var useridNumber = parseInt(userid, 10);
+  var useridNumber = parseInt(userID, 1);
   if (fromUser === useridNumber) {
     // Send response.
-    res.send(getProfileData(userid, feedData));
+    res.send(getProfileData(userID));
   } else {
     // 401: Unauthorized request.
     res.status(401).end();
