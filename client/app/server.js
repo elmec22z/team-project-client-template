@@ -142,9 +142,20 @@ export function getUsersByCity(cityId, cb) {
 * @param cb A Function object, which we will invoke when the Feed's data is available.
 */
 export function getFeedData(user, cb) {
-// Get the User object with the id "user".
-var userData = readDocument('users', user);
-// Get the Feed object for the user.
-var profile = readDocument('feeds', userData.id);
-emulateServerReturn(profile, cb);
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  // Get the Feed object for the user.
+  var profile = readDocument('feeds', userData.id);
+  emulateServerReturn(profile, cb);
+}
+
+// reset database
+export function resetDatabase() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/resetdb');
+  xhr.addEventListener('load', function() {
+    window.alert("Database reset! Refresehing the page now...");
+    document.location.reload(false);
+  });
+  xhr.send();
 }
