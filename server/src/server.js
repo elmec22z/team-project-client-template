@@ -1,4 +1,4 @@
-
+import {readDocument, writeDocument, addDocument, readCollection} from './database.js';
 // Imports the express Node module.
 var express = require('express');
 // Creates an Express server.
@@ -93,7 +93,7 @@ app.get("/user/:userid", function(req, res) {
     }
 });
 
-<<<<<<< HEAD
+
 /**
  * Get the feed data for a particular user.
  */
@@ -235,15 +235,7 @@ function getUsersByCity(cityId, cb) {
 * @param cb A Function object, which we will invoke when the Feed's data is available.
 */
 
-function getFeedData(user, cb) {
-  // Get the User object with the id "user".
-  var userData = readDocument('users', user);
-  // Get the Feed object for the user.
-  var profile = readDocument('feeds', userData.id);
-}
 
-=======
->>>>>>> 5ee76dc456b47a33931649f14b085a312884ca9b
 
 // Starts the server on port 3000!
 // app.listen(3000, function () {
