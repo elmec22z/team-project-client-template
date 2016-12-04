@@ -95,6 +95,6 @@ app.get("/user/:userid", function(req, res) {
 
 
 // Starts the server on port 3000!
-//app.listen(3000, function () {
-    //console.log('Geopost listening on port 3000 ');
-//})
+app.listen(3000, function () {
+    console.log('Geopost listening on port 3000 ');
+})
