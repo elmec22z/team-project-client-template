@@ -1,16 +1,17 @@
 import {readDocument, readCollection} from './database.js';
 
 
-/*var token=''; 
+//var token=''
 
 /**
 * Properly configure+send an XMLHttpRequest with error handling,
 * authorization token, and other needed properties.
 */
+
 function sendXHR(verb, resource, body, cb) {
   var xhr = new XMLHttpRequest();
   xhr.open(verb, resource);
-  xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+  //xhr.setRequestHeader('Authorization', 'Bearer ' + token);
   // Otherwise, ESLint would complain about it! (See what happens in Atom if
   // you remove the comment...)
   /* global FacebookError */
@@ -65,10 +66,6 @@ function sendXHR(verb, resource, body, cb) {
     throw new Error('Unknown body type: ' + typeof(body));
   }
 }
-
-
-
-
 
 /**
  * Emulates how a REST call is *asynchronous* -- it calls your function back

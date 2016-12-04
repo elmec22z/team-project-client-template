@@ -1,4 +1,4 @@
-import {readDocument, writeDocument, addDocument, readCollection} from './database.js';
+//import {readDocument, writeDocument, addDocument, readCollection} from './database.js';
 // Imports the express Node module.
 var express = require('express');
 // Creates an Express server.
