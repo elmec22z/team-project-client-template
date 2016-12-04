@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+// Implement your server in this file.
+// We should be able to run your server with node src/server.js
+
+>>>>>>> 5d3dc4801fe9e56ab4262e625ccb3e7a8eaa98d4
 // Imports the express Node module.
 var express = require('express');
 // Creates an Express server.
@@ -30,6 +36,31 @@ app.listen(3000, function () {
 });
 
 app.use(bodyParser.text());
+
+// Reset database
+app.post('/resetdb', function(req, res) {
+  console.log("Resetting database ...");
+  // this is a debug route, so don't do any validation
+  database.resetDatabase();
+  // sends an empty response with status code 200
+  res.send();
+});
+
+// Handle POST /reverse [data]
+// app.post('/reverse', function (req, res) {
+//     // If the request came with text, then the text() middleware handled it
+//     // and made `req.body` a string.
+//     // Check that req.body is a string.
+//     if (typeof(req.body) === 'string') {
+//         var reversed = reverseString(req.body);
+//         res.send(reversed);
+//     }
+//     else {
+//     // POST did not contain a string. Send an error code back!
+//       res.status(400).end();
+//     }
+// });
+
 
 /**
  * Get the user ID from a token. Returns -1 (an invalid ID)
