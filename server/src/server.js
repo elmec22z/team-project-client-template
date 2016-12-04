@@ -138,7 +138,7 @@ app.get('/cities/:cityid/', function(req, res) {
   var cityid = req.params.cityid;
   if (cityid <= 2) {
     // Send response.
-    res.send(getCityData(userid, feedData));
+    res.send(getUsersByCity(cityid));
   } else {
     // 401: Unauthorized request.
     res.status(401).end();
@@ -169,7 +169,77 @@ app.put('/user/:userid/editprofile', function(req, res) {
   }
 });
 
+function getProfileData(userID, cb){
+  var userData = readDocument('user', userID);
+  emulateServerReturn(userData, cb);
+}
 
+function getCityData(queryData, cb) {
+	var cities = readCollection('cities');
+	var c = {};
+	for (var key in cities) {
+		var result = true;
+		for (var k in queryData) {
+			switch(k) {
+				case ('cityName'):
+					if (cities[key].name.toLowerCase() == queryData[k].toLowerCase()) {
+						break;
+					}
+					result = false;
+					break;
+				case ('state'):
+					if (cities[key].location == queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
+				case ('climate'):
+					if (cities[key].climate == queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
+				case ('overPop'):
+					if (cities[key].population >= queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
+				case ('underPop'):
+					if (cities[key].population <= queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
+
+			}
+		}
+		if (result) c[key] = cities[key];
+	}
+	// get the cities collection
+}
+
+function getUsersByCity(cityId, cb) {
+	var city = readDocument('cities', cityId);
+	var people = [];
+	for(var i in city.people){
+		people.push(readDocument('user', city.people[i]));
+	}
+
+}
+
+/**
+* Emulates a REST call to get the feed data for a particular user.
+* @param user The ID of the user whose feed we are requesting.
+* @param cb A Function object, which we will invoke when the Feed's data is available.
+*/
+
+function getFeedData(user, cb) {
+  // Get the User object with the id "user".
+  var userData = readDocument('users', user);
+  // Get the Feed object for the user.
+  var profile = readDocument('feeds', userData.id);
+}
 
 
 // Starts the server on port 3000!
