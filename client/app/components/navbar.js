@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import {getProfileData} from '../server';
+//import {getProfileData} from '../server';
 
 export default class Navbar extends React.Component {
 
@@ -39,7 +39,19 @@ export default class Navbar extends React.Component {
           </a>
         </div>
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    
+          <form className="navbar-form navbar-left" role ="search">
+            <div className="input-group">
+              <input type = "text" className="form-control" placeholder = "Search Safehouse"
+                     onChange={(e) => this.handleChange(e)} />
+                <span className="input-group-btn">
+                  <Link to={{ pathname: '/cities', query: this.sendSearch() }}>
+                    <button type="submit" className="btn btn-default">
+                      <span className="glyphicon glyphicon-search"></span>
+                    </button>
+                  </Link>
+                </span>
+            </div>
+          </form>
           <div className="nav navbar-nav navbar-right">
             <div className="btn-toolbar pull right" role="toolbar">
               <Link to='/profile'>
@@ -60,6 +72,13 @@ export default class Navbar extends React.Component {
                 <div className="btn-group" role="group">
                   <button type="button" className="btn btn-default navbar-btn">
                     About
+                  </button>
+                </div>
+              </Link>
+              <Link to='/host'>
+                <div className="btn-group" role="group">
+                  <button type="button" className="btn btn-default navbar-btn">
+                    Host
                   </button>
                 </div>
               </Link>

@@ -32,20 +32,20 @@ app.post('/resetdb', function(req, res) {
   res.send();
 });
 
-// Handle POST /reverse [data]
-// app.post('/reverse', function (req, res) {
-//     // If the request came with text, then the text() middleware handled it
-//     // and made `req.body` a string.
-//     // Check that req.body is a string.
-//     if (typeof(req.body) === 'string') {
-//         var reversed = reverseString(req.body);
-//         res.send(reversed);
-//     }
-//     else {
-//     // POST did not contain a string. Send an error code back!
-//       res.status(400).end();
-//     }
-// });
+//Handle POST /reverse [data]
+app.post('/reverse', function (req, res) {
+    // If the request came with text, then the text() middleware handled it
+    // and made `req.body` a string.
+    // Check that req.body is a string.
+    if (typeof(req.body) === 'string') {
+        var reversed = reverseString(req.body);
+        res.send(reversed);
+    }
+    else {
+    // POST did not contain a string. Send an error code back!
+      res.status(400).end();
+    }
+});
 
 
 /**
@@ -78,7 +78,7 @@ function checkAuth(req, res) {
 
 app.get("/user/:userid", function(req, res) {
     if (checkAuth(req, res)) {
-        res.send(db.readDocument('users', parseInt(req.params.userID, 10)));
+        res.send(db.readDocument('users', parseInt(req.params.userID, 1)));
     } else {
         res.status(401).end();
     }
@@ -88,20 +88,20 @@ app.get("/user/:userid", function(req, res) {
 /**
  * Get the feed data for a particular user.
  */
-// app.get('/user/:userid/feed', function(req, res) {
-//   var userid = req.params.userid;
-//   var fromUser = getUserIdFromToken(req.get('Authorization')); // userid is a string. We need it to be a number.
-//   // Parameters are always strings.
-//   var useridNumber = parseInt(userid, 10);
-//   if (fromUser === useridNumber) {
-//     // Send response.
-//     res.send(getFeedData(userid));
-//   }
-//   else {
-//     // 401: Unauthorized request.
-//     res.status(401).end();
-//   }
-// });
+app.get('/user/:userid/feed', function(req, res) {
+  var userid = req.params.userid;
+  var fromUser = getUserIdFromToken(req.get('Authorization')); // userid is a string. We need it to be a number.
+  // Parameters are always strings.
+  var useridNumber = parseInt(userid, 10);
+  if (fromUser === useridNumber) {
+    // Send response.
+    res.send(getFeedData(userid));
+  }
+  else {
+    // 401: Unauthorized request.
+    res.status(401).end();
+  }
+});
 
 /**
 * Get the profile data for a particular user.
@@ -166,59 +166,59 @@ function getProfileData(userID, cb){
   emulateServerReturn(userData, cb);
 }
 
-function getCityData(queryData, cb) {
-	var cities = readCollection('cities');
-	var c = {};
-	for (var key in cities) {
-		var result = true;
-		for (var k in queryData) {
-			switch(k) {
-				case ('cityName'):
-					if (cities[key].name.toLowerCase() == queryData[k].toLowerCase()) {
-						break;
-					}
-					result = false;
-					break;
-				case ('state'):
-					if (cities[key].location == queryData[k]) {
-						break;
-					}
-					result = false;
-					break;
-				case ('climate'):
-					if (cities[key].climate == queryData[k]) {
-						break;
-					}
-					result = false;
-					break;
-				case ('overPop'):
-					if (cities[key].population >= queryData[k]) {
-						break;
-					}
-					result = false;
-					break;
-				case ('underPop'):
-					if (cities[key].population <= queryData[k]) {
-						break;
-					}
-					result = false;
-					break;
-
-			}
-		}
-		if (result) c[key] = cities[key];
-	}
-	// get the cities collection
-}
-
-function getUsersByCity(cityId, cb) {
-	var city = readDocument('cities', cityId);
-	var people = [];
-	for(var i in city.people){
-		people.push(readDocument('user', city.people[i]));
-	}
-
-}
+// function getCityData(queryData, cb) {
+// 	var cities = readCollection('cities');
+// 	var c = {};
+// 	for (var key in cities) {
+// 		var result = true;
+// 		for (var k in queryData) {
+// 			switch(k) {
+// 				case ('cityName'):
+// 					if (cities[key].name.toLowerCase() == queryData[k].toLowerCase()) {
+// 						break;
+// 					}
+// 					result = false;
+// 					break;
+// 				case ('state'):
+// 					if (cities[key].location == queryData[k]) {
+// 						break;
+// 					}
+// 					result = false;
+// 					break;
+// 				case ('climate'):
+// 					if (cities[key].climate == queryData[k]) {
+// 						break;
+// 					}
+// 					result = false;
+// 					break;
+// 				case ('overPop'):
+// 					if (cities[key].population >= queryData[k]) {
+// 						break;
+// 					}
+// 					result = false;
+// 					break;
+// 				case ('underPop'):
+// 					if (cities[key].population <= queryData[k]) {
+// 						break;
+// 					}
+// 					result = false;
+// 					break;
+//
+// 			}
+// 		}
+// 		if (result) c[key] = cities[key];
+// 	}
+// 	// get the cities collection
+// }
+//
+// function getUsersByCity(cityId, cb) {
+// 	var city = readDocument('cities', cityId);
+// 	var people = [];
+// 	for(var i in city.people){
+// 		people.push(readDocument('user', city.people[i]));
+// 	}
+//
+// }
 
 /**
 * Emulates a REST call to get the feed data for a particular user.

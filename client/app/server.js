@@ -1,13 +1,19 @@
-import {readDocument, readCollection} from './database.js';
+import {readDocument} from './database.js';
 
 
 //var token=''
 
+// /**
+// * Gets the data from the database
+// */
+// export function getUserData(user, cb)  {
+//     var userData = readDocument('users', user);
+//     emulateServerReturn(userData, cb);
+// }
 /**
 * Properly configure+send an XMLHttpRequest with error handling,
 * authorization token, and other needed properties.
 */
-
 function sendXHR(verb, resource, body, cb) {
   var xhr = new XMLHttpRequest();
   xhr.open(verb, resource);
@@ -76,70 +82,73 @@ function emulateServerReturn(data, cb) {
     cb(data);
   }, 4);
 }
-export function getProfileData(userID, cb, t)
+export function getProfileData(userID, cb)
 {
+  sendXHR('GET', '/user/' + userID, undefined, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+  });
   var xhr = new XMLHttpRequest();
   xhr.open('GET', '/user/' + userID,
       undefined, (xhr) => {
-      cb(JSON.parse(xhr.responseText), t);
+      cb(JSON.parse(xhr.responseText));
   });
 }
-
-export function getCityData(queryData, cb) {
-	var cities = readCollection('cities');
-	var c = {};
-	for (var key in cities) {
-		var result = true;
-		for (var k in queryData) {
-			switch(k) {
-				case ('cityName'):
-					if (cities[key].name.toLowerCase() == queryData[k].toLowerCase()) {
-						break;
-					}
-					result = false;
-					break;
-				case ('state'):
-					if (cities[key].location == queryData[k]) {
-						break;
-					}
-					result = false;
-					break;
-				case ('climate'):
-					if (cities[key].climate == queryData[k]) {
-						break;
-					}
-					result = false;
-					break;
-				case ('overPop'):
-					if (cities[key].population >= queryData[k]) {
-						break;
-					}
-					result = false;
-					break;
-				case ('underPop'):
-					if (cities[key].population <= queryData[k]) {
-						break;
-					}
-					result = false;
-					break;
-
-			}
-		}
-		if (result) c[key] = cities[key];
-	}
-	// get the cities collection
-
-	emulateServerReturn(c, cb);
-}
-
-export function getUsersByCity(cityId, cb) {
-	var city = readDocument('cities', cityId);
-	var people = [];
-	for(var i in city.people){
-		people.push(readDocument('user', city.people[i]));
-	}
-	emulateServerReturn(people, cb);
-}
+//
+// export function getCityData(queryData, cb) {
+// 	var cities = readCollection('cities');
+// 	var c = {};
+// 	for (var key in cities) {
+// 		var result = true;
+// 		for (var k in queryData) {
+// 			switch(k) {
+// 				case ('cityName'):
+// 					if (cities[key].name.toLowerCase() == queryData[k].toLowerCase()) {
+// 						break;
+// 					}
+// 					result = false;
+// 					break;
+// 				case ('state'):
+// 					if (cities[key].location == queryData[k]) {
+// 						break;
+// 					}
+// 					result = false;
+// 					break;
+// 				case ('climate'):
+// 					if (cities[key].climate == queryData[k]) {
+// 						break;
+// 					}
+// 					result = false;
+// 					break;
+// 				case ('overPop'):
+// 					if (cities[key].population >= queryData[k]) {
+// 						break;
+// 					}
+// 					result = false;
+// 					break;
+// 				case ('underPop'):
+// 					if (cities[key].population <= queryData[k]) {
+// 						break;
+// 					}
+// 					result = false;
+// 					break;
+//
+// 			}
+// 		}
+// 		if (result) c[key] = cities[key];
+// 	}
+// 	// get the cities collection
+//
+// 	emulateServerReturn(c, cb);
+// }
+//
+// export function getUsersByCity(cityId, cb) {
+// 	var city = readDocument('cities', cityId);
+// 	var people = [];
+// 	for(var i in city.people){
+// 		people.push(readDocument('user', city.people[i]));
+// 	}
+// 	emulateServerReturn(people, cb);
+// }
 
 /**
 * Emulates a REST call to get the feed data for a particular user.
