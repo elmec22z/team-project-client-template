@@ -37,6 +37,7 @@ return(
                             <tbody>
                                 <tr>
                                     <td>Language spoken at home
+                                      <br></br>
                                         <select>
                                             <option value=""></option>
                                             <option value="Spanish">Spanish</option>
@@ -48,6 +49,7 @@ return(
                                 </tr>
                                 <tr>
                                     <td>Location
+                                      <br></br>
                                         <select>
                                             <option value=""></option>
                                             <option value="City">City</option>
@@ -58,6 +60,7 @@ return(
                                 </tr>
                                 <tr>
                                     <td>Climate
+                                      <br></br>
                                         <select>
                                             <option value=""></option>
                                             <option value="Tropical">Tropical</option>
@@ -65,6 +68,19 @@ return(
                                             <option value="Arid">Arid</option>
                                             <option value="Temperate">Temperate</option>
                                             <option value="Continental">Continental</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Numbers to Host
+                                       <br></br>
+                                        <select>
+                                            <option value=""></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
                                         </select>
                                     </td>
                                 </tr>

@@ -88,10 +88,6 @@ componentDidMount(){
               <td>Email</td>
               <td>{this.state.email}</td>
             </tr>
-            <tr>
-              <td>Number to host</td>
-              <td>{this.state.numberToHost}</td>
-            </tr>
           </tbody>
         </table>
 
