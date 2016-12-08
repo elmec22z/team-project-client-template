@@ -39,19 +39,7 @@ export default class Navbar extends React.Component {
           </a>
         </div>
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <form className="navbar-form navbar-left" role ="search">
-            <div className="input-group">
-              <input type = "text" className="form-control" placeholder = "Search Safehouse"
-                     onChange={(e) => this.handleChange(e)} />
-                <span className="input-group-btn">
-                  <Link to={{ pathname: '/cities', query: this.sendSearch() }}>
-                    <button type="submit" className="btn btn-default">
-                      <span className="glyphicon glyphicon-search"></span>
-                    </button>
-                  </Link>
-                </span>
-            </div>
-          </form>
+    
           <div className="nav navbar-nav navbar-right">
             <div className="btn-toolbar pull right" role="toolbar">
               <Link to='/profile'>
