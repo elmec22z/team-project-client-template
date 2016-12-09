@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './navbar';
-import {getProfileData} from '../server';
+import {getUserData} from '../server';
 import { Link } from 'react-router';
 //import {readDocument} from './database.js';
 export default class profile extends React.Component {
@@ -32,7 +32,7 @@ export default class profile extends React.Component {
 */
 
 componentDidMount(){
-  getProfileData(1, (feedData)=> {
+  getUserData('1', (feedData)=> {
     this.setState({name:feedData.name,dob: feedData.dob,gender:feedData.gender,email:feedData.email, image:feedData.image, numberToHost:feedData.numberToHost, familySize:feedData.familySize, address:feedData.address});
   });
 }

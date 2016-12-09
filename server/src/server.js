@@ -33,31 +33,52 @@ app.post('/resetdb', function(req, res) {
 });
 
 
-/**
- * Get the user ID from a token. Returns -1 (an invalid ID)
- * if it fails.
- */
 function getUserIdFromToken(authorizationLine) {
-    try {
-        var token = authorizationLine.slice(7);
-        var regularString = new Buffer(token, 'base64').toString('utf8');
-        var tokenObj = JSON.parse(regularString);
-        var id = tokenObj['id'];
-        if (typeof id === 'number') {
-            return id;
-        } else {
-            return -1;
-        }
-    } catch (e) {
-        return -1;
+  try {
+    // Cut off "Bearer " from the header value.
+    var token = authorizationLine.slice(7);
+    // Convert the base64 string to a UTF-8 string.
+    var regularString = new Buffer(token, 'base64').toString('utf8');
+    // Convert the UTF-8 string into a JavaScript object.
+    var tokenObj = JSON.parse(regularString);
+    var id = tokenObj['id'];
+    // Check that id is a number.
+    if (typeof id === 'number') {
+    return id;
+    } else {
+    // Not a number. Return -1, an invalid ID.
+    return -1;
     }
+  } catch (e) {
+// Return an invalid ID.
+return -1;
 }
+}
+
+
+//get user data
+function getUserData(userid){
+	var user = readDocument('users', userid);
+	return user;
+}
+
+app.get('/user/:userid/profile', function(req, res) {
+  var userid = parseInt(req.params.userid, 10);
+  var fromUser = getUserIdFromToken(req.get('Authorization'));
+  if(fromUser === userid) {
+    // send response
+    res.status(201);
+    res.send(getUserData(userid));
+  } else {
+    res.status(401).end();
+  }
+});
 /*
  * Shorten this as it will be called anytime we send the userId.
  */
 function checkAuth(req, res) {
     var fromUser = getUserIdFromToken(req.get('Authorization'));
-    var useridNumber = parseInt(req.params.userID, 1);
+    var useridNumber = parseInt(req.params.userID, 10);
     return fromUser == useridNumber;
 }
 
@@ -147,10 +168,10 @@ app.put('/user/:userid/editprofile', function(req, res) {
   }
 });
 
-function getProfileData(userID, cb){
-  var userData = readDocument('user', userID);
-  emulateServerReturn(userData, cb);
-}
+// function getProfileData(userID, cb){
+//   var userData = readDocument('user', userID);
+//   emulateServerReturn(userData, cb);
+// }
 
 // function getCityData(queryData, cb) {
 // 	var cities = readCollection('cities');

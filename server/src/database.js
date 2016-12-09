@@ -1,8 +1,118 @@
-// Your startup's initial mock objects go here
+
+
+
+// Modify with your startup's name!
+var safehouse = null;
+
+// Put your mock objects here, as in Workshop 4
 var initialData = {
 
-};
+  "cities": {
+    "0": {
+      "_id": 0,
+      "name": "Amherst",
+      "location": "MA",
+      "climate": "Warm summer, Cold winter",
+      "population": 37819,
+      "image": "img/city.png",
+      "people": [0,1]
+    },
+    "1": {
+      "_id": 1,
+      "name": "New York City",
+      "location": "NY",
+      "climate": "Warm summer, Cold winter",
+      "population": 8,
+      "image": "img/city.png",
+      "people": []
+    },
+    "2": {
+      "_id": 2,
+      "name": "Boston",
+      "location": "MA",
+      "climate": "Warm summer, Cold winter",
+      "population": 8,
+      "image": "img/city.png",
+      "people": []
+    }
+  },
 
+  "user": {
+    "0": {
+      "_id": 0,
+      "name": "Jon Doe",
+      "dob": "10/15/1080",
+      "familySize": 2,
+      "gender": "male",
+      "email": "jondoe@gmail.com",
+      "image": "img/blank-profile.png",
+      "numberToHost": 5,
+      // howLongToHost is in number of days.
+      "howLongToHost": 100,
+      "address": "1600 Pennsylvania Ave",
+      "homeDesc": "Small 3 Bedroom, 1 Bath",
+      "familyDesc": "Married, 1 Boy, 6 years old",
+      "AreaDesc": "Quiet, Low Crime, Cold Winters",
+      "Accommodations": "Own Bedroom, willing to cook familiar meals"
+    },
+    "1": {
+      "_id": 1,
+      "name": "Jane Doe",
+      "dob": "06/17/1981",
+      "familySize": 2,
+      "gender": "female",
+      "email": "janedoe@gmail.com",
+      "image": "img/blank-profile.png",
+      "numberToHost": 5,
+      // howLongToHost is in number of days.
+      "howLongToHost": 100,
+      "address": "1600 Pennsylvania Ave",
+      "homeDesc": "Large 5 Bedroom, 3 Bath",
+      "familyDesc": "Married, 3 Boys, 4, 7, 10 years old",
+      "AreaDesc": "Urban Center, Busy, Good Public Transport",
+      "Accommodations": "Own Bedroom, Own Bath"
+    }
+  },
+
+  "forum": {
+    "0": {
+      "_id": 0,
+      "author": 0,
+      "content": "This is a sample question.",
+      "postDate": 1453690800000,
+      "likeCounter": [1],
+      "comments": [
+        {
+          "_id": 0,
+          "author": 1,
+          "content": "This is a sample response.",
+          "postdate": 1453690800000,
+          "likeCounter": [1],
+          "postId": 0
+        }
+      ]
+    },
+    "1": {
+      "_id": 1,
+      "author": 1,
+      "content": "This is a sample question.",
+      "postDate": 1453690800000,
+      "likeCounter": [0],
+      "comments": [
+        {
+          "_id": 0,
+          "author": 0,
+          "content": "This is a sample response.",
+          "postdate": 1453690800000,
+          "likeCounter": [0],
+          "postId": 1
+        }
+      ]
+    }
+
+  }
+
+};
 var data;
 // If 'true', the in-memory object representing the database has changed,
 // and we should flush it to disk.
