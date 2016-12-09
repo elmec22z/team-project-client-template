@@ -3,7 +3,6 @@ var express = require('express');
 // Creates an Express server.
 var app = express();
 
-
 // import readDocument
 //var database = require ('./database');
 //var readDocument = database.readDocument;
@@ -58,7 +57,7 @@ return -1;
 
 //get user data
 function getUserData(userid){
-	var user = readDocument('users', userid);
+	var user = readDocument('user', userid);
 	return user;
 }
 
@@ -84,7 +83,7 @@ function checkAuth(req, res) {
 
 app.get("/user/:userid", function(req, res) {
     if (checkAuth(req, res)) {
-        res.send(db.readDocument('user', parseInt(req.params.userID, 1)));
+        res.send(db.readDocument('user', parseInt(req.params.userID, 10)));
     } else {
         res.status(401).end();
     }

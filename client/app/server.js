@@ -1,7 +1,7 @@
 //import {readDocument} from './database.js';
 
 
-var token='eyJpZCI6NH0=';
+var token='eyJpZCI6MX0=';
 
 // /**
 // * Gets the data from the database
@@ -14,7 +14,7 @@ var token='eyJpZCI6NH0=';
 * Properly configure+send an XMLHttpRequest with error handling,
 * authorization token, and other needed properties.
 */
-function sendXHR(verb, resource, body, cb) {
+export function sendXHR(verb, resource, body, cb) {
   var xhr = new XMLHttpRequest();
   xhr.open(verb, resource);
   xhr.setRequestHeader('Authorization', 'Bearer ' + token);
@@ -77,7 +77,7 @@ function sendXHR(verb, resource, body, cb) {
  * Emulates how a REST call is *asynchronous* -- it calls your function back
  * some time in the future with data.
  */
-function emulateServerReturn(userID, cb) {
+export function emulateServerReturn(userID, cb) {
   setTimeout(() => {
     cb(userID);
   }, 1);
