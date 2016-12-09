@@ -32,21 +32,6 @@ app.post('/resetdb', function(req, res) {
   res.send();
 });
 
-//Handle POST /reverse [data]
-app.post('/reverse', function (req, res) {
-    // If the request came with text, then the text() middleware handled it
-    // and made `req.body` a string.
-    // Check that req.body is a string.
-    if (typeof(req.body) === 'string') {
-        var reversed = reverseString(req.body);
-        res.send(reversed);
-    }
-    else {
-    // POST did not contain a string. Send an error code back!
-      res.status(400).end();
-    }
-});
-
 
 /**
  * Get the user ID from a token. Returns -1 (an invalid ID)
@@ -78,7 +63,7 @@ function checkAuth(req, res) {
 
 app.get("/user/:userid", function(req, res) {
     if (checkAuth(req, res)) {
-        res.send(db.readDocument('users', parseInt(req.params.userID, 1)));
+        res.send(db.readDocument('user', parseInt(req.params.userID, 1)));
     } else {
         res.status(401).end();
     }
@@ -92,7 +77,7 @@ app.get('/user/:userid/feed', function(req, res) {
   var userid = req.params.userid;
   var fromUser = getUserIdFromToken(req.get('Authorization')); // userid is a string. We need it to be a number.
   // Parameters are always strings.
-  var useridNumber = parseInt(userid, 10);
+  var useridNumber = parseInt(userid, 1);
   if (fromUser === useridNumber) {
     // Send response.
     res.send(getFeedData(userid));
@@ -117,6 +102,7 @@ app.get('/user/:userid/profile', function(req, res) {
     res.send(getProfileData(userID));
   } else {
     // 401: Unauthorized request.
+    console.log("USER NOT MATCHING");
     res.status(401).end();
   }
 });

@@ -87,9 +87,11 @@ return(
                             </tbody>
                         </table>
                         <section>
+                          <Link to='/resulthome'>
                             <div className="container">
                                 <button className="entypo-right-open-big">Match Me!</button>
                             </div>
+                          </Link>
                         </section>
                     </div>
                 </div>

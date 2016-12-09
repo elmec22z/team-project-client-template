@@ -77,20 +77,15 @@ function sendXHR(verb, resource, body, cb) {
  * Emulates how a REST call is *asynchronous* -- it calls your function back
  * some time in the future with data.
  */
-function emulateServerReturn(data, cb) {
+function emulateServerReturn(userID, cb) {
   setTimeout(() => {
-    cb(data);
-  }, 4);
+    cb(userID);
+  }, 1);
 }
 export function getProfileData(userID, cb)
 {
   sendXHR('GET', '/user/' + userID, undefined, (xhr) => {
     cb(JSON.parse(xhr.responseText));
-  });
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', '/user/' + userID,
-      undefined, (xhr) => {
-      cb(JSON.parse(xhr.responseText));
   });
 }
 //
