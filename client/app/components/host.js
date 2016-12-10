@@ -19,6 +19,18 @@ export default class host extends React.Component {
     numberToHost:""
   }
 }
+
+sendSearch() {
+  var dict = {}
+  for (var key in this.state) {
+    if (!this.state.hasOwnProperty(key)) continue;
+    var obj = this.state[key];
+    if (obj !== '') {
+      dict[key] = obj;
+    }
+  }
+  return dict;
+}
 render(){
 return(
 <div>
@@ -77,7 +89,7 @@ return(
                             </tbody>
                         </table>
                         <section>
-                          <Link to='/resulthome'>
+                          <Link to={{ pathname: '/cities', query: this.sendSearch()}}>
                             <div className="container">
                                 <button className="entypo-right-open-big">Match Me!</button>
                             </div>

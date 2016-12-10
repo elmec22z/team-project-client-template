@@ -15,24 +15,27 @@ var initialData = {
       "climate": "Warm summer, Cold winter",
       "population": 37819,
       "image": "img/city.png",
+      "language":"Arabic",
       "people": [0,1]
     },
     "1": {
       "_id": 1,
-      "name":"Sana'a",
+      "name": "Sana'a",
       "location": "Yemen",
       "climate": "Warm summer, Cold winter",
       "population": 8,
       "image": "img/city.png",
+      "language":"Arabic",
       "people": []
     },
     "2": {
       "_id": 2,
-       "name": "Aleppo",
+      "name": "Aleppo",
       "location": "Syria",
       "climate": "Warm summer, Cold winter",
       "population": 8,
       "image": "img/city.png",
+      "language":"Arabic",
       "people": []
     },
     "3": {
@@ -42,6 +45,7 @@ var initialData = {
       "climate": "Warm summer, Cold winter",
       "population": 8,
       "image": "img/city.png",
+      "language":"Arabic",
       "people": []
     }
   },

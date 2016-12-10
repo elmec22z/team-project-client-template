@@ -41,9 +41,11 @@ export default class splash extends React.Component {
 
                       <br />
                       <div className="btn-group" role="group">
+                        <Link to ='/profile'>
                         <button type="button" className="btn btn-default navbar-btn">
                           Login
                         </button>
+                      </Link>
                       </div>
 
                       <div className="btn-group" role="group">
@@ -53,15 +55,14 @@ export default class splash extends React.Component {
                       </div>
 
                       <div>
-                      <Link to='/about'>
+                      <Link to ='/about'>
                         <div className="btn-group" role="group">
                           <button type="button" className="btn btn-default navbar-btn">
                             About
                           </button>
-                        </div>
+                      </div>
                       </Link>
                     </div>
-
                     </div>
                   </div>
                 </div>
