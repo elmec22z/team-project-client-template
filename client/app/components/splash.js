@@ -9,53 +9,55 @@ export default class splash extends React.Component {
         SafeHouse
         </div>
 
-        <div id="login">
-          <div className="row">
-            <div className="col-md-12">
+        <div>
+          <body />
+        </div>
 
-                <h1> LOGIN </h1>
-                <br />
+        <div>
+          <div id="login">
+            <div className="row">
+              <div className="col-md-12">
+
+                  <h1> LOGIN </h1>
+                  <br />
 
 
-                <div id="username">
-                  <div className="input-group">
-                    <input type = "text" className= "form-control" placeholder = "Username" />
-                      <span className= "input-group-btn">
-                      </span>
-                    </div>
-                  </div>
-
-                  <div id="password">
+                  <div id="username">
                     <div className="input-group">
-                      <input type = "text" className= "form-control" placeholder = "Password" />
+                      <input type = "text" className= "form-control" placeholder = "Username" />
                         <span className= "input-group-btn">
                         </span>
                       </div>
                     </div>
 
-                    <br />
-                    <div className="btn-group" role="group">
-                      <button type="button" className="btn btn-default navbar-btn">
-                        Login
-                      </button>
-                    </div>
+                    <div id="password">
+                      <div className="input-group">
+                        <input type = "text" className= "form-control" placeholder = "Password" />
+                          <span className= "input-group-btn">
+                          </span>
+                        </div>
+                      </div>
 
-                    <div className="btn-group" role="group">
-                      <button type="button" className="btn btn-default navbar-btn">
-                        Forgot Password?
-                      </button>
+                      <br />
+                      <div className="btn-group" role="group">
+                        <button type="button" className="btn btn-default navbar-btn">
+                          Login
+                        </button>
+                      </div>
+
+                      <div className="btn-group" role="group">
+                        <button type="button" className="btn btn-default navbar-btn">
+                          Forgot Password?
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+        </div>
 
             <div>
-              About us
+              <a href="#">About us</a>
             </div>
-
-          <div id="background">
-            <img src="img/safehouse.jpg"/>
-          </div>
 
     </div>
     )
