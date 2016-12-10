@@ -5,7 +5,7 @@ var app = express();
 
 // import readDocument
 //var database = require ('./database');
-var readCollection = require ('./database').readCollection;
+//var readDocument = database.readDocument;
 var readDocument = require ('./database').readDocument;
 
 var bodyParser = require('body-parser');

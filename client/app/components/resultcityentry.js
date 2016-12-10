@@ -47,10 +47,6 @@ export default class ResultCityEntry extends React.Component {
                             <td>Climate:</td>
                             <td className="r">{this.state.climate}</td>
                           </tr>
-                          <tr>
-                            <td>Population:</td>
-                            <td className="r">{this.state.population}</td>
-                          </tr>
                         </tbody>
                       </table>
                     </div>
