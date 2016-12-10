@@ -57,7 +57,7 @@ export default class Navbar extends React.Component {
               <Link to='/profile'>
                 <div className="btn-group" role="group">
                   <button type="button" className="btn btn-default navbar-btn">
-                    My Profile
+                    Profile
                   </button>
                 </div>
               </Link>
@@ -71,7 +71,7 @@ export default class Navbar extends React.Component {
               <Link to='/resulthome'>
                 <div className="btn-group" role="group">
                   <button type="button" className="btn btn-default navbar-btn">
-                    My Results
+                    Results
                   </button>
                 </div>
               </Link>
