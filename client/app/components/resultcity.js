@@ -25,6 +25,10 @@ export default class Result extends React.Component {
     getCityData(this.props.location.query, (cityData) => {
         this.setState({cityData});
     });
+    //this is where the language will be set
+    // getLanguageData(){
+    //   getLanguageData(this.this.props.lan)
+    // }
   }
 
   render() {
@@ -38,7 +42,7 @@ export default class Result extends React.Component {
       rows.push(
         <div className="row" key={'key'}>
           <div className="col-md-12 result" key={'key'}>
-            <h1 key={'key'}>No results for this search.</h1>
+            <h1 key={'key'}> Sorry there is no match ...</h1>
           </div>
         </div>
       )

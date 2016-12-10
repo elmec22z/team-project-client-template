@@ -73,19 +73,7 @@ return(
                                         </select>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Numbers to Host
-                                       <br></br>
-                                        <select>
-                                            <option value=""></option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </td>
-                                </tr>
+
                             </tbody>
                         </table>
                         <section>
@@ -103,8 +91,6 @@ return(
 </div>
 </div>
 </div >
-
-
 )
 }
 }

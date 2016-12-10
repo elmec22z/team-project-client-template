@@ -47,6 +47,13 @@ export default class ResultCityEntry extends React.Component {
                             <td>Climate:</td>
                             <td className="r">{this.state.climate}</td>
                           </tr>
+<<<<<<< HEAD
+=======
+                          <tr>
+                            <td>Number of Refugees:</td>
+                            <td className="r">{this.state.population}</td>
+                          </tr>
+>>>>>>> 1e819ad75c64d5c4efa8634e05a7ec95d8f5ddc3
                         </tbody>
                       </table>
                     </div>

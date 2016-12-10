@@ -1,4 +1,6 @@
 body {
+	background-color: #8BBAC9;
+	background-image: url(../img/safehouse.jpg);
 	font-family: "Open Sans" serif;
   padding-top:30px;
 }
@@ -9,15 +11,16 @@ body {
 
 .btn{
 	color: white;
-	background-color: #e87817;
+	background-color: #8BBAC9;
 }
 
 #login {
-  color: black;
-  padding-top: 100px;
-  padding-left: 470px;
+  color: #FFFFFF;
+  padding-top: 50px;
+  padding-left: 500px;
   border: 1px;
   border-color: black;
+	font-family: 'Roboto Slab', serif;
 }
 
 #profile {
@@ -45,4 +48,13 @@ body {
 }
 #footer_socials{
     margin: 0 .5em 0 .5em;
+}
+
+#title {
+	padding-left: 500px;
+	padding-right: 450px;
+	padding-top: 85px;
+	color: #FFFFFF;
+	font-family: 'Aladin', cursive;
+	font-size: 64px;
 }
