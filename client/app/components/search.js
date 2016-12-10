@@ -40,12 +40,14 @@ export default class Search extends React.Component {
                 <div className="col-md-12 search">
                   <h3>Search Cities</h3>
                   <hr/>
-                  <input type="text" id="city-search" placeholder="City Name" 
+                  <input type="text" id="city-search" placeholder="City Name"
                          onChange={(e) => this.handleChange(e,'cityName')} />
                   <select onChange={(e) => this.handleChange(e,'state')}>
                     <option value="">State</option>
-                    <option value="MA">MA</option>
-                    <option value="NY">NY</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Yemen">Yemen</option>
+                    <option value="Syria">Syria</option>
+                    <option value="Iraq">Iraq</option>                    
                   </select>
                   <select onChange={(e) => this.handleChange(e,'climate')}>
                     <option value="">Climate</option>
@@ -54,22 +56,22 @@ export default class Search extends React.Component {
                   <h4>Population:</h4>
                   Over:
                   <form>
-                    <div className="row"> 
+                    <div className="row">
                       <div className="col-xs-8">
-                        <input type="range" name="overRange" 
-                               min="0" max={this.state.underPop} value={this.state.overPop} 
+                        <input type="range" name="overRange"
+                               min="0" max={this.state.underPop} value={this.state.overPop}
                                onChange={(e) => this.handleChange(e,'overPop')} />
                       </div>
                       <div className="col-xs-4">
                         <input type="number" name="overInput"
-                               min="0" max={this.state.underPop} value={this.state.overPop} 
+                               min="0" max={this.state.underPop} value={this.state.overPop}
                                onChange={(e) => this.handleChange(e,'overPop')} />
                       </div>
                     </div>
                     Under:
-                    <div className="row"> 
+                    <div className="row">
                       <div className="col-xs-8">
-                        <input type="range" name="underRange" 
+                        <input type="range" name="underRange"
                                min={this.state.overPop} max="50000" value={this.state.underPop}
                                onChange={(e) => this.handleChange(e,'underPop')} />
                       </div>

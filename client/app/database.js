@@ -10,8 +10,8 @@ var initialData = {
   "cities": {
     "0": {
       "_id": 0,
-      "name": "Amherst",
-      "location": "MA",
+      "name": "Bama",
+      "location": "Kenya",
       "climate": "Warm summer, Cold winter",
       "population": 37819,
       "image": "img/city.png",
@@ -19,8 +19,8 @@ var initialData = {
     },
     "1": {
       "_id": 1,
-      "name": "New York City",
-      "location": "NY",
+      "name": "Sana'a",
+      "location": "Yemen",
       "climate": "Warm summer, Cold winter",
       "population": 8,
       "image": "img/city.png",
@@ -28,8 +28,17 @@ var initialData = {
     },
     "2": {
       "_id": 2,
-      "name": "Boston",
-      "location": "MA",
+      "name": "Aleppo",
+      "location": "Syria",
+      "climate": "Warm summer, Cold winter",
+      "population": 8,
+      "image": "img/city.png",
+      "people": []
+    },
+    "3": {
+      "_id": 3,
+      "name": "Baghdad",
+      "location": "Iraq",
       "climate": "Warm summer, Cold winter",
       "population": 8,
       "image": "img/city.png",
