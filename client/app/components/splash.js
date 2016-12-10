@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export default class splash extends React.Component {
   render(){
@@ -50,14 +51,22 @@ export default class splash extends React.Component {
                           Forgot Password?
                         </button>
                       </div>
+
+                      <div>
+                      <Link to='/about'>
+                        <div className="btn-group" role="group">
+                          <button type="button" className="btn btn-default navbar-btn">
+                            About
+                          </button>
+                        </div>
+                      </Link>
+                    </div>
+
                     </div>
                   </div>
                 </div>
         </div>
 
-            <div>
-              <a href="#">About us</a>
-            </div>
 
     </div>
     )
