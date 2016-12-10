@@ -57,21 +57,7 @@ export default class Navbar extends React.Component {
               <Link to='/profile'>
                 <div className="btn-group" role="group">
                   <button type="button" className="btn btn-default navbar-btn">
-                    My Profile
-                  </button>
-                </div>
-              </Link>
-              <Link to='/resulthome'>
-                <div className="btn-group" role="group">
-                  <button type="button" className="btn btn-default navbar-btn">
-                    My Results
-                  </button>
-                </div>
-              </Link>
-              <Link to='/about'>
-                <div className="btn-group" role="group">
-                  <button type="button" className="btn btn-default navbar-btn">
-                    About
+                    Profile
                   </button>
                 </div>
               </Link>
@@ -82,10 +68,24 @@ export default class Navbar extends React.Component {
                   </button>
                 </div>
               </Link>
+              <Link to='/resulthome'>
+                <div className="btn-group" role="group">
+                  <button type="button" className="btn btn-default navbar-btn">
+                    Results
+                  </button>
+                </div>
+              </Link>
               <Link to='/forum'>
                 <div className="btn-group" role="group">
                   <button type="button" className="btn btn-default navbar-btn">
                     Forum
+                  </button>
+                </div>
+              </Link>
+              <Link to='/about'>
+                <div className="btn-group" role="group">
+                  <button type="button" className="btn btn-default navbar-btn">
+                    About
                   </button>
                 </div>
               </Link>
