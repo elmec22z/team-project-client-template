@@ -1,7 +1,6 @@
-//import {readDocument} from './database.js';
+import {readDocument, writeDocument, addDocument, readCollection} from './database.js';
 
-
-var token='eyJpZCI6NH0=';
+var token='eyJpZCI6MX0=';
 
 // /**
 // * Gets the data from the database
@@ -14,7 +13,7 @@ var token='eyJpZCI6NH0=';
 * Properly configure+send an XMLHttpRequest with error handling,
 * authorization token, and other needed properties.
 */
-function sendXHR(verb, resource, body, cb) {
+export function sendXHR(verb, resource, body, cb) {
   var xhr = new XMLHttpRequest();
   xhr.open(verb, resource);
   xhr.setRequestHeader('Authorization', 'Bearer ' + token);
@@ -77,7 +76,7 @@ function sendXHR(verb, resource, body, cb) {
  * Emulates how a REST call is *asynchronous* -- it calls your function back
  * some time in the future with data.
  */
-function emulateServerReturn(userID, cb) {
+export function emulateServerReturn(userID, cb) {
   setTimeout(() => {
     cb(userID);
   }, 1);
@@ -88,68 +87,68 @@ function emulateServerReturn(userID, cb) {
   })
 }
 
-// export function getProfileData(userID, cb)
-// {
-//   sendXHR('GET', '/user/' + userID, undefined, (xhr) => {
-//     cb(JSON.parse(xhr.responseText));
-//   });
-// }
-//
-// export function getCityData(queryData, cb) {
-// 	var cities = readCollection('cities');
-// 	var c = {};
-// 	for (var key in cities) {
-// 		var result = true;
-// 		for (var k in queryData) {
-// 			switch(k) {
-// 				case ('cityName'):
-// 					if (cities[key].name.toLowerCase() == queryData[k].toLowerCase()) {
-// 						break;
-// 					}
-// 					result = false;
-// 					break;
-// 				case ('state'):
-// 					if (cities[key].location == queryData[k]) {
-// 						break;
-// 					}
-// 					result = false;
-// 					break;
-// 				case ('climate'):
-// 					if (cities[key].climate == queryData[k]) {
-// 						break;
-// 					}
-// 					result = false;
-// 					break;
-// 				case ('overPop'):
-// 					if (cities[key].population >= queryData[k]) {
-// 						break;
-// 					}
-// 					result = false;
-// 					break;
-// 				case ('underPop'):
-// 					if (cities[key].population <= queryData[k]) {
-// 						break;
-// 					}
-// 					result = false;
-// 					break;
-//
-// 			}
-// 		}
-// 		if (result) c[key] = cities[key];
-// 	}
-// 	// get the cities collection
-//
-// 	emulateServerReturn(c, cb);
-// }
-//
-// export function getUsersByCity(cityId, cb) {
-// 	var city = readDocument('cities', cityId);
-// 	var people = [];
-// 	for(var i in city.people){
-// 		people.push(readDocument('user', city.people[i]));
-// 	}
-// 	emulateServerReturn(people, cb);
-// }
+export function getProfileData(userID, cb)
+{
+  sendXHR('GET', '/user/' + userID, undefined, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+  });
+}
+
+export function getCityData(queryData, cb) {
+	var cities = readCollection('cities');
+	var c = {};
+	for (var key in cities) {
+		var result = true;
+		for (var k in queryData) {
+			switch(k) {
+				case ('cityName'):
+					if (cities[key].name.toLowerCase() == queryData[k].toLowerCase()) {
+						break;
+					}
+					result = false;
+					break;
+				case ('state'):
+					if (cities[key].location == queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
+				case ('climate'):
+					if (cities[key].climate == queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
+				case ('overPop'):
+					if (cities[key].population >= queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
+				case ('underPop'):
+					if (cities[key].population <= queryData[k]) {
+						break;
+					}
+					result = false;
+					break;
+
+			}
+		}
+		if (result) c[key] = cities[key];
+	}
+	// get the cities collection
+
+	emulateServerReturn(c, cb);
+}
+
+export function getUsersByCity(cityId, cb) {
+	var city = readDocument('cities', cityId);
+	var people = [];
+	for(var i in city.people){
+		people.push(readDocument('user', city.people[i]));
+	}
+	emulateServerReturn(people, cb);
+}
 
 /**
 * Emulates a REST call to get the feed data for a particular user.
