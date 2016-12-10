@@ -48,7 +48,7 @@ var initialData = {
       "image": "img/blank-profile.png",
       "language": "spanish",
       "location": "city",
-      "climate": "temperate"
+      "climate": "temperate",
       "numberToHost": 2,
       // howLongToHost is in number of days.
       "howLongToHost": 100,
@@ -68,8 +68,8 @@ var initialData = {
       "image": "img/blank-profile.png",
       "language": "arabic",
       "location": "rural",
-      "climate": "Arid"
-      "numberToHost": 2,
+      "climate": "Arid",
+      "numberToHost": 1,
       // howLongToHost is in number of days.
       "howLongToHost": 100,
       "address": "1600 Pennsylvania Ave",
