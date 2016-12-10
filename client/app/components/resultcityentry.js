@@ -61,6 +61,10 @@ export default class ResultCityEntry extends React.Component {
                             <td>Number of hosts:</td>
                             <td>{this.state.people.length}</td>
                           </tr>
+                           <tr>
+                            <td>Language:</td>
+                            <td>{this.state.language}</td>
+                          </tr>
                         </tbody>
                       </table>
                       <div className="col-md-12 visible-md visible-lg">

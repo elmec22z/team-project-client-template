@@ -9,6 +9,7 @@ export default class Search extends React.Component {
       cityName: '',
       state: '',
       climate: '',
+      language: '',
       overPop: '0',
       underPop: '50000'
     }

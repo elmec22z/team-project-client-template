@@ -42,6 +42,7 @@ var initialData = {
       "climate": "Warm summer, Cold winter",
       "population": 8,
       "image": "img/baghdad.jpg",
+      "language": "Arabic",
       "people": []
     }
   },
