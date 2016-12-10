@@ -8,6 +8,7 @@
 		<title>About Safehouse</title>
 
 		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
 
 		<link href="css/about.css" rel="stylesheet">
 		<link href="css/profile.css" rel="stylesheet">
@@ -17,26 +18,13 @@
 	<body>
 		<nav class="navbar navbar-fixed-top navbar-default">
 			<div class="container">
-
-
 				<div class="navbar-header">
 					<a class="navbar-brand" href="#">
 						<span class="glyphicon glyphicon-home"></span>
 					</a>
 				</div>
 
-
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<form class="navbar-form navbar-left" role ="search">
-						<div class ="input-group">
-							<input type = "text" class = "form-control" placeholder = "Search Safehouse">
-							<span class = "input-group-btn">
-								<button type="submit" class="btn btn-default">
-									<span class="glyphicon glyphicon-search"></span>
-								</button>
-							</span>
-						</div>
-					</form>
 					<div class="nav navbar-nav navbar-right">
 						<div class="btn-toolbar pull right" role="toolbar">
 							<div class="btn-group" role="group">
@@ -80,50 +68,59 @@
 
         <div class="panel panel-info">
           <div class="panel-heading">
-            <h3 class="panel-title"> Name </h3>
+            <h3 class="panel-title"> Host information </h3>
           </div>
           <div class="panel-body">
             <div class="row">
-              <div class="col-md-2 col-lg-2 " align="center"> <img alt="User Pic" src="https://pixabay.com/static/uploads/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" class="img-circle img-responsive"> </div>
+              <div class="col-md-2 col-lg-2 " align="center"> </div>
 
               <div class=" col-md-9 col-lg-9 ">
                 <table class="table table-user-information">
                   <tbody>
                     <tr>
-                      <td>Date of Birth</td>
-                      <td>01/24/1988</td>
-                    </tr>
-												<td>Family size</td>
-												<td>4</td>
-                       <tr>
-                    <tr>
-                      <td>Gender</td>
-                      <td>Female</td>
-                    </tr>
-                      <tr>
-                      <td>Home Address</td>
-                      <td>----</td>
-                    </tr>
-                    <tr>
-                      <td>Email</td>
-                      <td><a href="mailto:info@support.com">info@support.com</a></td>
-                    </tr>
-                      <td>Phone Number</td>
-                      <td>123-4567-890(Landline)<br>
-                      </td>
-
-                    </tr>
-
+                      <td>Language spoken at home
+											<select>
+												<option value=""></option>
+											  <option value="Spanish">Spanish</option>
+											  <option value="French">French</option>
+											  <option value="Arabic">Arabic</option>
+											  <option value="Hindi">Hindi</option>
+										</select>
+										</td>
+									  </tr>
+										<tr>
+												<td>Location
+												<select>
+															<option value=""></option>
+															<option value="City">City</option>
+															<option value="Rural">Rural</option>
+															<option value="Suburbs">Suburbs</option>
+												</select>
+												</td>
+										</tr>
+										<tr>
+												<td>Climate
+												<select>
+															<option value=""></option>
+															<option value="Tropical">Tropical</option>
+															<option value="Tundra">Tundra</option>
+															<option value="Arid">Arid</option>
+															<option value="Temperate">Temperate</option>
+															<option value="Continental">Continental</option>
+												</select>
+												</td>
+										</tr>
                   </tbody>
                 </table>
-
+								<section>
+								<div class="container">
+									<button class="entypo-right-open-big">Match Me!</button>
+								</div>
+							</section>
               </div>
             </div>
           </div>
-               <div class="panel-footer">
-                 <a href="/edit-profile" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
-                      <span class="pull-right"></span>
-              </div>
+
         </div>
       </div>
     </div>

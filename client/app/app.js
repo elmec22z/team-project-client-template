@@ -8,6 +8,7 @@ import login from './components/login';
 import splash from './components/splash';
 import Forum from './components/forum';
 import editprofile from './components/editprofile'
+import host from './components/host'
 import profile from './components/profile'
 import ErrorBanner from './components/errorbanner'
 import { IndexRoute, Router, Route, Link, hashHistory } from 'react-router'
@@ -42,6 +43,7 @@ ReactDOM.render((
       <Route path='/forum' component={Forum}/>
 			<Route path ='/login' component={login} />
       <Route path ='/resulthome' component={ResultHome} />
+        <Route path ='/host' component={host} />
   </Router>
   ),document.getElementById('app')
 );

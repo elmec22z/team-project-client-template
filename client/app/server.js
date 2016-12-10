@@ -1,17 +1,22 @@
-import {readDocument, readCollection} from './database.js';
+import {readDocument, writeDocument, addDocument, readCollection} from './database.js';
 
+var token='eyJpZCI6MX0=';
 
-//var token=''
-
+// /**
+// * Gets the data from the database
+// */
+//export function getUserData(user, cb)  {
+//     var userData = readDocument('users', user);
+//     emulateServerReturn(userData, cb);
+// }
 /**
 * Properly configure+send an XMLHttpRequest with error handling,
 * authorization token, and other needed properties.
 */
-
-function sendXHR(verb, resource, body, cb) {
+export function sendXHR(verb, resource, body, cb) {
   var xhr = new XMLHttpRequest();
   xhr.open(verb, resource);
-  //xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+  xhr.setRequestHeader('Authorization', 'Bearer ' + token);
   // Otherwise, ESLint would complain about it! (See what happens in Atom if
   // you remove the comment...)
   /* global FacebookError */
@@ -71,17 +76,21 @@ function sendXHR(verb, resource, body, cb) {
  * Emulates how a REST call is *asynchronous* -- it calls your function back
  * some time in the future with data.
  */
-function emulateServerReturn(data, cb) {
+export function emulateServerReturn(userID, cb) {
   setTimeout(() => {
-    cb(data);
-  }, 4);
+    cb(userID);
+  }, 1);
 }
-export function getProfileData(userID, cb, t)
+ export function getUserData(user,cb){
+  sendXHR('GET','/user/'+ user + '/profile/', undefined,(xhr)=>{
+    cb(JSON.parse(xhr.responseText));
+  })
+}
+
+export function getProfileData(userID, cb)
 {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', '/user/' + userID,
-      undefined, (xhr) => {
-      cb(JSON.parse(xhr.responseText), t);
+  sendXHR('GET', '/user/' + userID, undefined, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
   });
 }
 
@@ -146,16 +155,17 @@ export function getUsersByCity(cityId, cb) {
 * @param user The ID of the user whose feed we are requesting.
 * @param cb A Function object, which we will invoke when the Feed's data is available.
 */
-export function getFeedData(user, cb) {
-  // Get the User object with the id "user".
-  var userData = readDocument('users', user);
-  // Get the Feed object for the user.
-  var profile = readDocument('feeds', userData.id);
-  emulateServerReturn(profile, cb);
-}
+
+//  function getFeedData(user, cb) {
+//   // Get the User object with the id "user".
+//   var userData = readDocument('users', user);
+//   // Get the Feed object for the user.
+//   var profile = readDocument('feeds', userData.id);
+//   emulateServerReturn(profile, cb);
+// }
 
 // reset database
-export function resetDatabase() {
+ function resetDatabase() {
   var xhr = new XMLHttpRequest();
   xhr.open('POST', '/resetdb');
   xhr.addEventListener('load', function() {
