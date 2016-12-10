@@ -13,6 +13,9 @@ export default class host extends React.Component {
     gender: "",
     email:"",
     image:"",
+    languages: "",
+    location: "",
+    climate: "",
     numberToHost:""
   }
 }
