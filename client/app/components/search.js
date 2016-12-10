@@ -44,7 +44,7 @@ export default class Search extends React.Component {
                   <input type="text" id="city-search" placeholder="City Name"
                          onChange={(e) => this.handleChange(e,'cityName')} />
                   <select onChange={(e) => this.handleChange(e,'state')}>
-                    <option value="">State</option>
+                    <option value="">Country</option>
                     <option value="Kenya">Kenya</option>
                     <option value="Yemen">Yemen</option>
                     <option value="Syria">Syria</option>
