@@ -46,7 +46,10 @@ var initialData = {
       "gender": "male",
       "email": "jondoe@gmail.com",
       "image": "img/blank-profile.png",
-      "numberToHost": 5,
+      "language": "spanish",
+      "location": "city",
+      "climate": "temperate",
+      "numberToHost": 2,
       // howLongToHost is in number of days.
       "howLongToHost": 100,
       "address": "1600 Pennsylvania Ave",
@@ -63,7 +66,10 @@ var initialData = {
       "gender": "female",
       "email": "janedoe@gmail.com",
       "image": "img/blank-profile.png",
-      "numberToHost": 5,
+      "language": "arabic",
+      "location": "rural",
+      "climate": "Arid",
+      "numberToHost": 1,
       // howLongToHost is in number of days.
       "howLongToHost": 100,
       "address": "1600 Pennsylvania Ave",

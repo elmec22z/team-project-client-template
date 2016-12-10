@@ -13,6 +13,9 @@ export default class host extends React.Component {
     gender: "",
     email:"",
     image:"",
+    languages: "",
+    location: "",
+    climate: "",
     numberToHost:""
   }
 }
@@ -40,10 +43,9 @@ return(
                                       <br></br>
                                         <select>
                                             <option value=""></option>
-                                            <option value="Spanish">Spanish</option>
-                                            <option value="French">French</option>
-                                            <option value="Arabic">Arabic</option>
-                                            <option value="Hindi">Hindi</option>
+                                            <option value="Spanish">Hausa</option>
+                                            <option value="French">Arabic</option>
+                                            <option value="Arabic">Somali</option>
                                         </select>
                                     </td>
                                 </tr>
