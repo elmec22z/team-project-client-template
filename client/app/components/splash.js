@@ -19,7 +19,7 @@ export default class splash extends React.Component {
 
                 <div id="username">
                   <div className="input-group">
-                    <input type = "text" className= "form-control" placeholder = "Username">
+                    <input type = "text" className= "form-control" placeholder = "Username" />
                       <span className= "input-group-btn">
                       </span>
                     </div>
@@ -27,7 +27,7 @@ export default class splash extends React.Component {
 
                   <div id="password">
                     <div className="input-group">
-                      <input type = "text" className= "form-control" placeholder = "Password">
+                      <input type = "text" className= "form-control" placeholder = "Password" />
                         <span className= "input-group-btn">
                         </span>
                       </div>
@@ -57,12 +57,7 @@ export default class splash extends React.Component {
             <img src="img/safehouse.jpg"/>
           </div>
 
-    	<div>
-        <Navbar />
-        <div id="background">
-          <img src="img/safehouse-worldmap.jpg" width="1500" height="979"/>
-        </div>
-      </div>
+    </div>
     )
 	}
 }
