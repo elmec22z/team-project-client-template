@@ -11,7 +11,7 @@ export default class splash extends React.Component {
         <div id="background">
           <img src="img/safehouse-worldmap.jpg" width="1500" height="979"/>
         </div>
-
+        
       </div>
     )
 	}
