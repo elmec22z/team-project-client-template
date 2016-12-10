@@ -30,7 +30,7 @@ return (
 						<li role="presentation" className="pres">
 							<a href="#locations">
 								<span className="glyphicon glyphicon-briefcase"></span>
-								Locations
+								Location
 							</a>
 						</li>
 						<br/><br/>
@@ -100,7 +100,7 @@ return (
 						<div className="panel-body">
 							<ul className="nav nav-pills">
 								<li role="presentation" className="active">
-									<span><strong>Locations</strong></span>
+									<span><strong>Location</strong></span>
 								</li>
 							</ul>
 							<div className="panel-body">

@@ -10,11 +10,11 @@ var initialData = {
   "cities": {
     "0": {
       "_id": 0,
-      "name": "Bama",
+      "name": "Dadaab",
       "location": "Kenya",
       "climate": "Warm summer, Cold winter",
       "population": 37819,
-      "image": "img/city.png",
+      "image": "img/dadaab.jpg",
       "people": [0,1]
     },
     "1": {
@@ -23,7 +23,7 @@ var initialData = {
       "location": "Yemen",
       "climate": "Warm summer, Cold winter",
       "population": 8,
-      "image": "img/city.png",
+      "image": "img/sanaa.jpg",
       "people": []
     },
     "2": {
@@ -32,7 +32,7 @@ var initialData = {
       "location": "Syria",
       "climate": "Warm summer, Cold winter",
       "population": 8,
-      "image": "img/city.png",
+      "image": "img/aleppo.jpg",
       "people": []
     },
     "3": {
@@ -41,7 +41,7 @@ var initialData = {
       "location": "Iraq",
       "climate": "Warm summer, Cold winter",
       "population": 8,
-      "image": "img/city.png",
+      "image": "img/baghdad.jpg",
       "people": []
     }
   },
