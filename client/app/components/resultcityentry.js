@@ -52,7 +52,7 @@ export default class ResultCityEntry extends React.Component {
                           </tr>
                           <tr>
                             <td>Number of Refugees:</td>
-                            <td className="r">{this.state.language}</td>
+                            <td className="r">{this.state.population}</td>
                           </tr>
                         </tbody>
                       </table>
