@@ -3,6 +3,7 @@ import Navbar from './navbar';
 import {getProfileData} from '../server';
 import { Link } from 'react-router';
 //import {readDocument} from './database.js';
+import {getUsersByLanguage} from '../server'
 export default class host extends React.Component {
   constructor(props) {
   super(props);
@@ -13,7 +14,7 @@ export default class host extends React.Component {
     gender: "",
     email:"",
     image:"",
-    languages: "",
+    language: "",
     location: "",
     climate: "",
     numberToHost:""
@@ -30,6 +31,26 @@ sendSearch() {
     }
   }
   return dict;
+}
+
+componentDidMount(){
+  getUsersByLanguage(this.state.language, (language) => {
+    this.setState({language: language});
+  });
+}
+
+ matchAlgo(){
+  var dict;
+  for(var key in this.state.language){
+    var x = document.getElementById("Arabic");
+    if(x.hasOwnProperty(key)){
+      var obj = this.state[key];
+      if (obj !== '') {
+      dict[key] = obj;
+    }
+  }
+}
+return dict;
 }
 render(){
 return(
@@ -89,7 +110,7 @@ return(
                             </tbody>
                         </table>
                         <section>
-                          <Link to={{ pathname: '/cities', query: this.sendSearch()}}>
+                          <Link to={{ pathname: '/cities', query: this.matchAlgo()}}>
                             <div className="container">
                                 <button className="entypo-right-open-big">Match Me!</button>
                             </div>

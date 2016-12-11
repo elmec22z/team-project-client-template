@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router'
 import { getUsersByCity } from '../server'
+//import {getUsersByLanguage} from '../server'
 
 export default class ResultCityEntry extends React.Component {
 	constructor(props){
@@ -13,6 +14,8 @@ export default class ResultCityEntry extends React.Component {
       this.setState({peoplepics: peopleData});
     });
   }
+
+
 
   render() {
     var pics = [];

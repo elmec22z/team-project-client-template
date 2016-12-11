@@ -1,4 +1,5 @@
 import React from 'react';
+import {getUserData} from '../server';
 import { Link } from 'react-router';
 //import {getProfileData} from '../server';
 
@@ -7,10 +8,16 @@ export default class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      name:"",
       cityName: ''
+
     }
   }
-
+  componentDidMount(){
+    getUserData('1', (feedData)=> {
+      this.setState({name:feedData.name});
+    });
+  }
   handleChange(e) {
     this.setState({'cityName': e.target.value});
   }
@@ -57,7 +64,7 @@ export default class Navbar extends React.Component {
               <Link to='/profile'>
                 <div className="btn-group" role="group">
                   <button type="button" className="btn btn-default navbar-btn">
-                    Profile
+                    {this.state.name}
                   </button>
                 </div>
               </Link>

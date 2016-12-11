@@ -216,7 +216,14 @@ function getCityData(queryData, cb) {
 	}
 	// get the cities collection
 }
-
+function getUsersByLanguage(langArabic,cb){
+  var lang = readDocument('language', lang);
+  var people=[];
+    for(var i in lang.people){
+      people.push('user', city.people[i]);
+    }
+  return lang;
+}
 function getUsersByCity(cityId, cb) {
 	var city = readDocument('cities', cityId);
 	var people = [];

@@ -15,7 +15,7 @@ var initialData = {
       "climate": "Warm summer, Cold winter",
       "population": 37819,
       "image": "img/dadaab.jpg",
-      "language": "Arabic",
+      "language": "French",
       "people": [0,1]
     },
     "1": {
