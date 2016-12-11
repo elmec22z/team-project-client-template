@@ -134,9 +134,10 @@ return (
 											placeholder = "Your text here">
 										</textarea>
 									</div>
-									<form>
-										<input type="submit" value = "Submit"/>
-									</form>
+									<button>Submit</button>
+
+
+									
 								</div>
 							</div>
 						</div>

@@ -52,7 +52,11 @@ export default class Search extends React.Component {
                   </select>
                   <select onChange={(e) => this.handleChange(e,'climate')}>
                     <option value="">Climate</option>
-                    <option value="Warm summer, Cold winter">Warm summer, Cold winter</option>
+                    <option value="Continental">Continental</option>
+                    <option value="Tropical">Tropical</option>
+                    <option value="Tundra">Tundra</option>
+                    <option value="Arid">Arid</option>
+                    <option value="Temperate">Temperate</option>
                   </select>
                   <h4>Population:</h4>
                   Over:
