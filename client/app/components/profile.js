@@ -50,7 +50,6 @@ componentDidMount(){
   });
 }*/
   render(){
-
     return(
 <div>
 <Navbar/>
@@ -96,7 +95,7 @@ componentDidMount(){
   </div>
        <div className="panel-footer">
         <Link to='/editprofile'>
-         <a data-original-title="Edit this user" data-toggle="tooltip" type="button" className="btn btn-sm btn-warning"><i className="glyphicon glyphicon-edit"></i></a>
+         <button data-original-title="Edit this user" data-toggle="tooltip" type="button" className="btn btn-sm btn-warning"><i className="glyphicon glyphicon-edit"></i></button>
               <span className="pull-right"> </span>
         </Link>
     </div>

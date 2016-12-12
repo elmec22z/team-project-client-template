@@ -4,15 +4,14 @@ import { Link } from 'react-router';
 export default class splash extends React.Component {
   render(){
     return (
+
       <div>
 
         <div id="title">
         SafeHouse
         </div>
 
-        <div>
-          <body />
-        </div>
+
 
         <div>
           <div id="login">
@@ -40,13 +39,14 @@ export default class splash extends React.Component {
                       </div>
 
                       <br />
+                      <Link to="/profile">
                       <div className="btn-group" role="group">
-                        <Link to ='/profile'>
                         <button type="button" className="btn btn-default navbar-btn">
                           Login
                         </button>
-                      </Link>
+
                       </div>
+                      </Link>
 
                       <div className="btn-group" role="group">
                         <button type="button" className="btn btn-default navbar-btn">
