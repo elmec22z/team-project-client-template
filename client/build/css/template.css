@@ -20,3 +20,10 @@
   position: fixed;
   z-index: -100;
 }
+
+body {
+	background-color: #8BBAC9;
+	background-image: url(../img/safehouse.jpg);
+	font-family: 'Roboto Slab', serif;
+  padding-top:30px;
+}
