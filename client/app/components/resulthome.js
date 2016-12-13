@@ -42,11 +42,6 @@ export default class ResultHome extends React.Component {
         <Navbar/>
         <div className="contain">
           <div className="row" id="base-row">
-            <div className="panel-heading">
-                <h3 className="panel-title">
-                    Results
-                </h3>
-            </div>
             <div className="col-sm-2 visible-md visible-lg" id="left-half-of-page-just-a-temp-name"></div>
             <div className="col-sm-4 col-md-3 col-md-push-7 col-sm-push-8" id="search-col">
               <Search/>

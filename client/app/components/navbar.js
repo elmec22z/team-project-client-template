@@ -82,7 +82,7 @@ export default class Navbar extends React.Component {
                   </button>
                 </div>
               </Link>
-              <Link to='/forum'>
+              <Link to='/forumhome'>
                 <div className="btn-group" role="group">
                   <button type="button" className="btn btn-default navbar-btn">
                     Forum

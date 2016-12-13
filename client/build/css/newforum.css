@@ -1,0 +1,58 @@
+.forum-question-entry textarea {
+  resize: none;
+  /* Needs to be !important, since Bootstrap sets this elsewhere. */
+  box-shadow: none !important;
+  border: none;
+}
+
+.forum-question-entry .media {
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  /* Adds whitespace between bottom border and buttons */
+  margin-bottom: 10px;
+  /* Adds whitespace between top of media object and top border. */
+  padding-top: 5px;
+}
+
+.forum-question-update hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* The color of 'hr' is set by its top border color. */
+  border-top: 1px solid lightgray;
+}
+
+.forum-question-update .list-inline {
+  margin-bottom: 0px;
+}
+
+.forum-question-update .panel-body {
+  padding-bottom: 0px;
+}
+
+.forum-answer-update hr {
+  padding-top: 0px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  /* The color of 'hr' is set by its top border color. */
+  border-top: 1px solid lightgray;
+}
+
+.forum-answer-update br {
+  padding-top: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* The color of 'hr' is set by its top border color. */
+  border-top: 1px solid lightgray;
+}
+
+.freq-topics-list ul{
+	/* Take out space on the left*/
+	padding: 0px;
+	/* Take out bullet points */
+	list-style-type: none;
+}
+
+.freq-topics-list li{
+	/* Add space between list */
+	margin: 1em 0;
+}

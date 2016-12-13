@@ -7,6 +7,7 @@ import About from './components/about';
 import login from './components/login';
 import splash from './components/splash';
 import Forum from './components/forum';
+import ForumHome from './components/forumhome';
 import editprofile from './components/editprofile'
 import host from './components/host'
 import profile from './components/profile'
@@ -39,7 +40,8 @@ ReactDOM.render((
       <Route path="/cities/:city" component={ResultHome}/>
 			<Route path="/about" component={About}/>
 			<Route path ='/editprofile' component={editprofile}/>
-      <Route path='/forum' component={Forum}/>
+      <Route path="/forum" component={Forum}/>
+      <Route path="/forumhome" component={ForumHome}/>
 			<Route path ='/login' component={login} />
       <Route path ='/resulthome' component={ResultHome} />
         <Route path ='/host' component={host} />
