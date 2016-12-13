@@ -77,12 +77,12 @@ export default class Search extends React.Component {
                     <div className="row">
                       <div className="col-xs-8">
                         <input type="range" name="underRange"
-                               min={this.state.overPop} max="50000" value={this.state.underPop}
+                               min={this.state.overPop} max="5000000" value={this.state.underPop}
                                onChange={(e) => this.handleChange(e,'underPop')} />
                       </div>
                       <div className="col-xs-4">
                         <input type="number" name="underInput"
-                               min={this.state.overPop} max="50000" value={this.state.underPop}
+                               min={this.state.overPop} max="5000000" value={this.state.underPop}
                                onChange={(e) => this.handleChange(e,'underPop')} />
                       </div>
                     </div>

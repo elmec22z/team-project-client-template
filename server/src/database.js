@@ -13,7 +13,7 @@ var initialData = {
       "name": "Dadaab",
       "location": "Kenya",
       "climate": "Arid",
-      "population": 37819,
+      "population": 329811,
       "image": "img/dadaab.jpg",
       "language": "Arabic",
       "people": [0,1]
@@ -23,7 +23,7 @@ var initialData = {
       "name": "Sana'a",
       "location": "Yemen",
       "climate": "Arid",
-      "population": 8,
+      "population": 2400000,
       "image": "img/sanaa.jpg",
       "language": "Arabic",
       "people": []
@@ -33,7 +33,7 @@ var initialData = {
       "name": "Aleppo",
       "location": "Syria",
       "climate": "Temperate",
-      "population": 8,
+      "population": 4800000,
       "image": "img/aleppo.jpg",
       "language": "Arabic",
       "people": []
@@ -43,7 +43,7 @@ var initialData = {
       "name": "Baghdad",
       "location": "Iraq",
       "climate": "Continental",
-      "population": 8,
+      "population": 3900000,
       "image": "img/baghdad.jpg",
       "language": "Arabic",
       "people": []
