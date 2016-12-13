@@ -224,14 +224,16 @@ function getUsersByLanguage(langArabic,cb){
     }
   return lang;
 }
+
 function getUsersByCity(cityId, cb) {
 	var city = readDocument('cities', cityId);
 	var people = [];
 	for(var i in city.people){
 		people.push(readDocument('user', city.people[i]));
 	}
-
 }
+
+
 
 /**
 * Emulates a REST call to get the feed data for a particular user.

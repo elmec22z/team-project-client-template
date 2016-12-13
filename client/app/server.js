@@ -164,6 +164,7 @@ export function getUsersByCity(cityId, cb) {
 //   emulateServerReturn(profile, cb);
 // }
 
+
 // reset database
  function resetDatabase() {
   var xhr = new XMLHttpRequest();

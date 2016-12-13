@@ -3,9 +3,18 @@ import Navbar from './navbar';
 import ForumQuestionEntry from './forumquestionentry';
 import ForumRightColumn from './forumrightcolumn';
 import ForumItem from './forumitem';
+import {getForumData} from '../server';
 
 
 export default class ForumHome extends React.Component {
+
+
+  componentDidMount() {
+    getForumData(this.props.user, (forumData) => {
+      this.setState(forumData);
+    });
+  }
+
   render() {
     return (
       <div>
@@ -18,6 +27,11 @@ export default class ForumHome extends React.Component {
               <div className="col-md-9">
                 <ForumQuestionEntry />
                 <ForumItem />
+                {/*}{this.state.contents.map((forumItem) => {
+                  return (
+                    <ForumItem key={forumItem._id} data={feedItem} />
+                  );
+                })}*/}
               </div>
               <ForumRightColumn />
           </div>
