@@ -4,6 +4,8 @@ import {getProfileData} from '../server';
 import { Link } from 'react-router';
 //import {readDocument} from './database.js';
 import {getUsersByLanguage} from '../server'
+
+
 export default class host extends React.Component {
   constructor(props) {
   super(props);
@@ -57,7 +59,6 @@ return(
 <div>
 <Navbar/> < div classNameName = "container" > <div className="row">
     <div className="col-md-12 .flash">
-
         <div className="panel panel-info">
             <div className="panel-heading">
                 <h3 className="panel-title">
