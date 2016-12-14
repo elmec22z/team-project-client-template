@@ -1,10 +1,133 @@
 var ObjectID = require('mongodb').ObjectID;
 
 // Put your startup's name here (only letters and numbers -- no spaces, apostrophes, or special characters!)
-var databaseName = null;
+var databaseName = "safehouse";
 // Put the initial mock objects here.
-var initialData = null;
+var initialData = {
+  "cities": {
+    // "0": {
+    //   "_id": 0,
+    //   "name": "Dadaab",
+    //   "location": "Kenya",
+    //   "climate": "Arid",
+    //   "population": 329811,
+    //   "image": "img/dadaab.jpg",
+    //   "language": "Arabic",
+    //   "people": [0,1]
+    // },
+    "0": {
+      "_id": new ObjectID("000000000000000000000000"),
+      "name": "Sana'a",
+      "location": "Yemen",
+      "climate": "Arid",
+      "population": 2400000,
+      "image": "img/sanaa.jpg",
+      "language": "Arabic",
+      "people": []
+    },
+    "1": {
+      "_id": new ObjectID("000000000000000000000001"),
+      "name": "Aleppo",
+      "location": "Syria",
+      "climate": "Temperate",
+      "population": 4800000,
+      "image": "img/aleppo.jpg",
+      "language": "Arabic",
+      "people": []
+    },
+    "2": {
+      "_id": new ObjectID("000000000000000000000002"),
+      "name": "Baghdad",
+      "location": "Iraq",
+      "climate": "Continental",
+      "population": 3900000,
+      "image": "img/baghdad.jpg",
+      "language": "Arabic",
+      "people": []
+    }
+  },
 
+  "user": {
+    "0": {
+      "_id": new ObjectID("000000000000000000000000"),
+      "name": "Jon Doe",
+      "dob": "10/15/1080",
+      "familySize": 2,
+      "gender": "male",
+      "email": "jondoe@gmail.com",
+      "image": "img/blank-profile.png",
+      "image": "img/blank-profile.png",
+      "language": "spanish",
+      "location": "city",
+      "climate": "temperate",
+      "numberToHost": 2,
+      // howLongToHost is in number of days.
+      "howLongToHost": 100,
+      "address": "1600 Pennsylvania Ave",
+      "homeDesc": "Small 3 Bedroom, 1 Bath",
+      "familyDesc": "Married, 1 Boy, 6 years old",
+      "AreaDesc": "Quiet, Low Crime, Cold Winters",
+      "Accommodations": "Own Bedroom, willing to cook familiar meals"
+    },
+    "1": {
+      "_id": new ObjectID("000000000000000000000001"),
+      "name": "Jane Doe",
+      "dob": "06/17/1981",
+      "familySize": 2,
+      "gender": "female",
+      "email": "janedoe@gmail.com",
+      "image": "img/blank-profile.png",
+      "language": "arabic",
+      "location": "rural",
+      "climate": "Arid",
+      "numberToHost": 1,
+      // howLongToHost is in number of days.
+      "howLongToHost": 100,
+      "address": "1600 Pennsylvania Ave",
+      "homeDesc": "Large 5 Bedroom, 3 Bath",
+      "familyDesc": "Married, 3 Boys, 4, 7, 10 years old",
+      "AreaDesc": "Urban Center, Busy, Good Public Transport",
+      "Accommodations": "Own Bedroom, Own Bath"
+    }
+  },
+
+  "forum": {
+    "0": {
+      "_id": new ObjectID("000000000000000000000000"),
+      "author": new ObjectID("000000000000000000000000"),
+      "content": "This is a sample question.",
+      "postDate": 1453690800000,
+      "likeCounter": [new ObjectID("000000000000000000000001")],
+      "comments": [
+        {
+          "_id": new ObjectID("000000000000000000000000"),
+          "author": new ObjectID("000000000000000000000001"),
+          "content": "This is a sample response.",
+          "postdate": 1453690800000,
+          "likeCounter": [new ObjectID("000000000000000000000001")],
+          "postId": new ObjectID("000000000000000000000000")
+        }
+      ]
+    },
+    "1": {
+      "_id": new ObjectID("000000000000000000000001"),
+      "author": new ObjectID("000000000000000000000001"),
+      "content": "This is a sample question.",
+      "postDate": 1453690800000,
+      "likeCounter": [new ObjectID("000000000000000000000000")],
+      "comments": [
+        {
+          "_id": new ObjectID("000000000000000000000000"),
+          "author": new ObjectID("000000000000000000000000"),
+          "content": "This is a sample response.",
+          "postdate": 1453690800000,
+          "likeCounter": [new ObjectID("000000000000000000000000")],
+          "postId": new ObjectID("000000000000000000000001")
+        }
+      ]
+    }
+  }
+};
 /**
  * Resets a collection.
  */
