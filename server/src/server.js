@@ -14,7 +14,10 @@ var bodyParser = require('body-parser');
 // `server/../client/bu // '..' means "go up one directory",
 // so this translates into `client/build`!
 app.use(express.static('../client/build'));
-
+var mongo_express = require('mongo-express/lib/middleware');
+// Import the default Mongo Express configuration
+var mongo_express_config = require('mongo-express/config.default.js')
+app.use('/mongo_express', mongo_express(mongo_express_config));
 //starts the server on port 3000:
 app.listen(3000, function () {
  console.log('SafeHouse listening on port 3000!');
