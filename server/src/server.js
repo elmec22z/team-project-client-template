@@ -13,11 +13,10 @@ var bodyParser = require('body-parser');
 // You run the server from `server`, so `../client/build` is
 // `server/../client/bu // '..' means "go up one directory",
 // so this translates into `client/build`!
-app.use(express.static('../client/build'));
+
 var mongo_express = require('mongo-express/lib/middleware');
 // Import the default Mongo Express configuration
 var mongo_express_config = require('mongo-express/config.default.js')
-app.use('/mongo_express', mongo_express(mongo_express_config));
 var MongoDB = require('mongodb');
 var MongoClient = MongoDB.MongoClient;
 var ObjectID = MongoDB.ObjectID;
@@ -34,6 +33,9 @@ MongoClient.connect(url, function(err, db) {
   //starts the server on port 3000:
 
   app.use(bodyParser.text());
+  app.use(bodyParser.json());
+  app.use(express.static('../client/build'));
+  app.use('/mongo_express', mongo_express(mongo_express_config));
 
   //  Reset database
   app.post('/resetdb', function(req, res) {
@@ -42,6 +44,38 @@ MongoClient.connect(url, function(err, db) {
       res.send();
     });
   });
+
+   /* Resolves a list of user objects. Returns an object that maps user IDs to
+   * user objects.
+   */
+  function resolveUserObjects(userList, callback) {
+    // Special case: userList is empty.
+    // It would be invalid to query the database with a logical OR
+    // query with an empty array.
+    if (userList.length === 0) {
+      callback(null, {});
+    }
+    else {
+      // Build up a MongoDB "OR" query to resolve all of the user objects
+      // in the userList.
+      var query = {
+        $or: userList.map((id) => { return {_id: id } })
+      };
+      // Resolve 'like' counter
+      db.collection('users').find(query).toArray(function(err, users) {
+        if (err) {
+          return callback(err);
+        }
+        // Build a map from ID to user object.
+        // (so userMap["4"] will give the user with ID 4)
+        var userMap = {};
+        users.forEach((user) => {
+          userMap[user._id] = user;
+        });
+        callback(null, userMap);
+      });
+    }
+  }
 
   function getUserIdFromToken(authorizationLine) {
     try {
@@ -249,8 +283,8 @@ MongoClient.connect(url, function(err, db) {
   });
 
 });
-  
-  
+
+
 // The file ends here. Nothing should be after this.
 
 
