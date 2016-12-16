@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './navbar'
 import ResultHomeEntry from './resulthomeentry'
-import { getUsersByCity, getCityById } from '../server'
+import { getUsersByCity, getCityById, getUsersByLanguage } from '../server'
 import Search from './search'
 
 export default class ResultHome extends React.Component {

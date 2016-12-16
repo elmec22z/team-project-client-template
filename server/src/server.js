@@ -46,7 +46,9 @@ MongoClient.connect(url, function(err, db) {
   });
 
 
-  function getLanguage(){
+  // function getLanguage(){
+  //   db.collection({users:"Arabic"})
+  // }
 
    /* Resolves a list of user objects. Returns an object that maps user IDs to
    * user objects.
@@ -264,13 +266,8 @@ MongoClient.connect(url, function(err, db) {
     // get the cities collection
   }
 
-  function getUsersByLanguage(langArabic,cb){
-    var lang = readDocument('language', lang);
-    var people=[];
-      for(var i in lang.people){
-        people.push('user', city.people[i]);
-      }
-    return lang;
+  function getUsersByLanguage(language){
+    language= db.collection.find({"language":"Arabic"})
   }
 
   function getUsersByCity(cityId, cb) {
