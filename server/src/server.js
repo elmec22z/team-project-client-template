@@ -45,6 +45,9 @@ MongoClient.connect(url, function(err, db) {
     });
   });
 
+
+  function getLanguage(){
+
    /* Resolves a list of user objects. Returns an object that maps user IDs to
    * user objects.
    */

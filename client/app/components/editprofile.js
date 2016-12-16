@@ -57,7 +57,7 @@ render(){
               </ul>
               <div className="panel-body">
                 <div className ="describe-your-home">
-                  <textarea styles="resize:none" rows="1" cols="120" value={this.state.homeDesc} onChange={this.state.homeDesc}>
+                  <textarea styles="resize:none" rows="1" cols="120" defaultvalue={this.state.homeDesc} onChange={this.state.homeDesc}>
                   </textarea>
                 </div>
               </div>

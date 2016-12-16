@@ -93,7 +93,12 @@ export function getProfileData(userID, cb)
     cb(JSON.parse(xhr.responseText));
   });
 }
-
+export function getUsersByLanguage(userID, cb)
+{
+  sendXHR('GET', '/user/' + userID, undefined, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+  });
+}
 export function getCityData(queryData, cb) {
 	var cities = readCollection('cities');
 	var c = {};
