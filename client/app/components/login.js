@@ -9,11 +9,8 @@ export default class login extends React.Component {
     <div id="background">
       <img src="img/safehouse-worldmap.jpg" width="1500" height="979"/>
     </div>
-
     <div className="container">
-
   			<div className="container">
-
   				<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   					<div className="nav navbar-nav navbar-right">
   						<div className="btn-toolbar pull right" role="toolbar">
@@ -26,13 +23,11 @@ export default class login extends React.Component {
   					</div>
   				</div>
   			</div>
-
       <div className="row">
         <div className="col-md-12">
           <div id="login">
             <h1> LOGIN </h1>
-            <br/>
-
+            <br/
             <div id="username">
               <div className="input-group">
                 <input type = "text" className= "form-control" placeholder = "Username"/>
@@ -40,7 +35,6 @@ export default class login extends React.Component {
                 </span>
               </div>
             </div>
-
             <div id="password">
               <div className="input-group">
                 <input type = "text" className= "form-control" placeholder = "Password"/>
@@ -48,24 +42,20 @@ export default class login extends React.Component {
                 </span>
               </div>
             </div>
-
             <br/>
             <div className="btn-group" role="group">
               <button type="button" className="btn btn-default navbar-btn">
                 Login
               </button>
             </div>
-
             <div className="btn-group" role="group">
               <button type="button" className="btn btn-default navbar-btn">
                 Forgot Password?
               </button>
             </div>
-
           </div>
         </div>
       </div>
-
       <div className="row">
         <div className="col-md-12">
           <div id="profile">
@@ -80,7 +70,6 @@ export default class login extends React.Component {
     </div>
     </div>
     </div>
-
     )
 	}
 }
