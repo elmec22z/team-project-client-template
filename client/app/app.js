@@ -14,23 +14,6 @@ import profile from './components/profile'
 import ErrorBanner from './components/errorbanner'
 import { IndexRoute, Router, Route, Link, hashHistory } from 'react-router'
 
-
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <div className="container">
-//           <div className="row">
-//             <div className="col-md-12">
-//               <ErrorBanner />
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     )
-//   }
-// }
-
 ReactDOM.render((
   <Router history={hashHistory}>
       {/* make them children of `App` */}

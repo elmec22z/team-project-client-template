@@ -17,6 +17,7 @@ export default class MatchSearch extends React.Component {
     }
   }
 
+//uses key to perform a search
   sendSearch() {
     var dict = {}
     for (var key in this.state) {
@@ -29,6 +30,7 @@ export default class MatchSearch extends React.Component {
     return dict;
   }
 
+//handles changes and changes the state values
   handleChange(e,name){
     this.setState({[name]: e.target.value});
   }

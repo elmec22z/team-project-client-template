@@ -5,16 +5,6 @@ var databaseName = "safehouse";
 // Put the initial mock objects here.
 var initialData = {
   "cities": {
-    // "0": {
-    //   "_id": 0,
-    //   "name": "Dadaab",
-    //   "location": "Kenya",
-    //   "climate": "Arid",
-    //   "population": 329811,
-    //   "image": "img/dadaab.jpg",
-    //   "language": "Arabic",
-    //   "people": [0,1]
-    // },
     "0": {
       "_id": new ObjectID("000000000000000000000000"),
       "name": "Sana'a",
@@ -128,6 +118,7 @@ var initialData = {
     }
   }
 };
+
 /**
  * Resets a collection.
  */
@@ -153,7 +144,7 @@ function resetDatabase(db, cb) {
   // "for" loop over asynchronous operations.
   var collections = Object.keys(initialData);
   var i = 0;
-  
+
   // Processes the next collection in the collections array.
   // If we have finished processing all of the collections,
   // it triggers the callback.
@@ -167,7 +158,6 @@ function resetDatabase(db, cb) {
       cb();
     }
   }
-  
   // Start processing the first collection!
   processNextCollection();
 }

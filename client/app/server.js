@@ -17,10 +17,7 @@ export function sendXHR(verb, resource, body, cb) {
   var xhr = new XMLHttpRequest();
   xhr.open(verb, resource);
   xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-  // Otherwise, ESLint would complain about it! (See what happens in Atom if
-  // you remove the comment...)
   /* global FacebookError */
-  // Response received from server. It could be a failure, though!
   xhr.addEventListener('load', function() {
     var statusCode = xhr.status;
     var statusText = xhr.statusText;
@@ -33,7 +30,7 @@ export function sendXHR(verb, resource, body, cb) {
       // The server may have included some response text with details concerning
       // the error.
       var responseText = xhr.responseText;
-      FacebookError('Could not ' + verb + " " + resource + ": Received " +
+      SafeHouseError('Could not ' + verb + " " + resource + ": Received " +
       statusCode + " " + statusText + ": " + responseText);
     }
   });
@@ -42,33 +39,33 @@ export function sendXHR(verb, resource, body, cb) {
   xhr.timeout = 10000;
   // Network failure: Could not connect to server.
   xhr.addEventListener('error', function() {
-    FacebookError('Could not ' + verb + " " + resource +
+    SafeHouseError('Could not ' + verb + " " + resource +
     ": Could not connect to the server.");
   });
   // Network failure: request took too long to complete.
   xhr.addEventListener('timeout', function() {
-    FacebookError('Could not ' + verb + " " + resource +
+    SafeHouseError('Could not ' + verb + " " + resource +
     ": Request timed out.");
   });
   switch (typeof(body)) {
     case 'undefined':
-    // No body to send.
-    xhr.send();
-    break;
+      // No body to send.
+      xhr.send();
+      break;
     case 'string':
-    // Tell the server we are sending text.
+      // Tell the server we are sending text.
 
-    xhr.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-    xhr.send(body);
-    break;
+      xhr.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+      xhr.send(body);
+      break;
     case 'object':
-    // Tell the server we are sending JSON.
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    // Convert body into a JSON string.
-    xhr.send(JSON.stringify(body));
-    break;
+      // Tell the server we are sending JSON.
+      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      // Convert body into a JSON string.
+      xhr.send(JSON.stringify(body));
+      break;
     default:
-    throw new Error('Unknown body type: ' + typeof(body));
+      throw new Error('Unknown body type: ' + typeof(body));
   }
 }
 
@@ -81,19 +78,48 @@ export function emulateServerReturn(userID, cb) {
     cb(userID);
   }, 1);
 }
+
+<<<<<<< HEAD
+//gets a User's data based on the user calling it
  export function getUserData(user,cb){
+=======
+// profile
+export function getUserData(user,cb){
+>>>>>>> 34f1e00292c82da92bd6474b379379997a39daaa
   sendXHR('GET','/user/'+ user + '/profile/', undefined,(xhr)=>{
     cb(JSON.parse(xhr.responseText));
   })
 }
 
+<<<<<<< HEAD
+//gets the profiledata from the DB based on the User's ID
+=======
+// edit profile
+>>>>>>> 34f1e00292c82da92bd6474b379379997a39daaa
 export function getProfileData(userID, cb)
+{
+  sendXHR('GET', '/user/' + userID + '/editprofile/', undefined, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+  });
+}
+
+//edit profile
+export function editProfileData (userID, newData, cb) {
+  sendXHR('PUT', '/user/' +userID+ newData + '/profile/', undefined, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+
+  });
+}
+
+//gets users in the DB matching the language they speak
+export function getUsersByLanguage(userID, cb)
 {
   sendXHR('GET', '/user/' + userID, undefined, (xhr) => {
     cb(JSON.parse(xhr.responseText));
   });
 }
 
+//gets the data on the cities in the DB
 export function getCityData(queryData, cb) {
 	var cities = readCollection('cities');
 	var c = {};
@@ -165,7 +191,7 @@ export function getUsersByCity(cityId, cb) {
 // }
 
 
-// reset database
+//reset database
  function resetDatabase() {
   var xhr = new XMLHttpRequest();
   xhr.open('POST', '/resetdb');
@@ -175,3 +201,28 @@ export function getUsersByCity(cityId, cb) {
   });
   xhr.send();
 }
+
+/**
+* Reset database button.
+*/
+// export class ResetDatabase extends React.Component {
+//     render() {
+//       return (
+//         <button className="btn btn-default" type="button" onClick={() => {
+//           var xhr = new XMLHttpRequest();
+//           xhr.open('POST', '/resetdb');
+//           xhr.addEventListener('load', function() {
+//             window.alert("Database reset! Refreshing the page now...");
+//             document.location.reload(false);
+//           });
+//         xhr.send();
+//         }}>Reset Mock DB
+//       </button>
+//       );
+//     }
+// }
+
+// ReactDOM.render(
+//   <ResetDatabase />,
+//   document.getElementById('db-reset')
+// );

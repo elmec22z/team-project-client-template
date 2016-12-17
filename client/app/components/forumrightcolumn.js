@@ -33,8 +33,6 @@ export default class ForumRightColumn extends React.Component {
           </div>
         </div>
       </div>
-
     )
   }
-
 }

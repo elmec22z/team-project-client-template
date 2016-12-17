@@ -12,13 +12,7 @@ class default class ResetDatabase extends React.Component {
         resetDatabase();
         window.alert("Database reset! Refreshing the page now...");
         document.location.reload(false);
-        //var xhr = new XMLHttpRequest();
-        //xhr.open('POST', '/resetdb');
-        //xhr.addEventListener('load', function() {
-          //window.alert("Database reset! Refresehing the page now...");
-          //document.location.reload(false);
         });
-        //xhr.send();
       }}>Reset Mock DB</button>
     );
   }

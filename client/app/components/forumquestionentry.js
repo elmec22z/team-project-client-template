@@ -17,5 +17,4 @@ export default class ForumQuestionEntry extends React.Component {
       </div>
     )
   }
-
 }

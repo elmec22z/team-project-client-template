@@ -8,16 +8,7 @@ var safehouse = null;
 var initialData = {
 
   "cities": {
-    // "0": {
-    //   "_id": 0,
-    //   "name": "Dadaab",
-    //   "location": "Kenya",
-    //   "climate": "Arid",
-    //   "population": 329811,
-    //   "image": "img/dadaab.jpg",
-    //   "language": "Arabic",
-    //   "people": [0,1]
-    // },
+
     "0": {
       "_id": 0,
       "name": "Sana'a",
