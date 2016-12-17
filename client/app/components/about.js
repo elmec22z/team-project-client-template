@@ -54,8 +54,8 @@ return (
 							</ul>
 							<div className="panel-body">
 								<div className="who-we-are">
-									<p>Safehouse is a web application intended to match hosts to a 
-									specific region based on affordability, crime rate, industry, 
+									<p>Safehouse is a web application intended to match hosts to a
+									specific region based on affordability, crime rate, industry,
 									and climate of the location of the host.
 									</p>
 								</div>
@@ -74,23 +74,23 @@ return (
 								<div className="faq">
 									<p><em>How does it work?</em></p>
 										<p>
-										Hosts state information about themselves including their 
-										language spoken at home, their location, the climate in 
+										Hosts state information about themselves including their
+										language spoken at home, their location, the climate in
 										their location, and how many people that they are able to host,
-										and we will match the host with an appropriate location based on 
+										and we will match the host with an appropriate location based on
 										their inputs as to where the refugees would come from.
 										</p>
 									<p><em>Where are we located?</em></p>
 										<p>
-										We are based out of Amherst, Massachusetts. For directions to 
+										We are based out of Amherst, Massachusetts. For directions to
 										our office, please look at the map below in the "Locations" section.
-										</p>									
+										</p>
 									<p><em>Who can I contact if I have questions about Safehouse?</em></p>
 										<p>
-										Click on the "Forum" tab at the top of the page to post your 
+										Click on the "Forum" tab at the top of the page to post your
 										own questions, and you can also see questions that other people
 										have asked. You can also contact us using the form below.
-										</p>									
+										</p>
 								</div>
 							</div>
 						</div>
@@ -134,10 +134,7 @@ return (
 											placeholder = "Your text here">
 										</textarea>
 									</div>
-									<button>Submit</button>
-
-
-									
+									<button>Submit</button>									
 								</div>
 							</div>
 						</div>

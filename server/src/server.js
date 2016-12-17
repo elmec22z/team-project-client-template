@@ -45,7 +45,6 @@ MongoClient.connect(url, function(err, db) {
     });
   });
 
-
   // function getLanguage(){
   //   db.collection({users:"Arabic"})
   // }
@@ -220,7 +219,6 @@ MongoClient.connect(url, function(err, db) {
   //   var userData = readDocument('user', userID);
   //   emulateServerReturn(userData, cb);
   // }
-
   function getCityData(queryData, cb) {
     var cities = readCollection('cities');
     var c = {};
@@ -258,7 +256,6 @@ MongoClient.connect(url, function(err, db) {
             }
             result = false;
             break;
-
         }
       }
       if (result) c[key] = cities[key];

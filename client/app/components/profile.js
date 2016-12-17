@@ -16,20 +16,6 @@ export default class profile extends React.Component {
     numberToHost:""
   }
 }
-/*pullfromDB(){
-  var user = readDocument("user", 1);
-  this.setState({
-    numberToHost: user.numberToHost,
-    name: user.name,
-    dob: user.dob,
-    gender: user.gender,
-    email: user.email,
-    image: user.image,
-    familySize:user.familySize
-
-  });
-}
-*/
 
 componentDidMount(){
   getUserData('1', (feedData)=> {
@@ -37,18 +23,6 @@ componentDidMount(){
   });
 }
 
-/*id(){
-  this.setState({
-    numberToHost: document.getElementById("numberToHost"),
-    name:  document.getElementById("name"),
-    dob:  document.getElementById("dob"),
-    gender:  document.getElementById("gender"),
-    email: document.getElementById("email"),
-    image: document.getElementById("image"),
-    familySize: document.getElementById("family")
-
-  });
-}*/
   render(){
     return(
 <div>

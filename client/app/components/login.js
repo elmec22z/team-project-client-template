@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-	
+
 export default class login extends React.Component {
   render(){
     return (
@@ -12,9 +12,7 @@ export default class login extends React.Component {
 
     <div className="container">
 
-
   			<div className="container">
-
 
   				<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   					<div className="nav navbar-nav navbar-right">
@@ -29,15 +27,11 @@ export default class login extends React.Component {
   				</div>
   			</div>
 
-
-
-
       <div className="row">
         <div className="col-md-12">
           <div id="login">
             <h1> LOGIN </h1>
             <br/>
-
 
             <div id="username">
               <div className="input-group">
@@ -90,4 +84,3 @@ export default class login extends React.Component {
     )
 	}
 }
-

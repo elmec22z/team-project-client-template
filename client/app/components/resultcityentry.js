@@ -15,8 +15,6 @@ export default class ResultCityEntry extends React.Component {
     });
   }
 
-
-
   render() {
     var pics = [];
     for (var key in this.state.peoplepics) {

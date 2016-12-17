@@ -81,24 +81,31 @@ export function emulateServerReturn(userID, cb) {
     cb(userID);
   }, 1);
 }
+
+//gets a User's data based on the user calling it
  export function getUserData(user,cb){
   sendXHR('GET','/user/'+ user + '/profile/', undefined,(xhr)=>{
     cb(JSON.parse(xhr.responseText));
   })
 }
 
+//gets the profiledata from the DB based on the User's ID
 export function getProfileData(userID, cb)
 {
   sendXHR('GET', '/user/' + userID, undefined, (xhr) => {
     cb(JSON.parse(xhr.responseText));
   });
 }
+
+//gets users in the DB matching the language they speak
 export function getUsersByLanguage(userID, cb)
 {
   sendXHR('GET', '/user/' + userID, undefined, (xhr) => {
     cb(JSON.parse(xhr.responseText));
   });
 }
+
+//gets the data on the cities in the DB
 export function getCityData(queryData, cb) {
 	var cities = readCollection('cities');
 	var c = {};
