@@ -12,8 +12,7 @@ export default class profile extends React.Component {
     familySize: "",
     gender: "",
     email:"",
-    image:"",
-    numberToHost:""
+    image:""
   }
 }
 /*pullfromDB(){
@@ -33,7 +32,16 @@ export default class profile extends React.Component {
 
 componentDidMount(){
   getUserData('1', (feedData)=> {
-    this.setState({name:feedData.name,dob: feedData.dob,gender:feedData.gender,email:feedData.email, image:feedData.image, numberToHost:feedData.numberToHost, familySize:feedData.familySize, address:feedData.address});
+    this.setState({
+      name:feedData.name,
+      dob: feedData.dob,
+      gender:feedData.gender,
+      email:feedData.email,
+      image:feedData.image,
+      numberToHost:feedData.numberToHost,
+      familySize:feedData.familySize,
+      address:feedData.address
+    });
   });
 }
 
@@ -51,59 +59,64 @@ componentDidMount(){
 }*/
   render(){
     return(
-<div>
-<Navbar/>
-<div className = "container">
-<div className="row">
-<div className="col-md-12 .flash" >
+      <div>
+        <Navbar/>
+        <div className = "container">
+          <div className="row">
+            <div className="col-md-12 .flash" >
 
-<div className="panel panel-info">
-  <div className="panel-heading">
-    <h3 className="panel-title"> {this.state.name} </h3>
-  </div>
-  <div className="panel-body">
-    <div className="row">
-      <div className="col-md-2 col-lg-2 " align="center"> <img alt="User Pic" src="img/blank-profile.png" className="img-circle img-responsive" /> </div>
-      <div className=" col-md-9 col-lg-9 ">
-        <table className="table table-user-information">
-          <tbody>
-            <tr>
-              <td>Date of Birth</td>
-              <td>{this.state.dob}</td>
-            </tr>
-            <tr>
-								<td>Family size</td>
-								<td>{this.state.familySize}</td>
-            </tr>
-            <tr>
-              <td>Gender</td>
-              <td>{this.state.gender}</td>
-            </tr>
-            <tr>
-              <td>Home Address</td>
-              <td>{this.state.address}</td>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td>{this.state.email}</td>
-            </tr>
-          </tbody>
-        </table>
+            <div className="panel panel-info">
+              <div className="panel-heading">
+                <h3 className="panel-title"> {this.state.name} </h3>
+              </div>
+              <div className="panel-body">
+                <div className="row">
+                  <div className="col-md-2 col-lg-2 " align="center">
+                    <img alt="User Pic" src="img/blank-profile.png"
+                    className="img-circle img-responsive" />
+                  </div>
+                  <div className=" col-md-9 col-lg-9 ">
+                    <table className="table table-user-information">
+                      <tbody>
+                        <tr>
+                          <td>Date of Birth</td>
+                          <td>{this.state.dob}</td>
+                        </tr>
+                        <tr>
+          								<td>Family size</td>
+          								<td>{this.state.familySize}</td>
+                        </tr>
+                        <tr>
+                          <td>Gender</td>
+                          <td>{this.state.gender}</td>
+                        </tr>
+                        <tr>
+                          <td>Home Address</td>
+                          <td>{this.state.address}</td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td>{this.state.email}</td>
+                        </tr>
+                      </tbody>
+                    </table>
 
-      </div>
-    </div>
-  </div>
-       <div className="panel-footer">
-        <Link to='/editprofile'>
-         <button data-original-title="Edit this user" data-toggle="tooltip" type="button" className="btn btn-sm btn-warning"><i className="glyphicon glyphicon-edit"></i></button>
-              <span className="pull-right"> </span>
-        </Link>
-    </div>
-		</div>
-</div>
-</div>
-</div>
-</div>
-)
-}
+                  </div>
+                </div>
+              </div>
+                  <div className="panel-footer">
+                    <Link to='/editprofile'>
+                      <button data-original-title="Edit this user" data-toggle="tooltip"
+                        type="button" className="btn btn-sm btn-warning">
+                        <i className="glyphicon glyphicon-edit"></i></button>
+                      <span className="pull-right"> </span>
+                    </Link>
+                  </div>
+            		</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        )
+      }
 }
