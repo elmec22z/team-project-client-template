@@ -8,16 +8,6 @@ var safehouse = null;
 var initialData = {
 
   "cities": {
-    // "0": {
-    //   "_id": 0,
-    //   "name": "Dadaab",
-    //   "location": "Kenya",
-    //   "climate": "Arid",
-    //   "population": 329811,
-    //   "image": "img/dadaab.jpg",
-    //   "language": "French",
-    //   "people": [0,1]
-    // },
     "0": {
       "_id": 0,
       "name": "Sana'a",
@@ -198,10 +188,3 @@ export function resetDatabase() {
   localStorage.setItem(safehouse, JSON.stringify(initialData));
   data = JSONClone(initialData);
 }
-
-
-
-//ReactDOM.render(
-  //<ResetDatabase />,
-  //document.getElementById('db-reset')
-//);

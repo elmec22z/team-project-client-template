@@ -6,20 +6,14 @@ export default class Forum extends React.Component {
     render() {
       return (
         <div>
-
-
           <Navbar/>
-
           <div className="container">
             <div className="row">
               <div className="page-header header-gap">
                 <h1> Safehouse Forum <small>Ask your questions here!</small></h1>
               </div>
-
               <div className="col-md-9">
-
                 <div style={{height: 999999}}>
-
                   <div className="panel panel-default">
                     <div className="panel-body">
                       <div className="input-group">
@@ -30,21 +24,16 @@ export default class Forum extends React.Component {
                       </div>
                     </div>
                   </div>
-
                   <h4>Top Answers <span className="label label-default" /></h4>
-
                   <div className="panel panel-default top-answers">
                     <div className="panel-body">
-
                       <div className="row">
                         <div className="col-md-12">
                           <h3> What is the best app for real time speech translation?<span className="label label-default" /></h3>
                         </div>
                       </div>
-
                       <div className="row">
                         <div className="col-md-12">
-
                           <div className="media">
                             <div className="media-left media-top">
                               <span className="glyphicon glyphicon-user"> </span>
@@ -54,7 +43,6 @@ export default class Forum extends React.Component {
                               <br /> Jan 10, 2016
                             </div>
                           </div>
-
                           <hr />
                           <div className="row">
                             <div className="col-md-12">
@@ -92,10 +80,8 @@ export default class Forum extends React.Component {
                           <h3> Supermarkets in Toronto that cater to international people?<span className="label label-default" /></h3>
                         </div>
                       </div>
-
                       <div className="row">
                         <div className="col-md-12">
-
                           <div className="media">
                             <div className="media-left media-top">
                               <span className="glyphicon glyphicon-user"> </span>
@@ -105,7 +91,6 @@ export default class Forum extends React.Component {
                               <br /> Sept 5, 2016
                             </div>
                           </div>
-
                           <hr />
                           <div className="row ">
                             <div className="col-md-12">
@@ -137,9 +122,7 @@ export default class Forum extends React.Component {
                   </div>
                 </div>
               </div>
-
               <div className="col-md-3">
-
                 <div className="row">
                   <div className="col-md-12">
                     <div className="panel panel-default">
@@ -149,7 +132,6 @@ export default class Forum extends React.Component {
                     </div>
                   </div>
                 </div>
-
                 <div className="row">
                   <div className="col-md-12">
                     <div className="panel panel-default">
