@@ -69,104 +69,126 @@ export default class editprofile extends React.Component {
     browserHistory.push('/profile');
   }
 
-  render(){
-    return(
-      <div>
-        <Navbar/>
-        <div className = "container">
-          <button type="button" onclick="alert('Save Changes!')">Save Changes</button>
-          <div className = "col-md-16">
-            <a name="Date of birth"></a>
-            <div className = "panel panel-default">
-              <div className="panel-body">
-                <ul className ="nav nav-pills">
-                  <li role="presentation" className="active">
-                    <span><strong><font size="4">Date of birth</font></strong></span>
-                  </li>
-                </ul>
+    render(){
+      return(
+        <div>
+          <Navbar/>
+          <div className = "container">
+
+            <button className="btn btn-default update-button"
+              onClick={(e) => this.handleSave(e)}>
+              <span className="glyphicon glyphicon-pin"></span>
+              Save and Exit
+            </button>
+            <div className = "col-md-16">
+              <a name="Date of birth"></a>
+              <div className = "panel panel-default">
                 <div className="panel-body">
-                  <div className ="describe-your-home">
-                    <textarea styles="resize:none" rows="1" cols="120" defaultvalue={this.state.homeDesc} onChange={this.state.homeDesc}>
-                    </textarea>
+                  <ul className ="nav nav-pills">
+                    <li role="presentation" className="active">
+                      <span><strong><font size="4">Date of birth</font></strong></span>
+                    </li>
+                  </ul>
+                  <div className="panel-body">
+                    <div className ="date-of-birth">
+                      <input type ="dob"
+                        type='text'
+                        id="dob"
+                        defaultvalue = {this.state.dob}
+                        onChange={(e) => this.handleDobChange(e)} />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className = "col-md-16">
-            <a name="Family Size"></a>
-            <div className = "panel panel-default">
-              <div className="panel-body">
-                <ul className ="nav nav-pills">
-                  <li role="presentation" className="active">
-                    <span><strong><font size="4">Family Size</font></strong></span>
-                  </li>
-                </ul>
+            <div className = "col-md-16">
+              <a name="familySize"></a>
+              <div className = "panel panel-default">
                 <div className="panel-body">
-                  <div className ="describe-your-family">
-                    <textarea styles="resize:none" rows="1" cols="120" value={this.state.familyDesc} onChange={this.state.familyDesc}>
-                    </textarea>
+                  <ul className ="nav nav-pills">
+                    <li role="presentation" className="active">
+                      <span><strong><font size="4">Family Size</font></strong></span>
+                    </li>
+                  </ul>
+                  <div className="panel-body">
+                    <div className ="family-size">
+                      <input type ="family-size"
+                        type='text'
+                        id="dob"
+                        defaultvalue = {this.state.familySize}
+                        onChange={(e) => this.handleFamilySizeChange(e)} />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className = "col-md-16">
-            <a name="Gender"></a>
-            <div className = "panel panel-default">
-              <div className="panel-body">
-                <ul className ="nav nav-pills">
-                  <li role="presentation" className="active">
-                    <span><strong><font size="4">Gender</font></strong></span>
-                  </li>
-                </ul>
+            <div className = "col-md-16">
+              <a name="Gender"></a>
+              <div className = "panel panel-default">
                 <div className="panel-body">
-                  <div className ="describe-your-family">
-                    <textarea styles="resize:none" rows="1" cols="120" value={this.state.familyDesc} onChange={this.state.familyDesc}>
-                    </textarea>
+                  <ul className ="nav nav-pills">
+                    <li role="presentation" className="active">
+                      <span><strong><font size="4">Gender</font></strong></span>
+                    </li>
+                  </ul>
+                  <div className="panel-body">
+                    <div className ="gender">
+                      <input type ="gender"
+                        type='text'
+                        id="dob"
+                        defaultvalue = {this.state.gender}
+                        onChange={(e) => this.handleGenderChange(e)} />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className = "col-md-16">
-            <a name="Home address"></a>
-            <div className = "panel panel-default">
-              <div className="panel-body">
-                <ul className ="nav nav-pills">
-                  <li role="presentation" className="active">
-                    <span><strong><font size="4">Home address</font></strong></span>
-                  </li>
-                </ul>
+            <div className = "col-md-16">
+              <a name="Home address"></a>
+              <div className = "panel panel-default">
                 <div className="panel-body">
-                  <div className ="describe-your-family">
-                    <textarea styles="resize:none" rows="1" cols="120" value={this.state.familyDesc} onChange={this.state.familyDesc}>
-                    </textarea>
+                  <ul className ="nav nav-pills">
+                    <li role="presentation" className="active">
+                      <span><strong><font size="4">Home address</font></strong></span>
+                    </li>
+                  </ul>
+                  <div className="panel-body">
+                    <div className ="home_address">
+                      <input type ="home_address"
+                        type='text'
+                        id="home_address"
+                        defaultvalue = {this.state.address}
+                        onChange={(e) => this.handleAddressChange(e)} />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className = "col-md-16">
-            <a name="Email"></a>
-            <div className = "panel panel-default">
-              <div className="panel-body">
-                <ul className ="nav nav-pills">
-                  <li role="presentation" className="active">
-                    <span><strong><font size="4">Email</font></strong></span>
-                  </li>
-                </ul>
+            <div className = "col-md-16">
+              <a name="Email"></a>
+              <div className = "panel panel-default">
                 <div className="panel-body">
-                  <div className ="describe-your-family">
-                    <textarea styles="resize:none" rows="1" cols="120" value={this.state.familyDesc} onChange={this.state.familyDesc}>
-                    </textarea>
+                  <ul className ="nav nav-pills">
+                    <li role="presentation" className="active">
+                      <span><strong><font size="4">Email</font></strong></span>
+                    </li>
+                  </ul>
+                  <div className="panel-body">
+                    <div className ="email">
+                      <input type ="email"
+                        type='text'
+                        id="email"
+                        defaultvalue = {this.state.email}
+                        onChange={(e) => this.handleEmailChange(e)} />
+                      {/*<textarea styles="resize:none" rows="1" cols="120" value={this.state.familyDesc} onChange={this.state.familyDesc}>
+                      </textarea> */}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      )
-    }
+        )
+      }
   }
