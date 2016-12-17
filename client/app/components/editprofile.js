@@ -28,7 +28,6 @@ export default class editprofile extends React.Component {
         gender:user.gender,
         email:user.email,
         address:user.address
-
       });
     });
     console.log("old dob: "+ user.dob.value);
