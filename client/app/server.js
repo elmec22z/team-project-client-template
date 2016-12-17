@@ -73,43 +73,38 @@ export function sendXHR(verb, resource, body, cb) {
  * Emulates how a REST call is *asynchronous* -- it calls your function back
  * some time in the future with data.
  */
-export function emulateServerReturn(userID, cb) {
-  setTimeout(() => {
-    cb(userID);
-  }, 1);
-}
+ /**
+  * Emulates how a REST call is *asynchronous* -- it calls your function back
+  * some time in the future with data.
+  */
+ export function emulateServerReturn(userID, cb) {
+   setTimeout(() => {
+     cb(userID);
+   }, 1);
+ }
 
-<<<<<<< HEAD
-//gets a User's data based on the user calling it
+ // profile
  export function getUserData(user,cb){
-=======
-// profile
-export function getUserData(user,cb){
->>>>>>> 34f1e00292c82da92bd6474b379379997a39daaa
-  sendXHR('GET','/user/'+ user + '/profile/', undefined,(xhr)=>{
-    cb(JSON.parse(xhr.responseText));
-  })
-}
+   sendXHR('GET','/user/'+ user + '/profile/', undefined,(xhr)=>{
+     cb(JSON.parse(xhr.responseText));
+   })
+ }
 
-<<<<<<< HEAD
-//gets the profiledata from the DB based on the User's ID
-=======
-// edit profile
->>>>>>> 34f1e00292c82da92bd6474b379379997a39daaa
-export function getProfileData(userID, cb)
-{
-  sendXHR('GET', '/user/' + userID + '/editprofile/', undefined, (xhr) => {
-    cb(JSON.parse(xhr.responseText));
-  });
-}
+ // edit profile
+ export function getProfileData(userID, cb)
+ {
+   sendXHR('GET', '/user/' + userID + '/editprofile/', undefined, (xhr) => {
+     cb(JSON.parse(xhr.responseText));
+   });
+ }
 
-//edit profile
-export function editProfileData (userID, newData, cb) {
-  sendXHR('PUT', '/user/' +userID+ newData + '/profile/', undefined, (xhr) => {
-    cb(JSON.parse(xhr.responseText));
+ //edit profile
+ export function editProfileData (userID, newData, cb) {
+   sendXHR('PUT', '/user/' +userID+ newData + '/profile/', undefined, (xhr) => {
+     cb(JSON.parse(xhr.responseText));
 
-  });
-}
+   });
+ }
 
 //gets users in the DB matching the language they speak
 export function getUsersByLanguage(userID, cb)
